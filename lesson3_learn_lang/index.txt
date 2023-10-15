@@ -1,0 +1,11 @@
+Hello!
+
+
+<script>
+
+  window.alert('Hello!!')
+
+  
+  alert('Hello!!')
+
+</script>
