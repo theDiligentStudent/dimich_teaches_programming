@@ -1,4 +1,4 @@
-// 4/11/23     4,5,6
+// 4/11/23     4,5,6,8
 // В начале 6-го видео (своего курса по Программированию) Димыч рассказал - какую Про.-у он будет писать в этом видео
 // Сейчас я начну пытаться САМ написать хоть Кусочек её.
 // Сколько получится, НО - САМОСТОЯТЕЛЬНО.
@@ -15,6 +15,7 @@
 // 8/11/23 
 // Пробую работать над моей Про.-й Дальше.....  Т.к. она рабочая, пока что, %-в, наверное, на 10 - на 15......
 
+
 // Найти эл. input по id
 // для того чтобы манипулирувать его value
 
@@ -29,84 +30,20 @@ let valueOfInput = getInput.value;
 
 let counter = 0;
 
-// function takeInputValue() {
-//   if (getInput.value === 'I') {
-//     alert('Well done!');
-//     counter++;
-//     alert(counter);
-//   } else {
-//     alert('Incorrect/Wrong');
-//   }
-// }
-// alert('Я');
-// getButton.addEventListener('click', takeInputValue);
-
-// function next() {
-//   alert('My');
-//   function takeInputValue1() {
-//     if (getInput.value === 'Мой моя моё мои') {
-//       alert('Well done!');
-//       counter++;
-//       alert(counter);
-//     } else {
-//       alert('Incorrect/Wrong');
-//     }
-//   }
-//   getButton.addEventListener('click', takeInputValue1);
-// }
-// next();
-
-// 6/11/23 -- Try to write Code further
-
-// Ф. (ниже) полностью Рабочая -- комментирую её чтобы Рифакторить
-// function firsWord(){
-// alert('Я');
-
-// function takeInputValue() {
-//   if (getInput.value === 'I') {
-//     alert('Well done!');
-//     counter++;
-//     alert(counter);
-//   } else {
-//     alert('Incorrect/Wrong');
-//   }
-// }
-// getButton.addEventListener('click', takeInputValue);
-// }
-// firsWord();
-
-// Первый Рефакторинг -- Параметр Ф.-и (word) можно вынести в Самую Первую строку
-// (а можно оставить при объявлении - Второй - Ф.-и)
-// function firsWord(word){
-//     alert('Я');
-
-//     function takeInputValue() {
-//       if (getInput.value === word) {
-//         alert('Well done!');
-//         counter++;
-//         alert(counter);
-//       } else {
-//         alert('Incorrect/Wrong');
-//       }
-//     }
-//     getButton.addEventListener('click', takeInputValue);
-//     }
-//     firsWord('I');
-
 function firsWord(word1, word2) {
-  alert(word1);
-
-  function takeInputValue() {
-    // alert(word1);
-    if (getInput.value === word2) {
-      alert('Well done!');
-      counter++;
-      alert(counter);
-    } else {
-      alert('Incorrect/Wrong');
+    alert(word1);
+  
+    function takeInputValue() {
+      // alert(word1);
+      if (getInput.value === word2) {
+        alert('Well done!');
+        counter++;
+        alert(counter);
+      } else {
+        // alert('Incorrect/Wrong');
+      }
     }
+    getButton.addEventListener('click', takeInputValue);
   }
-  getButton.addEventListener('click', takeInputValue);
-}
-firsWord('Я', 'I');
-firsWord('Живу', 'Live');
+  firsWord('Я', 'I');
+  firsWord('Живу', 'Live');
