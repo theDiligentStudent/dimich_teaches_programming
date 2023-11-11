@@ -22,24 +22,25 @@
 // -- но Всё таки я же её делал Полностью САМ
 // Сегодня Рефакторю её -- как помню -- начинаю сокращать К.
 
-
-
 // Найти эл. input по id
 // для того чтобы манипулирувать его value
 
-let inputId = 'entering_answer';
-let getInput = document.getElementById(inputId);
+// Комментирую К. ниже - потому что Рефакторю/Перерабытываю его
+//  --
+//  Получаю доступ to html-element by ID with universal function
+// let inputId = 'entering_answer';
+// let getInput = document.getElementById(inputId);
 
-let buttonWord1Id = 'show_word_1';
-let getButtonWord1Id = document.getElementById(buttonWord1Id);
-let buttonWord2Id = 'show_word_2';
-let getButtonWord2Id = document.getElementById(buttonWord2Id);
-let buttonWord3Id = 'show_word_3';
-let getButtonWord3Id = document.getElementById(buttonWord3Id);
-let buttonWord4Id = 'show_word_4';
-let getButtonWord4Id = document.getElementById(buttonWord4Id);
-// let buttonWord5Id = 'show_word_5';
-// let getButtonWord5Id = document.getElementById(buttonWord5Id);
+// let buttonWord1Id = 'show_word_1';
+// let getButtonWord1Id = document.getElementById(buttonWord1Id);
+// let buttonWord2Id = 'show_word_2';
+// let getButtonWord2Id = document.getElementById(buttonWord2Id);
+// let buttonWord3Id = 'show_word_3';
+// let getButtonWord3Id = document.getElementById(buttonWord3Id);
+// let buttonWord4Id = 'show_word_4';
+// let getButtonWord4Id = document.getElementById(buttonWord4Id);
+// // let buttonWord5Id = 'show_word_5';
+// // let getButtonWord5Id = document.getElementById(buttonWord5Id);
 
 function giveId(id) {
   let el;
@@ -54,23 +55,39 @@ function giveId(id) {
 // }
 // word5.addEventListener('click', greetings);
 
-let buttonId = 'confirm_answer';
-let getButton = document.getElementById(buttonId);
+// Комментирую К. ниже - потому что Рефакторю/Перерабытываю его
+//  --
+//  Получаю доступ to html-element by ID with universal function
 
-let buttonResult = 'my_result';
-let getButtonResult = document.getElementById(buttonResult);
+// let buttonId = 'confirm_answer';
+// let getButton = document.getElementById(buttonId);
+
+// let buttonResult = 'my_result';
+// let getButtonResult = document.getElementById(buttonResult);
+
+let getInputId = giveId('entering_answer');
+
+let getButtonWord1Id = giveId('show_word_1');
+let getButtonWord2Id = giveId('show_word_2');
+let getButtonWord3Id = giveId('show_word_3');
+let getButtonWord4Id = giveId('show_word_4');
+let getButtonWord5Id = giveId('show_word_5');
+
+let getButtonAnswerId = giveId('confirm_answer');
+
+let getButtonResultId = giveId('my_result');
 
 // Присвоить value of input -- П.-й
-let valueOfInput = getInput.value;
+let valueOfInput = getInputId.value;
 
 let counter = 0;
 
-function firsWord(word1) {
+function firsWord(word) {
   // alert(word1);
 
   function takeInputValue() {
     // alert(word1);
-    if (getInput.value === word1) {
+    if (getInputId.value === word) {
       alert('Well done!');
       counter++;
       alert(counter);
@@ -78,7 +95,7 @@ function firsWord(word1) {
       // alert('Incorrect/Wrong');
     }
   }
-  getButton.addEventListener('click', takeInputValue);
+  getButtonAnswerId.addEventListener('click', takeInputValue);
 }
 firsWord('I');
 firsWord('Live');
@@ -112,9 +129,9 @@ getButtonWord4Id.addEventListener('click', showWord4);
 function showWord5(word) {
   alert('Мой');
 }
-// getButtonWord5Id.addEventListener('click', showWord5);
+getButtonWord5Id.addEventListener('click', showWord5);
 
 function myResult() {
   window.alert(counter);
 }
-getButtonResult.addEventListener('click', myResult);
+getButtonResultId.addEventListener('click', myResult);
