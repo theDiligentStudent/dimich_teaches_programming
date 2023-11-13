@@ -21,6 +21,7 @@
 // -- получилась она Конечно же Кривая и Корявая......
 // -- но Всё таки я же её делал Полностью САМ
 // Сегодня Рефакторю её -- как помню -- начинаю сокращать К.
+// t 
 
 // Найти эл. input по id
 // для того чтобы манипулирувать его value
@@ -82,7 +83,10 @@ let valueOfInput = getInputId.value;
 
 let counter = 0;
 
+alert('Я');
+
 function firsWord(word) {
+  // word1
   // alert(word1);
 
   function takeInputValue() {
@@ -94,44 +98,106 @@ function firsWord(word) {
     } else {
       // alert('Incorrect/Wrong');
     }
+    // alert(word1);
   }
   getButtonAnswerId.addEventListener('click', takeInputValue);
 }
 firsWord('I');
+// function word2() {
+//   alert('Я');
+// }
+// word2();
 firsWord('Live');
-firsWord('Мой моя моё мои');
-firsWord('Твой твоя твоё твои Ваш ваши');
+// alert('Я');
+firsWord('Мой'); //моя моё мои
+firsWord('Твой'); //твоя твоё твои Ваш ваши
 firsWord('My');
 
 // showWord('Я');
 // showWord('Живу');
 
-function showWord1(word) {
-  alert('Я');
-}
-getButtonWord1Id.addEventListener('click', showWord1);
+// function showWord1(word) {
+//   alert('Я');
+// }
+// getButtonWord1Id.addEventListener('click', showWord1);
 
-function showWord2(word) {
-  alert('Живу');
-}
-getButtonWord2Id.addEventListener('click', showWord2);
+// function showWord2(word) {
+//   alert('Живу');
+// }
+// getButtonWord2Id.addEventListener('click', showWord2);
 
-function showWord3(word) {
-  alert('My');
-}
-getButtonWord3Id.addEventListener('click', showWord3);
+// function showWord3(word) {
+//   alert('My');
+// }
+// getButtonWord3Id.addEventListener('click', showWord3);
 
-function showWord4(word) {
-  alert('Your');
-}
-getButtonWord4Id.addEventListener('click', showWord4);
+// function showWord4(word) {
+//   alert('Your');
+// }
+// getButtonWord4Id.addEventListener('click', showWord4);
 
-function showWord5(word) {
-  alert('Мой');
-}
-getButtonWord5Id.addEventListener('click', showWord5);
+// function showWord5(word) {
+//   alert('Мой');
+// }
+// getButtonWord5Id.addEventListener('click', showWord5);
 
 function myResult() {
   window.alert(counter);
+  if (counter === 4) {
+    alert('Great!');
+  }
+  if (counter === 5) {
+    alert('Completely Excellent!!');
+  } else {
+    alert('Try More (');
+  }
 }
 getButtonResultId.addEventListener('click', myResult);
+
+
+// function showWord(getButtonWord, word) {
+//   function showWordNumber() {
+//     alert(word);
+//   }
+//   getButtonWord.addEventListener('click', showWordNumber);
+// }
+
+// showWord(getButtonWord1Id, 'Я');
+// showWord(getButtonWord2Id, 'Живу');
+// showWord(getButtonWord3Id, 'My');
+// showWord(getButtonWord4Id, 'Your');
+// showWord(getButtonWord5Id, 'Мой');
+
+// function currentTarget(eventObject) {
+//   let getCurrentTarget = eventObject.currentTarget;
+// }
+
+function useCurrentTarget(eventObject) {
+  let currentTarget = eventObject.currentTarget;
+  let currentButton = currentTarget.textContent;
+  return(currentButton);
+}
+
+// function ifContentButton() { 
+function ifContentButton(currentButton) { 
+  useCurrentTarget();
+    if(currentButton === 'Show Word 1') {
+      alert('Я');
+    } 
+    if(currentButton === 'Show Word 2') {
+      alert('Живу');
+    } 
+    if(currentButton === 'Show Word 3') {
+      alert('My');
+    } 
+    if(currentButton === 'Show Word 4') {
+      alert('Your');
+    } 
+    if(currentButton === 'Show Word 5') {
+      alert('Мой');
+    } else {
+
+    }
+}
+// ifContentButtonElse.addEventListener('click', useCurrentTarget);
+getButtonWord1Id.addEventListener('click', ifContentButton);
