@@ -83,9 +83,9 @@ let valueOfInput = getInputId.value;
 
 let counter = 0;
 
-alert('Я');
+// alert('Я');
 
-function firsWord(word) {
+function firsWord(word, word1) {
   // word1
   // alert(word1);
 
@@ -97,16 +97,19 @@ function firsWord(word) {
       alert(counter);
     } else {
       // alert('Incorrect/Wrong');
+      // alert(word1);
     }
-    // alert(word1);
   }
   getButtonAnswerId.addEventListener('click', takeInputValue);
 }
+// firsWord('I', 'Живу');
 firsWord('I');
 // function word2() {
 //   alert('Я');
 // }
 // word2();
+// firsWord('Live', 'My');
+// alert('Живу');
 firsWord('Live');
 // alert('Я');
 firsWord('Мой'); //моя моё мои
@@ -155,18 +158,18 @@ function myResult() {
 getButtonResultId.addEventListener('click', myResult);
 
 
-// function showWord(getButtonWord, word) {
-//   function showWordNumber() {
-//     alert(word);
-//   }
-//   getButtonWord.addEventListener('click', showWordNumber);
-// }
+function showWord(getButtonWord, word) {
+  function showWordNumber() {
+    alert(word);
+  }
+  getButtonWord.addEventListener('click', showWordNumber);
+}
 
-// showWord(getButtonWord1Id, 'Я');
-// showWord(getButtonWord2Id, 'Живу');
-// showWord(getButtonWord3Id, 'My');
-// showWord(getButtonWord4Id, 'Your');
-// showWord(getButtonWord5Id, 'Мой');
+showWord(getButtonWord1Id, 'Я');
+showWord(getButtonWord2Id, 'Живу');
+showWord(getButtonWord3Id, 'My');
+showWord(getButtonWord4Id, 'Your');
+showWord(getButtonWord5Id, 'Мой');
 
 // function currentTarget(eventObject) {
 //   let getCurrentTarget = eventObject.currentTarget;
@@ -179,25 +182,68 @@ function useCurrentTarget(eventObject) {
 }
 
 // function ifContentButton() { 
-function ifContentButton(currentButton) { 
-  useCurrentTarget();
-    if(currentButton === 'Show Word 1') {
-      alert('Я');
-    } 
-    if(currentButton === 'Show Word 2') {
-      alert('Живу');
-    } 
-    if(currentButton === 'Show Word 3') {
-      alert('My');
-    } 
-    if(currentButton === 'Show Word 4') {
-      alert('Your');
-    } 
-    if(currentButton === 'Show Word 5') {
-      alert('Мой');
-    } else {
+// function ifContentButton() { 
+//   useCurrentTarget(currentButton);
+//     if(currentButton === 'Show Word 1') {
+//       alert('Я');
+//     } 
+//     if(currentButton === 'Show Word 2') {
+//       alert('Живу');
+//     } 
+//     if(currentButton === 'Show Word 3') {
+//       alert('My');
+//     } 
+//     if(currentButton === 'Show Word 4') {
+//       alert('Your');
+//     } 
+//     if(currentButton === 'Show Word 5') {
+//       alert('Мой');
+//     } else {
 
-    }
-}
+//     }
+// }
 // ifContentButtonElse.addEventListener('click', useCurrentTarget);
-getButtonWord1Id.addEventListener('click', ifContentButton);
+
+// getButtonWord1Id.addEventListener('click', ifContentButton);
+// getButtonWord2Id.addEventListener('click', ifContentButton);
+// getButtonWord3Id.addEventListener('click', ifContentButton);
+// getButtonWord4Id.addEventListener('click', ifContentButton);
+getButtonWord5Id.addEventListener('click', ifContentButton);
+
+function ifContentButton(currentButton) { 
+  // let currentButton = document.getElementById(id);
+  // alert('I');
+  // function add(word) {
+  //  let currentButton = word;
+  //  return currentButton;
+  // }
+  let result;
+    // if(currentButton === getButtonWord1Id) {
+    if('show_word_1') {
+      // result = alert('Я');
+      result = 'Я';
+    } 
+    // else('show_word_2') {
+    else {
+      result = 'Живу';
+    } 
+    // if('show_word_3') {
+    //   result = 'My';
+    // } 
+    // if('show_word_4') {
+    //   result = 'Your';
+    // } 
+    // if('show_word_5') {
+    //   result = 'Мой';
+    // } else {
+
+    // }
+    // alert(result);
+    console.log(result);
+}
+
+// function a() {
+//   alert(1);
+// }
+// // a();
+// getButtonWord1Id.addEventListener('click', a);
