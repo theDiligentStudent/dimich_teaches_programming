@@ -15,6 +15,19 @@
 // Сегодя надо добавть к уже Имеющимся Двум Словам на изучение - ещё Три.
 // И сделать Ф.-ю с Сообщением Результат Тренировки.
 // + Почищу К. от вчерашних Комментариев с Попытками
+// 18/11/23  -- Вчера сделал Рефакторинг Пор.-ы Димыча....
+// - Теперь она работает практически так - как говорил (задумал) Димыч в Начале Ролика, за исключением того -
+// что в конце НеТ Сообщения о количестве Правильных Ответов в Процентах.......   Это я сейчас *18/11/23* постараюсь Исправить/Доделать.... - chatGPT уже подсказал Решение. -- Когда буду пробовать или Сделаю -- то Закомитчу Изменения.
+// 19/11/23
+// Вчера -- Полностью Закончил работать над Про.-й Димыча !!!!!!
+// Сделал Подсчёт Правильных ответов в %-ах (с помощью chatGPT) (думал что будет сложно - а оказалось Очень Легко), вывожу это Сообщением alert на экран
+// разобраля (с помощью chatGPT) с Ф.-ей "if else"  (у меня Работает вот по Такой схеме: if -- else if -- else).
+// Кажется - Всё Полностью - Протестировал -- и кажется --
+// всё работает Как Часы.......
+// Сегодня осталось только Поудалять все комментарии -- с попытками наладить работу (100%-ную) -- и ещё раз Залить все изменения на github.com
+
+
+
 
 let counter = 0;
 function showAndGiveWord(word1, word2) {
@@ -32,17 +45,9 @@ function showAndGiveWord(word1, word2) {
   }
 }
 
-// let counter = 0;
-// function doCounter() {
-//   counter++;
-//   alert(counter);
-// }
-
 function studyWord() {
   showAndGiveWord('Я', 'I');
-  // doCounter();
   showAndGiveWord('Живу', 'Live');
-  // doCounter();
   showAndGiveWord('My', 'Мой');
   showAndGiveWord('Name', 'Имя');
   showAndGiveWord('Твой', 'Your');
@@ -50,29 +55,87 @@ function studyWord() {
 
 studyWord();
 
-function result() {
-  alert(counter);
-  if (counter === 3) {
-    alert('Not bad!');
-  }
-  if (counter === 4) {
-    alert('Fine!');
-  }
-  if (counter === 5) {
-    alert('Generally Excellent!!');
-  }
-  if (counter === 1) {
-    alert('Try harder (');
-  }
-  if (counter === 2) {
-    alert('Try harder (');
-  }
-  // else {
-  //   alert('Try harder (');
-  // }
+// function result() {
+//   // alert(counter);
+
+//   let showPercentage = percentageOfAnswers();
+//   alert('The number of Correct answers is ' + showPercentage + ' %.');
+
+//   if (counter === 3) {
+//     alert('Not bad!');
+//   }
+//   if (counter === 4) {
+//     alert('Fine!');
+//   }
+//   if (counter === 5) {
+//     alert('Generally Excellent!!');
+//   }
+//   if (counter === 1) {
+//     alert('Try harder (');
+//   }
+//   if (counter === 2) {
+//     alert('Try harder (');
+//   }
+//   if (counter === 0) {
+//     alert('Try your best, buddy!!');
+//   }
+//   // else {
+//   //   alert('Try harder (');
+//   // }
+//   // let showPercentage = percentageOfAnswers();
+//   // alert('The number of Correct answers is ' + showPercentage + ' %.');
+
+// }
+
+function percentageOfAnswers() {
+  let totalAnswer = 5;
+  let rightAnswers = counter;
+  let percentage = (rightAnswers / totalAnswer) * 100;
+  return percentage;
 }
+
+// Разбираюсь с Ф.-й -  --- Почему она у меня НЕкорректо работает.....
+// function result() {
+
+//   let showPercentage = percentageOfAnswers();
+//   alert('The number of Correct answers is ' + showPercentage + ' %.');
+
+//   if (counter < 3) {
+//     alert('Try again!');
+//   }
+//   // if (counter === 3) {
+//   //   alert('Not bad.');
+//   // }
+// //  if (counter === 5) {
+// //     alert('Generally Excellent!!');
+// //   }
+//   else {
+//     // alert('Excellent!');
+//     alert('Great!');
+//   }
+// }
+
+function result() {
+  let showPercentage = percentageOfAnswers();
+  alert('The number of Correct answers is ' + showPercentage + ' %.');
+
+  if (counter < 3) {
+    alert('Try again!');
+  } else if (counter === 3) {
+    alert('Not bad.');
+  }
+  //  if (counter === 5) {
+  //     alert('Generally Excellent!!');
+  //   }
+  else {
+    // alert('Excellent!');
+    alert('Great!');
+  }
+}
+
 result();
 
-counter = 0;
-studyWord();
-result();
+// Тренировка Начинается Заново!!!!
+// counter = 0;
+// studyWord();
+// result();
