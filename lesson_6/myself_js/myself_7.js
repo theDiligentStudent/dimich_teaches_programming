@@ -25,13 +25,15 @@
 // Кажется - Всё Полностью - Протестировал -- и кажется --
 // всё работает Как Часы.......
 // Сегодня осталось только Поудалять все комментарии -- с попытками наладить работу (100%-ную) -- и ещё раз Залить все изменения на github.com
-
-
-
+// 20/11/23
+// Кажется всё что можно попроверял (после вчерашнего удаления Комментариев) -- всё что можно - протестировал
+// -- Всё Работает -- закидываю Все Изменения на github.com
+// И наверное теперь уже буду смотреть видео Димыча и копипастить за ним уже в Других Файлах.....
+// Весь этот html и js К. (вместе с этими Комментариями) - я хочу скопировать в Word-file general_outline, который Находится По Пути:
+// Local Disk(D:) > Programming > Summaries.
 
 let counter = 0;
 function showAndGiveWord(word1, word2) {
-  // let counter = 0;   // Эту строку ВЫНЕС -- НАРУЖУ Ф.-И -- Иначе НЕ производится Подсчёт, а каждый раз (при Выполнении Ф.-и) - counter - берётся равным 0-лю!!!!
   function doCounter() {
     counter++;
     alert(counter);
@@ -55,65 +57,12 @@ function studyWord() {
 
 studyWord();
 
-// function result() {
-//   // alert(counter);
-
-//   let showPercentage = percentageOfAnswers();
-//   alert('The number of Correct answers is ' + showPercentage + ' %.');
-
-//   if (counter === 3) {
-//     alert('Not bad!');
-//   }
-//   if (counter === 4) {
-//     alert('Fine!');
-//   }
-//   if (counter === 5) {
-//     alert('Generally Excellent!!');
-//   }
-//   if (counter === 1) {
-//     alert('Try harder (');
-//   }
-//   if (counter === 2) {
-//     alert('Try harder (');
-//   }
-//   if (counter === 0) {
-//     alert('Try your best, buddy!!');
-//   }
-//   // else {
-//   //   alert('Try harder (');
-//   // }
-//   // let showPercentage = percentageOfAnswers();
-//   // alert('The number of Correct answers is ' + showPercentage + ' %.');
-
-// }
-
 function percentageOfAnswers() {
   let totalAnswer = 5;
   let rightAnswers = counter;
   let percentage = (rightAnswers / totalAnswer) * 100;
   return percentage;
 }
-
-// Разбираюсь с Ф.-й -  --- Почему она у меня НЕкорректо работает.....
-// function result() {
-
-//   let showPercentage = percentageOfAnswers();
-//   alert('The number of Correct answers is ' + showPercentage + ' %.');
-
-//   if (counter < 3) {
-//     alert('Try again!');
-//   }
-//   // if (counter === 3) {
-//   //   alert('Not bad.');
-//   // }
-// //  if (counter === 5) {
-// //     alert('Generally Excellent!!');
-// //   }
-//   else {
-//     // alert('Excellent!');
-//     alert('Great!');
-//   }
-// }
 
 function result() {
   let showPercentage = percentageOfAnswers();
@@ -123,12 +72,7 @@ function result() {
     alert('Try again!');
   } else if (counter === 3) {
     alert('Not bad.');
-  }
-  //  if (counter === 5) {
-  //     alert('Generally Excellent!!');
-  //   }
-  else {
-    // alert('Excellent!');
+  } else {
     alert('Great!');
   }
 }
@@ -136,6 +80,6 @@ function result() {
 result();
 
 // Тренировка Начинается Заново!!!!
-// counter = 0;
-// studyWord();
-// result();
+counter = 0;
+studyWord();
+result();
