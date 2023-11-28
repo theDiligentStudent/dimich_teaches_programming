@@ -80,6 +80,10 @@ function result() {
 result();
 
 // Тренировка Начинается Заново!!!!
+// // Пока работаю над Про.-й я - К. ниже - скрою
 counter = 0;
 studyWord();
 result();
+
+// let imgSmile = document.querySelector('#smile_1');
+// imgSmile.classList.add('hide');

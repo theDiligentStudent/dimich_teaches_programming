@@ -6,50 +6,59 @@
 //     Две недели -- с 1го по 14-е ноября --
 //     я пытался написать САМ (Полностью), ту Про.-у про которую Димыч рассказал в начале этого (6го) урока..... --
 //     -- получилось у  меня мало что, т.е. получилось Плохо ---- теперь буду пробовать делать так - как учит - Димыч - в этом видео.
+// 25/11/23
+//     К Сегодняшнему дню я сделал Про.-у Димыча
+//     записал весь К., коммиты, комментарии разные -- закончил её где-то неделю назад....
+//     и вот Сейчас - начал смотреть видео Димыча.
+// 28/11/23
+//   Продолжаю смотреть видео Димыча ---- и копипастить )) за ним.... или Перед ним
 
-// prompt('Я', 'I');
-// function giveWord() {
-//     let word2 = '';
-//     prompt('Я', 'Enter word', word2);
-//     if(word2 === 'I') {
-//         alert('Hi!');
-//     } else {
-//         alert('By...');
-//     }
-// }
-// giveWord();
+//  ---------------------
 
-// function giveWord() {
-// let word = prompt('Я');
-// if(word === 'I') {
-//     alert('Hi!')
-// }
-// }
-// giveWord();
+// маленькая Про.-ка, а ниже она будет Рефакториться.......
+// этот К., будет комментироваться
+// alert('fire');
+// alert('огонь');
+// alert('испуг');
+// alert('fright');
+// alert('сострадание, сочувствие, жалость');
+// alert('compassion');
 
-function giveWord() {
-  let word = prompt('Я');
-  if (word === 'I') {
-    alert('Hi!');
-  }
-}
+// Подготовка Д.-х
+// let engWord0 = 'fire'; // russian words
+// let engWord1 = 'fright';
+// let engWord2 = 'compassion';
 
-// function myFunction() {
-// let text;
-// let favDrink = prompt("What's your favorite drink?", "Coca-Cola");
-// switch(favDrink) {
-//   case "Coca-Cola":
-//     text = "Excellent choice. Coca-Cola is good for your soul.";
-//     break;
-//   case "Pepsi":
-//     text = "Pepsi is my favorite too!";
-//     break;
-//   case "Sprite":
-//     text = "Really? Are you sure the Sprite is your favorite?";
-//     break;
-//   default:
-//     text = "I have never heard of that one..";
-// }
-// }
+// let rusWord0 = 'огонь'; // english words
+// let rusWord1 = 'испуг';
+// let rusWord2 = 'сострадание, сочувствие, жалость';
 
-// myFunction();
+// Можно Сгруппировать наши П.-е немного ДРУГИМ Способом --- слово - перевод
+let rusWord0 = 'огонь'; // 0
+let engWord0 = 'fire';
+
+let rusWord1 = 'испуг'; // 1
+let engWord1 = 'fright';
+
+let rusWord2 = 'сострадание, сочувствие, жалость'; // 2
+let engWord2 = 'compassion';
+
+// П. с Конечным (поощрительным) Текстом
+let finalMessage = 'Well done, but keep trying.';
+
+// =============
+
+// Непосредственно Сама Про.
+// заменяю выводы в alert-ах Словами, на выводы П.-ми
+
+alert(engWord0); // 0
+alert(rusWord0);
+
+alert(rusWord1); // 1
+alert(engWord1);
+
+alert(rusWord2); // 2
+alert(engWord2);
+
+// вывод на экран Финального сообщения
+alert(finalMessage);
