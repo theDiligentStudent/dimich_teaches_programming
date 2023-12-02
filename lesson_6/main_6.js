@@ -14,47 +14,24 @@
 //   Продолжаю смотреть видео Димыча ---- и копипастить )) за ним.... или Перед ним
 // 29/11/23
 //  Смотрю видео Димыча Дальше с 18-й минуты
+// 30/11/23
+// Сперва -- Удаляю Всю Работу -- которую проделал Ранее и уже закомментировал,
+// Все варианты Выполнения Про.-ы (какой она была Вначале/Раньше).
+// После этого начинаю смотреть видео Димыча дальше -- где-то с 20-й минуты.
+// Повспоминал как работает method prompt --- а то забыл уже...... - Димыч в видео уже перешёл к нему - поэтому я попробовал Вспомнить Сам - увидел - что Забыл..... -- и стал вспоминать.
+// 2/12/23
+// Сперва напишу по памяти всю основную Про.-у, которую написал Димыч в своём 6-м видео к 19-й минуте. (Это Повторение заняло у меня 40 минут) -- Потом продолжу смотреть видео с Димычем.
 //  ---------------------
 //   ------------------------
 //   -------------------------------
-// ПЕРВЫЙ Вариант Про.-ы
-// ==
-// // Можно Сгруппировать наши П.-е немного ДРУГИМ Способом --- слово - перевод
-// // (Подготовка/инициализация Д.-х)
-// let rusWord0 = 'безопасность'; // 0
-// let engWord0 = 'safety';
 
-// let rusWord1 = 'испуг'; // 1
-// let engWord1 = 'fright';
-
-// let rusWord2 = 'сострадание, сочувствие, жалость'; // 2
-// let engWord2 = 'compassion';
-
-// // П. с Конечным (поощрительным) Текстом
-// let finalMessage = 'Well done, but keep trying.';
-
-// // =============
-
-// Непосредственно Сама Про.
-// заменяю выводы в alert-ах Словами, на выводы П.-ми
-
-// alert(rusWord0); // 0
-// alert(engWord0);
-
-// alert(rusWord1); // 1
-// alert(engWord1);
-
-// alert(rusWord2); // 2
-// alert(engWord2);
-
-// // вывод на экран Финального сообщения
-// alert(finalMessage);
-
+//
+//
+//
 //====
-// //ВТОРОЙ Вариант Про.-ы
-// //
-// // Можно Сгруппировать наши П.-е немного ДРУГИМ Способом --- слово - перевод
-// // (Подготовка/инициализация Д.-х)
+//ТРЕТИЙ Вариант Про.-ы
+//
+// (Подготовка/инициализация Д.-х)
 // let rusWord0 = 'безопасность'; // 0
 // let engWord0 = 'safety';
 
@@ -63,6 +40,9 @@
 
 // let rusWord2 = 'сострадание, сочувствие, жалость'; // 2
 // let engWord2 = 'compassion';
+
+// // Ввожу П.-ю С ПОДСКАЗКОЙ - во внутрь prompt
+// let clue = 'введи Английское слово';
 
 // // П. с Конечным (поощрительным) Текстом
 // let finalMessage = 'Well done, but keep trying.';
@@ -73,39 +53,36 @@
 
 // // Теперь МЕНЯЮ ВЫВОДЫ alert на prompt
 // // Кстати, --- очень интересный -- вариант Про.-ы теперь получается...
-// prompt(rusWord0, 'введи Английское слово'); // 0
+// prompt(rusWord0, clue); // 0  //Использую П.-ю clue -- вместо строки с текстом 'введи Английское слово'
 // alert(engWord0);
 
-// prompt(rusWord1, 'введи Английское слово'); // 1
+// prompt(rusWord1, clue); // 1   //Использую П.-ю clue -- вместо строки с текстом 'введи Английское слово'
 // alert(engWord1);
 
-// prompt(rusWord2, 'введи Английское слово'); // 2
+// prompt(rusWord2, clue); // 2   //Использую П.-ю clue -- вместо строки с текстом 'введи Английское слово'
 // alert(engWord2);
 
-// // вывод на экран Финального сообщения
-// alert(finalMessage);
+// alert(finalMessage);     // вывод на экран Финального сообщения
 //
 //
 //
-//====
-//ТРЕТИЙ Вариант Про.-ы
-//
-// Можно Сгруппировать наши П.-е немного ДРУГИМ Способом --- слово - перевод
 // (Подготовка/инициализация Д.-х)
-let rusWord0 = 'безопасность'; // 0
-let engWord0 = 'safety';
+// let rusWord0 = 'безопасность'; // 0
+// let engWord0 = 'safety';
 
-let rusWord1 = 'испуг'; // 1
-let engWord1 = 'fright';
+// let rusWord1 = 'испуг'; // 1
+// let engWord1 = 'fright';
 
-let rusWord2 = 'сострадание, сочувствие, жалость'; // 2
-let engWord2 = 'compassion';
+// let rusWord2 = 'сострадание, сочувствие, жалость'; // 2
+// let engWord2 = 'compassion';
+
+// let showWord = prompt(word, clue);  // Так -- НЕ работает
 
 // Ввожу П.-ю С ПОДСКАЗКОЙ - во внутрь prompt
-let clue = 'введи Английское слово';
+// let clue = 'введи Английское слово';
 
 // П. с Конечным (поощрительным) Текстом
-let finalMessage = 'Well done, but keep trying.';
+// let finalMessage = 'Well done, but keep trying.';
 
 // =============
 // Непосредственно Сама Про.
@@ -113,14 +90,67 @@ let finalMessage = 'Well done, but keep trying.';
 
 // Теперь МЕНЯЮ ВЫВОДЫ alert на prompt
 // Кстати, --- очень интересный -- вариант Про.-ы теперь получается...
-prompt(rusWord0, clue); // 0  //Использую П.-ю clue -- вместо строки с текстом 'введи Английское слово'
-alert(engWord0);
+// showWord(rusWord0, clue); // 0  // Так -- НЕ работает
+// function learnWords(rusWord, engWord) {
+//     // let word;
+//     // let word1;
+//     let showWord = prompt(rusWord, clue);
+//     if(showWord === engWord) {
+//         alert('Hi!');
+//     }
+//     else {
+//         alert('By');
+//     }
+// }
+// learnWords(rusWord0, engWord0);
+// learnWords(rusWord1, engWord1);
+// learnWords(rusWord2, engWord2);
+// learnWords('safety');
 
-prompt(rusWord1, clue); // 1   //Использую П.-ю clue -- вместо строки с текстом 'введи Английское слово'
+// prompt(rusWord1, clue); // 1   // Так -- НЕ работает
+
+// prompt(rusWord2, clue); // 2   // Так -- НЕ работает
+
+// alert(finalMessage); // вывод на экран Финального сообщения
+
+// ==================
+
+// 2/12/23
+// ----
+// initialization block
+let rusWord0 = 'производительность'; // 1
+let engWord0 = 'performance';
+
+let rusWord1 = 'обида'; // 2
+let engWord1 = 'resentment, hurt, offense, insult';
+
+let rusWord2 = 'ты обиделся?'; // 3
+let engWord2 = 'are you offended?';
+
+let promptOutput = 'enter a word in English';
+
+let finalMessage = 'Well done, but try harder!'; // final message
+//
+//
+// working code block  (execution block)
+// alert(rusWord0); // 1
+// function wordCheck() {
+let word0 = prompt(rusWord0, promptOutput); // 1
+alert(engWord0);
+// if(word0 === engWord0) {
+//     alert('Hi!');
+// } else {
+//     alert('By...');
+// }
+
+// alert(rusWord1); // 2
+let word1 = prompt(rusWord1, promptOutput); // 2
 alert(engWord1);
 
-prompt(rusWord2, clue); // 2   //Использую П.-ю clue -- вместо строки с текстом 'введи Английское слово'
+// alert(rusWord2); // 3
+let word2 = prompt(rusWord2, promptOutput);// 3
 alert(engWord2);
 
-// вывод на экран Финального сообщения
-alert(finalMessage);
+alert(finalMessage); // final message/
+// }
+wordCheck();
