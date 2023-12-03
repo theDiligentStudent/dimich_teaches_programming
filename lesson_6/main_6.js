@@ -136,7 +136,7 @@ let finalMessage = 'Well done, but try harder!'; // final message
 // alert(rusWord0); // 1
 // function wordCheck() {
 let word0 = prompt(rusWord0, promptOutput); // 1
-alert(engWord0);
+alert(word0 === engWord0);
 // if(word0 === engWord0) {
 //     alert('Hi!');
 // } else {
@@ -145,12 +145,12 @@ alert(engWord0);
 
 // alert(rusWord1); // 2
 let word1 = prompt(rusWord1, promptOutput); // 2
-alert(engWord1);
+alert(word1 === engWord1);
 
 // alert(rusWord2); // 3
-let word2 = prompt(rusWord2, promptOutput);// 3
-alert(engWord2);
+let word2 = prompt(rusWord2, promptOutput); // 3
+alert(word2 === engWord2);
 
 alert(finalMessage); // final message/
 // }
-wordCheck();
+// wordCheck();
