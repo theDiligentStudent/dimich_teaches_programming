@@ -24,6 +24,13 @@
 // 3/12/23
 // Сейчас буду смотреть видео (6-е) Димыча дальше, с 22-й минуты.
 // Но - сперва - поудаляю много комментариев, работы (более ранней) над К.-м Про.-ы.
+// 4/12/23
+// После просмотра 26-ти минут 6-го урока Димыча -- опять остановлюсь
+// и попробую (на основании того, что уже сделал с Димычем) доделать Про.-у САМ.
+// Так - как Получится.
+// Сперва нужно сделать Одну Общую Ф.-ю для всех prompt и выводить prompt на экран - с помощью Ф.-и, потом нужно сделать if else -- меньше половины правильных ответов или больше. И %-ты.
+// Поехали.
+// Всё!!   -----  За 1:10 - полностью всё сделал. Протестил.   ..... И (как мне кажется) - Всё Работает!!.....
 //  ---------------------
 //   ------------------------
 //   -------------------------------
@@ -37,7 +44,7 @@ let rusWord0 = 'производительность'; // 1
 let engWord0 = 'performance';
 
 let rusWord1 = 'обида'; // 2
-let engWord1 = 'resentment, hurt, offense, insult';
+let engWord1 = 'resentment'; // , hurt, offense, insult ---- additional words
 
 let rusWord2 = 'ты обиделся?'; // 3
 let engWord2 = 'are you offended?';
@@ -46,23 +53,14 @@ let promptOutput = 'enter a word in English';
 
 let counter = 0; // enter the counter variable
 
-let finalMessage = 'Well done, but try harder!'; // final message
+let totalNumberOfWords = 3; // 4/12/23  I enter a variable - totalNumberOfWords
+
+let percentageOfCorrectAnswers = (counter / totalNumberOfWords) * 100; // 4/12/23 I enter a variable - percentageLOfCorrectAnswers and assign it a value
+
+// let finalMessage = 'Well done, but try harder!'; // final message  // 4/12/23 I am commenting on this term
 //
 //
-// // working code block 1 (execution block)
 
-// let wordWithAnswer0 = prompt(rusWord0, promptOutput); // 1
-// alert(wordWithAnswer0 === engWord0);
-
-// // alert(rusWord1); // 2
-// let wordWithAnswer1 = prompt(rusWord1, promptOutput); // 2
-// alert(wordWithAnswer1 === engWord1);
-
-// // alert(rusWord2); // 3
-// let wordWithAnswer2 = prompt(rusWord2, promptOutput); // 3
-// alert(wordWithAnswer2 === engWord2);
-
-// alert(finalMessage); // final message/
 //
 //
 // // working code block 2 (execution block)
@@ -94,28 +92,28 @@ let finalMessage = 'Well done, but try harder!'; // final message
 //
 //
 // working code block 3 (execution block)
-
-let wordWithAnswer0 = prompt(rusWord0, promptOutput); // 1
-alert(wordWithAnswer0 === engWord0);
-if (wordWithAnswer0 === engWord0) {
-  counter++;
-  alert(counter);
+// 4/12/23
+function checkingKnowledgeOfForeignWords(word1, word2) {
+  let wordWithAnswer = prompt(word1, promptOutput); // 1
+  alert(wordWithAnswer === word2);
+  if (wordWithAnswer === word2) {
+    counter++;
+    alert(counter);
+    percentageOfCorrectAnswers = (counter / totalNumberOfWords) * 100;
+  }
 }
 
-// alert(rusWord1); // 2
-let wordWithAnswer1 = prompt(rusWord1, promptOutput); // 2
-alert(wordWithAnswer1 === engWord1);
-if (wordWithAnswer1 === engWord1) {
-  counter++;
-  alert(counter);
-}
+checkingKnowledgeOfForeignWords(rusWord0, engWord0);
+checkingKnowledgeOfForeignWords(rusWord1, engWord1);
+checkingKnowledgeOfForeignWords(rusWord2, engWord2);
 
-// alert(rusWord2); // 3
-let wordWithAnswer2 = prompt(rusWord2, promptOutput); // 3
-alert(wordWithAnswer2 === engWord2);
-if (wordWithAnswer2 === engWord2) {
-  counter++;
-  alert(counter);
+function finalMessage() {
+  if (percentageOfCorrectAnswers > 50) {
+    alert('Friend, you are well done!');
+  } else {
+    alert('Well done, but try harder!');
+  }
 }
-
-alert(finalMessage); // final message/
+// alert(percentageOfCorrectAnswers);  // 4/12/23 alert for health check (работоспособности)
+finalMessage();
+// alert(finalMessage); // final message/  // 4/12/23 I am commenting on this message - there will be another one instead
