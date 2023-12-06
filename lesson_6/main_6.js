@@ -31,7 +31,18 @@
 // Сперва нужно сделать Одну Общую Ф.-ю для всех prompt и выводить prompt на экран - с помощью Ф.-и, потом нужно сделать if else -- меньше половины правильных ответов или больше. И %-ты.
 // Поехали.
 // Всё!!   -----  За 1:10 - полностью всё сделал. Протестил.   ..... И (как мне кажется) - Всё Работает!!.....
-//  ---------------------
+
+// 5/12/23
+// (это было Вчера)
+// забыл что мне нужно вывести на экран сообщение о количестве %-в Правильных ответов..... - думал, что это Пустяк - и быстро справлюсь.....
+// --
+// Попробовал - но НЕТ!!  НЕ получилось.
+// Попробовал сам, потом где-то час с помощью ДжиПиТи мучался .....
+// Но в итоге -- так и НЕ получилось.
+// Доделал сегодня
+// --
+// 6/12/23
+// Сейчас в ГитХаб сохраню всё так как есть - с комментариями, потом - удалю ЛИШНИЕ КОМЕНТЫ И ЕЩЁ РАЗ СОХРАНЮ -- а потом - то, что уже останется опять Закомментирую --- и буду Дальше - смотреть видео с Димычем......
 //   ------------------------
 //   -------------------------------
 
@@ -52,52 +63,34 @@ let engWord2 = 'are you offended?';
 let promptOutput = 'enter a word in English';
 
 let counter = 0; // enter the counter variable
+// counter += 1;
 
 let totalNumberOfWords = 3; // 4/12/23  I enter a variable - totalNumberOfWords
 
+// let percentageOfCorrectAnswers = (counter / totalNumberOfWords) * 100; // 4/12/23 I enter a variable - percentageLOfCorrectAnswers and assign it a value
+
+// let percentageOfCorrectAnswers = Math.ceil((counter / totalNumberOfWords) * 100); // 4/12/23 I enter a variable - percentageLOfCorrectAnswers and assign it a value
+
+// let percentageOfCorrectAnswers = Math.round(
+//   (counter / totalNumberOfWords) * 100
+// ); // 4/12/23 I enter a variable - percentageLOfCorrectAnswers and assign it a value
+
 let percentageOfCorrectAnswers = (counter / totalNumberOfWords) * 100; // 4/12/23 I enter a variable - percentageLOfCorrectAnswers and assign it a value
 
-// let finalMessage = 'Well done, but try harder!'; // final message  // 4/12/23 I am commenting on this term
-//
-//
+// let formattedPercentage = Number(percentageOfCorrectAnswers.toFixed(2));
 
-//
-//
-// // working code block 2 (execution block)
+// let messageAboutThePercentage = 'Your result is ' + percentageOfCorrectAnswers.toFixed(2) + '%'; // 5/12/23
+let messageAboutThePercentage =
+  'Your result is ' + percentageOfCorrectAnswers + '%'; // 5/12/23
 
-// let wordWithAnswer0 = prompt(rusWord0, promptOutput); // 1
-// alert(wordWithAnswer0 === engWord0);
-// if (wordWithAnswer0 === engWord0) {
-//   counter++;
-//   alert(counter);
-// }
-
-// // alert(rusWord1); // 2
-// let wordWithAnswer1 = prompt(rusWord1, promptOutput); // 2
-// alert(wordWithAnswer1 === engWord1);
-// if (wordWithAnswer1 === engWord1) {
-//   counter++;
-//   alert(counter);
-// }
-
-// // alert(rusWord2); // 3
-// let wordWithAnswer2 = prompt(rusWord2, promptOutput); // 3
-// alert(wordWithAnswer2 === engWord2);
-// if (wordWithAnswer2 === engWord2) {
-//   counter++;
-//   alert(counter);
-// }
-
-// alert(finalMessage); // final message/
-//
-//
-// working code block 3 (execution block)
+// code block
 // 4/12/23
 function checkingKnowledgeOfForeignWords(word1, word2) {
   let wordWithAnswer = prompt(word1, promptOutput); // 1
   alert(wordWithAnswer === word2);
   if (wordWithAnswer === word2) {
     counter++;
+    // counter += 1;
     alert(counter);
     percentageOfCorrectAnswers = (counter / totalNumberOfWords) * 100;
   }
@@ -108,12 +101,19 @@ checkingKnowledgeOfForeignWords(rusWord1, engWord1);
 checkingKnowledgeOfForeignWords(rusWord2, engWord2);
 
 function finalMessage() {
-  if (percentageOfCorrectAnswers > 50) {
+  // counter += 1;
+  // alert(percentageOfCorrectAnswers.toFixed(2)); // 5/12/23
+  alert('Your result is ' + Math.round(percentageOfCorrectAnswers) + '%'); // 5/12/23  6/12/23
+  // alert(messageAboutThePercentage); // 5/12/23
+  if (percentageOfCorrectAnswers === 0) {
+    // if (formattedPercentage > 50) {
+    alert('Friend, try harder!');
+  } else if (percentageOfCorrectAnswers > 50) {
+    // if (formattedPercentage > 50) {
     alert('Friend, you are well done!');
   } else {
     alert('Well done, but try harder!');
   }
 }
-// alert(percentageOfCorrectAnswers);  // 4/12/23 alert for health check (работоспособности)
+
 finalMessage();
-// alert(finalMessage); // final message/  // 4/12/23 I am commenting on this message - there will be another one instead
