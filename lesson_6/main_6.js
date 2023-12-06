@@ -63,23 +63,11 @@ let engWord2 = 'are you offended?';
 let promptOutput = 'enter a word in English';
 
 let counter = 0; // enter the counter variable
-// counter += 1;
 
 let totalNumberOfWords = 3; // 4/12/23  I enter a variable - totalNumberOfWords
 
-// let percentageOfCorrectAnswers = (counter / totalNumberOfWords) * 100; // 4/12/23 I enter a variable - percentageLOfCorrectAnswers and assign it a value
-
-// let percentageOfCorrectAnswers = Math.ceil((counter / totalNumberOfWords) * 100); // 4/12/23 I enter a variable - percentageLOfCorrectAnswers and assign it a value
-
-// let percentageOfCorrectAnswers = Math.round(
-//   (counter / totalNumberOfWords) * 100
-// ); // 4/12/23 I enter a variable - percentageLOfCorrectAnswers and assign it a value
-
 let percentageOfCorrectAnswers = (counter / totalNumberOfWords) * 100; // 4/12/23 I enter a variable - percentageLOfCorrectAnswers and assign it a value
 
-// let formattedPercentage = Number(percentageOfCorrectAnswers.toFixed(2));
-
-// let messageAboutThePercentage = 'Your result is ' + percentageOfCorrectAnswers.toFixed(2) + '%'; // 5/12/23
 let messageAboutThePercentage =
   'Your result is ' + percentageOfCorrectAnswers + '%'; // 5/12/23
 
@@ -90,7 +78,6 @@ function checkingKnowledgeOfForeignWords(word1, word2) {
   alert(wordWithAnswer === word2);
   if (wordWithAnswer === word2) {
     counter++;
-    // counter += 1;
     alert(counter);
     percentageOfCorrectAnswers = (counter / totalNumberOfWords) * 100;
   }
@@ -101,15 +88,10 @@ checkingKnowledgeOfForeignWords(rusWord1, engWord1);
 checkingKnowledgeOfForeignWords(rusWord2, engWord2);
 
 function finalMessage() {
-  // counter += 1;
-  // alert(percentageOfCorrectAnswers.toFixed(2)); // 5/12/23
   alert('Your result is ' + Math.round(percentageOfCorrectAnswers) + '%'); // 5/12/23  6/12/23
-  // alert(messageAboutThePercentage); // 5/12/23
   if (percentageOfCorrectAnswers === 0) {
-    // if (formattedPercentage > 50) {
     alert('Friend, try harder!');
   } else if (percentageOfCorrectAnswers > 50) {
-    // if (formattedPercentage > 50) {
     alert('Friend, you are well done!');
   } else {
     alert('Well done, but try harder!');
