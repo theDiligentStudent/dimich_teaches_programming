@@ -72,21 +72,27 @@ let messageAboutThePercentage =
   'Your result is ' + percentageOfCorrectAnswers + '%'; // 5/12/23
 
 // code block
-// 4/12/23
+// // 4/12/23
+
+// I create One Common function for all foreign words being checked (studied)
 function checkingKnowledgeOfForeignWords(word1, word2) {
   let wordWithAnswer = prompt(word1, promptOutput); // 1
   alert(wordWithAnswer === word2);
   if (wordWithAnswer === word2) {
     counter++;
     alert(counter);
-    percentageOfCorrectAnswers = (counter / totalNumberOfWords) * 100;
+    // percentageOfCorrectAnswers = (counter / totalNumberOfWords) * 100;
+    // Эта строка - здесь - in function if else -- НЕ нужна. .... --- Поэтому я Опустил её НижЕ
   }
+  percentageOfCorrectAnswers = (counter / totalNumberOfWords) * 100;
 }
 
-checkingKnowledgeOfForeignWords(rusWord0, engWord0);
-checkingKnowledgeOfForeignWords(rusWord1, engWord1);
-checkingKnowledgeOfForeignWords(rusWord2, engWord2);
+// I call this (One Common) function for each word being checked
+checkingKnowledgeOfForeignWords(rusWord0, engWord0); //1
+checkingKnowledgeOfForeignWords(rusWord1, engWord1); //2
+checkingKnowledgeOfForeignWords(rusWord2, engWord2); //3
 
+// I am creating a function with a condition - for the end/final message. - Based on the results of checking all words.
 function finalMessage() {
   alert('Your result is ' + Math.round(percentageOfCorrectAnswers) + '%'); // 5/12/23  6/12/23
   if (percentageOfCorrectAnswers === 0) {
@@ -98,4 +104,5 @@ function finalMessage() {
   }
 }
 
+// I launch the final message function
 finalMessage();
