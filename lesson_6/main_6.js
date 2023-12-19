@@ -48,7 +48,7 @@
 
 // ==================
 
-// 2/12/23
+// 12/12/23
 // ----
 // initialization block
 let rusWord0 = 'производительность'; // 1
@@ -66,43 +66,36 @@ let counter = 0; // enter the counter variable
 
 let totalNumberOfWords = 3; // 4/12/23  I enter a variable - totalNumberOfWords
 
-let percentageOfCorrectAnswers = (counter / totalNumberOfWords) * 100; // 4/12/23 I enter a variable - percentageLOfCorrectAnswers and assign it a value
+let halfTheAnswers = totalNumberOfWords / 2; // 14/12/23  I enter a variable - halfTheAnswers
 
-let messageAboutThePercentage =
-  'Your result is ' + percentageOfCorrectAnswers + '%'; // 5/12/23
+let finalMessage = 'Well done! Keep trying!';
 
 // code block
 // // 4/12/23
+// 14/12/23
 
-// I create One Common function for all foreign words being checked (studied)
-function checkingKnowledgeOfForeignWords(word1, word2) {
-  let wordWithAnswer = prompt(word1, promptOutput); // 1
-  alert(wordWithAnswer === word2);
-  if (wordWithAnswer === word2) {
-    counter++;
-    alert(counter);
-    // percentageOfCorrectAnswers = (counter / totalNumberOfWords) * 100;
-    // Эта строка - здесь - in function if else -- НЕ нужна. .... --- Поэтому я Опустил её НижЕ
-  }
-  percentageOfCorrectAnswers = (counter / totalNumberOfWords) * 100;
+let wordBeingStudiedAndAnswer0 = prompt(rusWord0, promptOutput); // 1
+alert(wordBeingStudiedAndAnswer0 === engWord0);
+if (wordBeingStudiedAndAnswer0 === engWord0) {
+  counter++;
 }
 
-// I call this (One Common) function for each word being checked
-checkingKnowledgeOfForeignWords(rusWord0, engWord0); //1
-checkingKnowledgeOfForeignWords(rusWord1, engWord1); //2
-checkingKnowledgeOfForeignWords(rusWord2, engWord2); //3
-
-// I am creating a function with a condition - for the end/final message. - Based on the results of checking all words.
-function finalMessage() {
-  alert('Your result is ' + Math.round(percentageOfCorrectAnswers) + '%'); // 5/12/23  6/12/23
-  if (percentageOfCorrectAnswers === 0) {
-    alert('Friend, try harder!');
-  } else if (percentageOfCorrectAnswers > 50) {
-    alert('Friend, you are well done!');
-  } else {
-    alert('Well done, but try harder!');
-  }
+let wordBeingStudiedAndAnswer1 = prompt(rusWord1, promptOutput); // 2
+alert(wordBeingStudiedAndAnswer1 === engWord1);
+if (wordBeingStudiedAndAnswer1 === engWord1) {
+  counter++;
 }
 
-// I launch the final message function
-finalMessage();
+let wordBeingStudiedAndAnswer2 = prompt(rusWord2, promptOutput); // 3
+alert(wordBeingStudiedAndAnswer2 === engWord2);
+if (wordBeingStudiedAndAnswer2 === engWord2) {
+  counter++;
+}
+
+if (counter > halfTheAnswers) {
+  alert('Well done!');
+}
+alert(counter);
+alert(halfTheAnswers);
+
+alert(finalMessage);
