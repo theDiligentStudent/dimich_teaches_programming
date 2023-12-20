@@ -55,14 +55,17 @@ let rusWord0 = 'производительность'; // 1
 let engWord0 = 'performance';
 
 let rusWord1 = 'обида'; // 2
-let engWord1 = 'resentment'; // , hurt, offense, insult ---- additional words
+let engWord1 = 'resentment, offence'; // , hurt, insult ---- additional words
 
 let rusWord2 = 'ты обиделся?'; // 3
 let engWord2 = 'are you offended?';
 
 let promptOutput = 'enter a word in English';
 
-let counter = 0; // enter the counter variable
+// let counter = 0; // enter the counter variable
+
+// 20/12/23 -- Даю П.-й counter Более КОРРЕКТНОЕ и Правильное название
+let numberCorrectAnswers = 0; // enter the counter variable
 
 let totalNumberOfWords = 3; // 4/12/23  I enter a variable - totalNumberOfWords
 
@@ -76,26 +79,32 @@ let finalMessage = 'Well done! Keep trying!';
 
 let wordBeingStudiedAndAnswer0 = prompt(rusWord0, promptOutput); // 1
 alert(wordBeingStudiedAndAnswer0 === engWord0);
-if (wordBeingStudiedAndAnswer0 === engWord0) {
-  counter++;
-}
+// if (wordBeingStudiedAndAnswer0 === engWord0) {
+//   counter++;
+// Теперь здесь будет П. numberCorrectAnswers
+// numberCorrectAnswers++;
+// }
 
 let wordBeingStudiedAndAnswer1 = prompt(rusWord1, promptOutput); // 2
 alert(wordBeingStudiedAndAnswer1 === engWord1);
-if (wordBeingStudiedAndAnswer1 === engWord1) {
-  counter++;
-}
+// if (wordBeingStudiedAndAnswer1 === engWord1) {
+//   counter++;
+// Теперь здесь будет П. numberCorrectAnswers
+// numberCorrectAnswers++;
+// }
 
 let wordBeingStudiedAndAnswer2 = prompt(rusWord2, promptOutput); // 3
 alert(wordBeingStudiedAndAnswer2 === engWord2);
-if (wordBeingStudiedAndAnswer2 === engWord2) {
-  counter++;
-}
+// if (wordBeingStudiedAndAnswer2 === engWord2) {
+//   counter++;
+// Теперь здесь будет П. numberCorrectAnswers
+// numberCorrectAnswers++;
+// }
 
-if (counter > halfTheAnswers) {
-  alert('Well done!');
-}
-alert(counter);
-alert(halfTheAnswers);
+// if (counter > halfTheAnswers) {
+//   alert('Well done!');
+// }
+// alert(counter);
+// alert(halfTheAnswers);
 
 alert(finalMessage);
