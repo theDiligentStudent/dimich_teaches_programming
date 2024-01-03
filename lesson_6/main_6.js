@@ -54,20 +54,46 @@
 // 12/12/23
 // ----
 // initialization block
-let rusWord0 = 'производительность'; // 0
-let engWord0 = 'performance';
 
-let rusWord1 = 'обида'; // 1
-let engWord1 = 'resentment, offence'; // , hurt, insult ---- additional words
+// --  words being studied
+// let rusWord0 = 'производительность'; // 0
+// let engWord0 = 'performance';
 
-let rusWord2 = 'ты обиделся?'; // 2
-let engWord2 = 'are you offended?';
+// let rusWord1 = 'обида'; // 1
+// let engWord1 = 'resentment, offence'; // , hurt, insult ---- additional words
 
-let rusWord3 = 'желание'; // 3
-let engWord3 = 'desire';
+// let rusWord2 = 'ты обиделся?'; // 2
+// let engWord2 = 'are you offended?';
 
-let rusWord4 = 'трудности, препятствие, затруднение'; // 4
-let engWord4 = 'difficulty';
+// let rusWord3 = 'желание'; // 3
+// let engWord3 = 'desire';
+
+// let rusWord4 = 'трудности, препятствие, затруднение'; // 4
+// let engWord4 = 'difficulty';
+
+// 1/01/24
+// Сейчас - Попробую - изменить Все П.-е с объявлением слов -- Двумя Ма.-ми
+// ..... -- и посмотрю -- что из этого - у меня Получится
+let rusWords = [
+  'производительность',
+  'обида',
+  'ты обиделся?',
+  'желание',
+  'трудности, препятствие, затруднение',
+];
+let engWords = [
+  'performance',
+  'resentment, offence',
+  'are you offended?',
+  'desire',
+  'difficulty',
+];
+
+// Переношу П.-ю с Общим количеством слов -- к Списку объявления слов
+// (чтобы они находились РЯДОМ)
+let totalNumberOfWords = 5; // 4/12/23  I enter a variable - totalNumberOfWords
+
+// -- other variables
 
 let promptOutput = 'enter a word in English';
 
@@ -76,54 +102,66 @@ let promptOutput = 'enter a word in English';
 // 20/12/23 -- Даю П.-й counter Более КОРРЕКТНОЕ и Правильное название
 let numberCorrectAnswers = 0; // enter the counter variable
 
-let totalNumberOfWords = 5; // 4/12/23  I enter a variable - totalNumberOfWords
-
 let halfTheAnswers = totalNumberOfWords / 2; // 14/12/23  I enter a variable - halfTheAnswers
+let halfTheAnswers1 = rusWords.length / 2; // 14/12/23  I enter a variable - halfTheAnswers
 
+let messageOfPraise = 'Great!';
 let finalMessage = 'Well done! Keep trying!';
 
 // code block
 // // 4/12/23
 // 14/12/23
 
-let wordBeingStudiedAndAnswer0 = prompt(rusWord0, promptOutput); // 0
-alert(wordBeingStudiedAndAnswer0 === engWord0);
-if (wordBeingStudiedAndAnswer0 === engWord0) {
+// let wordBeingStudiedAndAnswer0 = prompt(rusWord0, promptOutput); // 0
+let wordBeingStudiedAndAnswer0 = prompt(rusWords[0], promptOutput); // 0
+// alert(wordBeingStudiedAndAnswer0 === engWord0);
+alert(wordBeingStudiedAndAnswer0 === engWords[0]);
+// if (wordBeingStudiedAndAnswer0 === engWord0) {
+if (wordBeingStudiedAndAnswer0 === engWords[0]) {
   numberCorrectAnswers++;
 }
 
-let wordBeingStudiedAndAnswer1 = prompt(rusWord1, promptOutput); // 1
-alert(wordBeingStudiedAndAnswer1 === engWord1);
-if (wordBeingStudiedAndAnswer1 === engWord1) {
+// let wordBeingStudiedAndAnswer1 = prompt(rusWord1, promptOutput); // 1
+let wordBeingStudiedAndAnswer1 = prompt(rusWords[1], promptOutput); // 1
+// alert(wordBeingStudiedAndAnswer1 === engWord1);
+alert(wordBeingStudiedAndAnswer1 === engWords[1]);
+// if (wordBeingStudiedAndAnswer1 === engWord1) {
+if (wordBeingStudiedAndAnswer1 === engWords[1]) {
   numberCorrectAnswers++;
 }
 
-let wordBeingStudiedAndAnswer2 = prompt(rusWord2, promptOutput); // 2
-alert(wordBeingStudiedAndAnswer2 === engWord2);
-if (wordBeingStudiedAndAnswer2 === engWord2) {
+// let wordBeingStudiedAndAnswer2 = prompt(rusWord2, promptOutput); // 2
+let wordBeingStudiedAndAnswer2 = prompt(rusWords[2], promptOutput); // 2
+// alert(wordBeingStudiedAndAnswer2 === engWord2);
+alert(wordBeingStudiedAndAnswer2 === engWords[2]);
+// if (wordBeingStudiedAndAnswer2 === engWord2) {
+if (wordBeingStudiedAndAnswer2 === engWords[2]) {
   numberCorrectAnswers++;
 }
 
-let wordBeingStudiedAndAnswer3 = prompt(rusWord3, promptOutput); // 3
-alert(wordBeingStudiedAndAnswer3 === engWord3);
-if (wordBeingStudiedAndAnswer3 === engWord3) {
+// let wordBeingStudiedAndAnswer3 = prompt(rusWord3, promptOutput); // 3
+let wordBeingStudiedAndAnswer3 = prompt(rusWords[3], promptOutput); // 3
+// alert(wordBeingStudiedAndAnswer3 === engWord3);
+alert(wordBeingStudiedAndAnswer3 === engWords[3]);
+// if (wordBeingStudiedAndAnswer3 === engWord3) {
+if (wordBeingStudiedAndAnswer3 === engWords[3]) {
   numberCorrectAnswers++;
 }
 
-let wordBeingStudiedAndAnswer4 = prompt(rusWord4, promptOutput); // 4
-alert(wordBeingStudiedAndAnswer4 === engWord4);
-if (wordBeingStudiedAndAnswer4 === engWord4) {
+// let wordBeingStudiedAndAnswer4 = prompt(rusWord4, promptOutput); // 4
+let wordBeingStudiedAndAnswer4 = prompt(rusWords[4], promptOutput); // 4
+// alert(wordBeingStudiedAndAnswer4 === engWord4);
+alert(wordBeingStudiedAndAnswer4 === engWords[4]);
+// if (wordBeingStudiedAndAnswer4 === engWord4) {
+if (wordBeingStudiedAndAnswer4 === engWords[4]) {
   numberCorrectAnswers++;
 }
 
-if (numberCorrectAnswers > halfTheAnswers) {
-  alert('Well done!');
+if (numberCorrectAnswers > halfTheAnswers1) {
+  alert(messageOfPraise);
 } else {
-  alert('Well done. Keep Trying.');
+  alert(finalMessage);
 }
 
-alert(totalNumberOfWords);
-
+alert(halfTheAnswers1);
 alert(numberCorrectAnswers);
-
-// alert(finalMessage);
