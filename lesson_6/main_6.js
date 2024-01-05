@@ -55,8 +55,11 @@
 // Сперва поудаляю все Изменения, которые сделал в Предыдущем занятии (1/01/14)
 // -- верну всё как было до 28-й минуты В. Димыча
 // чтобы опять заниматься Вместе с ним
-// 4/01/24 
+// 4/01/24
 //  Продолжаю 6й урок с Димычем. НЕспеша разбираю его Про.-у. В ней появилась ПЕРВАЯ const (Константа) -- Вернее  в П.-х я заменил Почти Всё на  const, let остались только Счётчик (++) и prompt.
+// 5/01/24
+//  Ещё использовал const -- поменял вместо let во всех prompt-ах *т.к. они НЕ будут меняться *так - как Счётчик**
+//  и ещё Поудалял почти все Комментарии, которые Не имеют отношения к Текущей версии Про.-ы. -- они сильно засоряли Про.-у (весь К.)
 //   ------------------------
 //   -------------------------------
 
@@ -69,56 +72,24 @@
 // --  words being studied
 // 3/01/23
 // МЕНЯЮ ВСЕ let НА const !!!!
-// let rusWord0 = 'производительность'; // 0
 const rusWord0 = 'производительность'; // 0
-// let engWord0 = 'performance';
 const engWord0 = 'performance';
 
-// let rusWord1 = 'обида'; // 1
 const rusWord1 = 'обида'; // 1
-// let engWord1 = 'resentment, offence'; // , hurt, insult ---- additional words
 const engWord1 = 'resentment, offence'; // , hurt, insult ---- additional words
 
-// let rusWord2 = 'ты обиделся?'; // 2
 const rusWord2 = 'ты обиделся?'; // 2
-// let engWord2 = 'are you offended?';
 const engWord2 = 'are you offended?';
 
-// let rusWord3 = 'желание'; // 3
 const rusWord3 = 'желание'; // 3
-// let engWord3 = 'desire';
 const engWord3 = 'desire';
 
-// let rusWord4 = 'трудности, препятствие, затруднение'; // 4
 const rusWord4 = 'трудности, препятствие, затруднение'; // 4
-// let engWord4 = 'difficulty';
 const engWord4 = 'difficulty';
 
 // Переношу П.-ю с Общим количеством слов -- к Списку объявления слов
 // (чтобы они находились РЯДОМ)
 const totalNumberOfWords = 5; // 4/12/23  I enter a variable - totalNumberOfWords
-
-// 1/01/24
-// Сейчас - Попробую - изменить Все П.-е с объявлением слов -- Двумя Ма.-ми
-// ..... -- и посмотрю -- что из этого - у меня Получится
-// let rusWords = [
-//   'производительность',
-//   'обида',
-//   'ты обиделся?',
-//   'желание',
-//   'трудности, препятствие, затруднение',
-// ];
-// let engWords = [
-//   'performance',
-//   'resentment, offence',
-//   'are you offended?',
-//   'desire',
-//   'difficulty',
-// ];
-
-// // Переношу П.-ю с Общим количеством слов -- к Списку объявления слов
-// // (чтобы они находились РЯДОМ)
-// let totalNumberOfWords = 5; // 4/12/23  I enter a variable - totalNumberOfWords
 
 // -- other variables
 
@@ -126,10 +97,7 @@ const totalNumberOfWords = 5; // 4/12/23  I enter a variable - totalNumberOfWord
 // let promptOutput = 'enter a word in English';
 const promptOutput = 'enter a word in English';
 
-// let counter = 0; // enter the counter variable
-
 // 20/12/23 -- Даю П.-й counter Более КОРРЕКТНОЕ и Правильное название
-
 // ПОЯВЛЯЕТСЯ ПЕРВАЯ ---- НАСТОЯЩАЯ ---- П. !!!!
 
 let numberCorrectAnswers = 0; // enter the counter variable
@@ -140,73 +108,53 @@ let numberCorrectAnswers = 0; // enter the counter variable
 // const numberCorrectAnswers = 0; // enter the counter variable
 
 // ТАКЖЕ МЕНЯЮ let НА const
-// let halfTheAnswers = totalNumberOfWords / 2; // 14/12/23  I enter a variable - halfTheAnswers
 const halfTheAnswers = totalNumberOfWords / 2; // 14/12/23  I enter a variable - halfTheAnswers
-// let halfTheAnswers1 = rusWords.length / 2; // 14/12/23  I enter a variable - halfTheAnswers
 
 // ТАКЖЕ МЕНЯЮ let НА const
-// let messageOfPraise = 'Great!';
 const messageOfPraise = 'Great!';
 
 // ТАКЖЕ МЕНЯЮ let НА const
-// let finalMessage = 'Well done! Keep trying';
 const finalMessage = 'Well done! Keep trying!';
 
 // code block
 // // 4/12/23
 // 14/12/23
 
-let wordBeingStudiedAndAnswer0 = prompt(rusWord0, promptOutput); // 0
-// let wordBeingStudiedAndAnswer0 = prompt(rusWords[0], promptOutput); // 0
+// Здесь в (prompt-ах) -- тоже -- Меняется Все let на const !!!!
+const wordBeingStudiedAndAnswer0 = prompt(rusWord0, promptOutput); // 0
 alert(wordBeingStudiedAndAnswer0 === engWord0);
-// alert(wordBeingStudiedAndAnswer0 === engWords[0]);
 if (wordBeingStudiedAndAnswer0 === engWord0) {
-  // if (wordBeingStudiedAndAnswer0 === engWords[0]) {
   numberCorrectAnswers++;
 }
 
-let wordBeingStudiedAndAnswer1 = prompt(rusWord1, promptOutput); // 1
-// let wordBeingStudiedAndAnswer1 = prompt(rusWords[1], promptOutput); // 1
+const wordBeingStudiedAndAnswer1 = prompt(rusWord1, promptOutput); // 1
 alert(wordBeingStudiedAndAnswer1 === engWord1);
-// alert(wordBeingStudiedAndAnswer1 === engWords[1]);
 if (wordBeingStudiedAndAnswer1 === engWord1) {
-  // if (wordBeingStudiedAndAnswer1 === engWords[1]) {
   numberCorrectAnswers++;
 }
 
-let wordBeingStudiedAndAnswer2 = prompt(rusWord2, promptOutput); // 2
-// let wordBeingStudiedAndAnswer2 = prompt(rusWords[2], promptOutput); // 2
+const wordBeingStudiedAndAnswer2 = prompt(rusWord2, promptOutput); // 2
 alert(wordBeingStudiedAndAnswer2 === engWord2);
-// alert(wordBeingStudiedAndAnswer2 === engWords[2]);
 if (wordBeingStudiedAndAnswer2 === engWord2) {
-  // if (wordBeingStudiedAndAnswer2 === engWords[2]) {
   numberCorrectAnswers++;
 }
 
-let wordBeingStudiedAndAnswer3 = prompt(rusWord3, promptOutput); // 3
-// let wordBeingStudiedAndAnswer3 = prompt(rusWords[3], promptOutput); // 3
+const wordBeingStudiedAndAnswer3 = prompt(rusWord3, promptOutput); // 3
 alert(wordBeingStudiedAndAnswer3 === engWord3);
-// alert(wordBeingStudiedAndAnswer3 === engWords[3]);
 if (wordBeingStudiedAndAnswer3 === engWord3) {
-  // if (wordBeingStudiedAndAnswer3 === engWords[3]) {
   numberCorrectAnswers++;
 }
 
-let wordBeingStudiedAndAnswer4 = prompt(rusWord4, promptOutput); // 4
-// let wordBeingStudiedAndAnswer4 = prompt(rusWords[4], promptOutput); // 4
+const wordBeingStudiedAndAnswer4 = prompt(rusWord4, promptOutput); // 4
 alert(wordBeingStudiedAndAnswer4 === engWord4);
-// alert(wordBeingStudiedAndAnswer4 === engWords[4]);
 if (wordBeingStudiedAndAnswer4 === engWord4) {
-  // if (wordBeingStudiedAndAnswer4 === engWords[4]) {
   numberCorrectAnswers++;
 }
 
-// if (numberCorrectAnswers > halfTheAnswers1) {
 if (numberCorrectAnswers > halfTheAnswers) {
   alert(messageOfPraise);
 } else {
   alert(finalMessage);
 }
 
-// alert(halfTheAnswers1);
 alert(numberCorrectAnswers);
