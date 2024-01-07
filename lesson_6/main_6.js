@@ -60,6 +60,9 @@
 // 5/01/24
 //  Ещё использовал const -- поменял вместо let во всех prompt-ах *т.к. они НЕ будут меняться *так - как Счётчик**
 //  и ещё Поудалял почти все Комментарии, которые Не имеют отношения к Текущей версии Про.-ы. -- они сильно засоряли Про.-у (весь К.)
+// 6,7/01/24
+// Продолжаю с Димычем его Про.-у (с 30й минуты) --- Ветвление Про.-ы
+// Позанимался с Димой по 38-ю минуту включительно
 //   ------------------------
 //   -------------------------------
 
@@ -76,7 +79,7 @@ const rusWord0 = 'производительность'; // 0
 const engWord0 = 'performance';
 
 const rusWord1 = 'обида'; // 1
-const engWord1 = 'resentment, offence'; // , hurt, insult ---- additional words
+const engWord1 = 'resentment, offence, insult'; // , hurt ---- additional words
 
 const rusWord2 = 'ты обиделся?'; // 2
 const engWord2 = 'are you offended?';
@@ -87,9 +90,13 @@ const engWord3 = 'desire';
 const rusWord4 = 'трудности, препятствие, затруднение'; // 4
 const engWord4 = 'difficulty';
 
+const rusWord5 = 'сравнение'; // 5
+const engWord5 = 'comparison'; // compare, simile, matching ---- additional words
+
 // Переношу П.-ю с Общим количеством слов -- к Списку объявления слов
 // (чтобы они находились РЯДОМ)
-const totalNumberOfWords = 5; // 4/12/23  I enter a variable - totalNumberOfWords
+// const totalNumberOfWords = 5; // 4/12/23  I enter a variable - totalNumberOfWords
+const totalNumberOfWords = 6; // 7/12/23  Сегодня меняю число 5 на 6
 
 // -- other variables
 
@@ -108,13 +115,21 @@ let numberCorrectAnswers = 0; // enter the counter variable
 // const numberCorrectAnswers = 0; // enter the counter variable
 
 // ТАКЖЕ МЕНЯЮ let НА const
-const halfTheAnswers = totalNumberOfWords / 2; // 14/12/23  I enter a variable - halfTheAnswers
+// 7/01/24
+// Комментирую этот К. -- и буду педелывать за Димычем
+// const halfTheAnswers = totalNumberOfWords / 2; // 14/12/23  I enter a variable - halfTheAnswers
 
 // ТАКЖЕ МЕНЯЮ let НА const
 const messageOfPraise = 'Great!';
 
 // ТАКЖЕ МЕНЯЮ let НА const
 const finalMessage = 'Well done! Keep trying!';
+
+const comparison = 50; // 7/01/24   Добавляю Новую П.-ю  - для сравнения количества Правильных ответов с Половиной
+
+// ------
+// ------
+// ------
 
 // code block
 // // 4/12/23
@@ -124,37 +139,67 @@ const finalMessage = 'Well done! Keep trying!';
 const wordBeingStudiedAndAnswer0 = prompt(rusWord0, promptOutput); // 0
 alert(wordBeingStudiedAndAnswer0 === engWord0);
 if (wordBeingStudiedAndAnswer0 === engWord0) {
-  numberCorrectAnswers++;
+  // Димыч увеличивает ПО-ДРУГОМУ
+  // numberCorrectAnswers++;
+  numberCorrectAnswers = numberCorrectAnswers + 1;
 }
 
 const wordBeingStudiedAndAnswer1 = prompt(rusWord1, promptOutput); // 1
 alert(wordBeingStudiedAndAnswer1 === engWord1);
 if (wordBeingStudiedAndAnswer1 === engWord1) {
-  numberCorrectAnswers++;
+  // Димыч увеличивает ПО-ДРУГОМУ
+  // numberCorrectAnswers++;
+  numberCorrectAnswers = numberCorrectAnswers + 1;
 }
 
 const wordBeingStudiedAndAnswer2 = prompt(rusWord2, promptOutput); // 2
 alert(wordBeingStudiedAndAnswer2 === engWord2);
 if (wordBeingStudiedAndAnswer2 === engWord2) {
-  numberCorrectAnswers++;
+  // Димыч увеличивает ПО-ДРУГОМУ
+  // numberCorrectAnswers++;
+  numberCorrectAnswers = numberCorrectAnswers + 1;
 }
 
 const wordBeingStudiedAndAnswer3 = prompt(rusWord3, promptOutput); // 3
 alert(wordBeingStudiedAndAnswer3 === engWord3);
 if (wordBeingStudiedAndAnswer3 === engWord3) {
-  numberCorrectAnswers++;
+  // Димыч увеличивает ПО-ДРУГОМУ
+  // numberCorrectAnswers++;
+  numberCorrectAnswers = numberCorrectAnswers + 1;
 }
 
 const wordBeingStudiedAndAnswer4 = prompt(rusWord4, promptOutput); // 4
 alert(wordBeingStudiedAndAnswer4 === engWord4);
 if (wordBeingStudiedAndAnswer4 === engWord4) {
-  numberCorrectAnswers++;
+  // Димыч увеличивает ПО-ДРУГОМУ
+  // numberCorrectAnswers++;
+  numberCorrectAnswers = numberCorrectAnswers + 1;
 }
 
-if (numberCorrectAnswers > halfTheAnswers) {
+const wordBeingStudiedAndAnswer5 = prompt(rusWord5, promptOutput); // 4
+alert(wordBeingStudiedAndAnswer5 === engWord5);
+if (wordBeingStudiedAndAnswer5 === engWord5) {
+  numberCorrectAnswers = numberCorrectAnswers + 1;
+}
+
+// это Закомментирую -- и Перепишу так - как делает Димыч
+// if (numberCorrectAnswers > halfTheAnswers) {
+//   alert(messageOfPraise);
+// } else {
+//   alert(finalMessage);
+// }
+
+// if(numberCorrectAnswers /  totalNumberOfWords * 100 > 50) {  // Рефакторим эту строчку Убирая -- Число 50
+if ((numberCorrectAnswers / totalNumberOfWords) * 100 > comparison) {
   alert(messageOfPraise);
 } else {
   alert(finalMessage);
 }
 
+alert(Math.round((numberCorrectAnswers / totalNumberOfWords) * 100) + ' %'); // эту строчку К.-а я сварганил Сам (без Димыча)
+
 alert(numberCorrectAnswers);
+
+// let numberCorrectAnswersResult =        // это я написал Сам - из головы - скорее НЕ так надо писать, но пока не хочу на этом зацикливаться - пойду Дальше, с Димычем
+//   (numberCorrectAnswers / totalNumberOfWords) * 100 + ' %';
+// alert(numberCorrectAnswersResult);
