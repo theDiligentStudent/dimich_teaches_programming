@@ -63,6 +63,11 @@
 // 6,7/01/24
 // Продолжаю с Димычем его Про.-у (с 30й минуты) --- Ветвление Про.-ы
 // Позанимался с Димой по 38-ю минуту включительно
+// 8/01/24
+// Продолжаю Добивать 6е В. Димыча
+// Сделал настоящую Вилку - if - else -- после введения ответа через prompt и Сравнение его с правильным. --- Теперь - если ответ - НЕправильный и alert *после сравнения* - выдаёт false - он ещё мне, Сразу же - также alert-ом --- показывает ПРАВИЛЬНЫЙ ОТВЕТ.
+// занимался по 40-ю минуту включительно.
+
 //   ------------------------
 //   -------------------------------
 
@@ -114,6 +119,12 @@ let numberCorrectAnswers = 0; // enter the counter variable
 //   в ДевТуулс будет написано -- Assignment to constant variable. строка такая-то
 // const numberCorrectAnswers = 0; // enter the counter variable
 
+// const comparison = 50; // 7/01/24   Добавляю Новую П.-ю  - для сравнения количества Правильных ответов с Половиной
+const comparisonOfCorrectAnswers = 50; // 8/01/24   Даю П.-й для Сравнения /намного более/ Логичное название
+
+// let correctAnswersInPercentage =
+//   Math.round(numberCorrectAnswers / totalNumberOfWords) * 100;
+
 // ТАКЖЕ МЕНЯЮ let НА const
 // 7/01/24
 // Комментирую этот К. -- и буду педелывать за Димычем
@@ -124,8 +135,6 @@ const messageOfPraise = 'Great!';
 
 // ТАКЖЕ МЕНЯЮ let НА const
 const finalMessage = 'Well done! Keep trying!';
-
-const comparison = 50; // 7/01/24   Добавляю Новую П.-ю  - для сравнения количества Правильных ответов с Половиной
 
 // ------
 // ------
@@ -142,6 +151,8 @@ if (wordBeingStudiedAndAnswer0 === engWord0) {
   // Димыч увеличивает ПО-ДРУГОМУ
   // numberCorrectAnswers++;
   numberCorrectAnswers = numberCorrectAnswers + 1;
+} else {
+  alert(engWord0);
 }
 
 const wordBeingStudiedAndAnswer1 = prompt(rusWord1, promptOutput); // 1
@@ -150,6 +161,8 @@ if (wordBeingStudiedAndAnswer1 === engWord1) {
   // Димыч увеличивает ПО-ДРУГОМУ
   // numberCorrectAnswers++;
   numberCorrectAnswers = numberCorrectAnswers + 1;
+} else {
+  alert(engWord1);
 }
 
 const wordBeingStudiedAndAnswer2 = prompt(rusWord2, promptOutput); // 2
@@ -158,6 +171,8 @@ if (wordBeingStudiedAndAnswer2 === engWord2) {
   // Димыч увеличивает ПО-ДРУГОМУ
   // numberCorrectAnswers++;
   numberCorrectAnswers = numberCorrectAnswers + 1;
+} else {
+  alert(engWord2);
 }
 
 const wordBeingStudiedAndAnswer3 = prompt(rusWord3, promptOutput); // 3
@@ -166,6 +181,8 @@ if (wordBeingStudiedAndAnswer3 === engWord3) {
   // Димыч увеличивает ПО-ДРУГОМУ
   // numberCorrectAnswers++;
   numberCorrectAnswers = numberCorrectAnswers + 1;
+} else {
+  alert(engWord3);
 }
 
 const wordBeingStudiedAndAnswer4 = prompt(rusWord4, promptOutput); // 4
@@ -174,12 +191,16 @@ if (wordBeingStudiedAndAnswer4 === engWord4) {
   // Димыч увеличивает ПО-ДРУГОМУ
   // numberCorrectAnswers++;
   numberCorrectAnswers = numberCorrectAnswers + 1;
+} else {
+  alert(engWord4);
 }
 
 const wordBeingStudiedAndAnswer5 = prompt(rusWord5, promptOutput); // 4
 alert(wordBeingStudiedAndAnswer5 === engWord5);
 if (wordBeingStudiedAndAnswer5 === engWord5) {
   numberCorrectAnswers = numberCorrectAnswers + 1;
+} else {
+  alert(engWord5);
 }
 
 // это Закомментирую -- и Перепишу так - как делает Димыч
@@ -190,13 +211,26 @@ if (wordBeingStudiedAndAnswer5 === engWord5) {
 // }
 
 // if(numberCorrectAnswers /  totalNumberOfWords * 100 > 50) {  // Рефакторим эту строчку Убирая -- Число 50
-if ((numberCorrectAnswers / totalNumberOfWords) * 100 > comparison) {
+// if (
+//   (numberCorrectAnswers / totalNumberOfWords) * 100 >     // Ниже будет Сделан Рефакторинг этой строке -- Определение %-в нужно вынести в Отдельную П.-ю и отправить эту П.-ю в Блок Инициализации
+//   comparisonOfCorrectAnswers
+// ) {
+//   alert(messageOfPraise);
+// } else {
+//   alert(finalMessage);
+// }
+
+const correctAnswersInPercentage =
+  Math.round(numberCorrectAnswers / totalNumberOfWords) * 100;
+
+if (correctAnswersInPercentage > comparisonOfCorrectAnswers) {
   alert(messageOfPraise);
 } else {
   alert(finalMessage);
 }
 
-alert(Math.round((numberCorrectAnswers / totalNumberOfWords) * 100) + ' %'); // эту строчку К.-а я сварганил Сам (без Димыча)
+// alert(Math.round((numberCorrectAnswers / totalNumberOfWords) * 100) + ' %'); // эту строчку К.-а я сварганил Сам (без Димыча)
+alert(correctAnswersInPercentage + ' %'); // эту строчку К.-а я сварганил Сам (без Димыча)
 
 alert(numberCorrectAnswers);
 
