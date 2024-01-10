@@ -67,6 +67,14 @@
 // Продолжаю Добивать 6е В. Димыча
 // Сделал настоящую Вилку - if - else -- после введения ответа через prompt и Сравнение его с правильным. --- Теперь - если ответ - НЕправильный и alert *после сравнения* - выдаёт false - он ещё мне, Сразу же - также alert-ом --- показывает ПРАВИЛЬНЫЙ ОТВЕТ.
 // занимался по 40-ю минуту включительно.
+// 10/01/24
+// Закончил Смотреть В. с Димычем
+// (по Максимуму во всём разобрался)
+// --
+// Но ДЕЛАТЬ закончил Ещё НЕ всё.
+// Сегодня -- убирал ошибку *в JS-К.-е*, которую Сам же - Случайно - и сделал -- 8/01/24.
+// Плюс/И -- все П.-е - убрал из Б.К.-а -- Абсолютно все - Их ОБЪЯВЛЕНИЕ - В  I. B. 
+// (ВСЕ они Стали let-ами ВМЕСТО  const    *ИНАЧЕ БЫ ОНИ -- НЕ работали*).
 
 //   ------------------------
 //   -------------------------------
@@ -127,7 +135,7 @@ const comparisonOfCorrectAnswers = 50; // 8/01/24   Даю П.-й для Сра�
 
 // ТАКЖЕ МЕНЯЮ let НА const
 // 7/01/24
-// Комментирую этот К. -- и буду педелывать за Димычем
+// Комментирую этот К. -- и буду переделывать за Димычем
 // const halfTheAnswers = totalNumberOfWords / 2; // 14/12/23  I enter a variable - halfTheAnswers
 
 // ТАКЖЕ МЕНЯЮ let НА const
@@ -135,6 +143,23 @@ const messageOfPraise = 'Great!';
 
 // ТАКЖЕ МЕНЯЮ let НА const
 const finalMessage = 'Well done! Keep trying!';
+
+// ОБЪЯВЛЯЮ prompt-ы в I. B.  !!!!
+// А З.-я --- им будут присваиваться --- Уже в C. B. !!!!
+// const-антами ---- эти П.е делать НЕЛЬЗЯ --- так НЕ БУДЕТ Работать!!
+
+let wordBeingStudiedAndAnswer0;
+let wordBeingStudiedAndAnswer1;
+let wordBeingStudiedAndAnswer2;
+let wordBeingStudiedAndAnswer3;
+let wordBeingStudiedAndAnswer4;
+let wordBeingStudiedAndAnswer5;
+
+// точно также Делаю с двумя П.-ми ниже *как и с  prompt-ами*
+
+let correctAnswersInPercentage;
+
+let alertAboutPercentage;
 
 // ------
 // ------
@@ -145,7 +170,7 @@ const finalMessage = 'Well done! Keep trying!';
 // 14/12/23
 
 // Здесь в (prompt-ах) -- тоже -- Меняется Все let на const !!!!
-const wordBeingStudiedAndAnswer0 = prompt(rusWord0, promptOutput); // 0
+wordBeingStudiedAndAnswer0 = prompt(rusWord0, promptOutput); // 0
 alert(wordBeingStudiedAndAnswer0 === engWord0);
 if (wordBeingStudiedAndAnswer0 === engWord0) {
   // Димыч увеличивает ПО-ДРУГОМУ
@@ -155,7 +180,7 @@ if (wordBeingStudiedAndAnswer0 === engWord0) {
   alert(engWord0);
 }
 
-const wordBeingStudiedAndAnswer1 = prompt(rusWord1, promptOutput); // 1
+wordBeingStudiedAndAnswer1 = prompt(rusWord1, promptOutput); // 1
 alert(wordBeingStudiedAndAnswer1 === engWord1);
 if (wordBeingStudiedAndAnswer1 === engWord1) {
   // Димыч увеличивает ПО-ДРУГОМУ
@@ -165,7 +190,7 @@ if (wordBeingStudiedAndAnswer1 === engWord1) {
   alert(engWord1);
 }
 
-const wordBeingStudiedAndAnswer2 = prompt(rusWord2, promptOutput); // 2
+wordBeingStudiedAndAnswer2 = prompt(rusWord2, promptOutput); // 2
 alert(wordBeingStudiedAndAnswer2 === engWord2);
 if (wordBeingStudiedAndAnswer2 === engWord2) {
   // Димыч увеличивает ПО-ДРУГОМУ
@@ -175,7 +200,7 @@ if (wordBeingStudiedAndAnswer2 === engWord2) {
   alert(engWord2);
 }
 
-const wordBeingStudiedAndAnswer3 = prompt(rusWord3, promptOutput); // 3
+wordBeingStudiedAndAnswer3 = prompt(rusWord3, promptOutput); // 3
 alert(wordBeingStudiedAndAnswer3 === engWord3);
 if (wordBeingStudiedAndAnswer3 === engWord3) {
   // Димыч увеличивает ПО-ДРУГОМУ
@@ -185,7 +210,7 @@ if (wordBeingStudiedAndAnswer3 === engWord3) {
   alert(engWord3);
 }
 
-const wordBeingStudiedAndAnswer4 = prompt(rusWord4, promptOutput); // 4
+wordBeingStudiedAndAnswer4 = prompt(rusWord4, promptOutput); // 4
 alert(wordBeingStudiedAndAnswer4 === engWord4);
 if (wordBeingStudiedAndAnswer4 === engWord4) {
   // Димыч увеличивает ПО-ДРУГОМУ
@@ -195,7 +220,7 @@ if (wordBeingStudiedAndAnswer4 === engWord4) {
   alert(engWord4);
 }
 
-const wordBeingStudiedAndAnswer5 = prompt(rusWord5, promptOutput); // 4
+wordBeingStudiedAndAnswer5 = prompt(rusWord5, promptOutput); // 4
 alert(wordBeingStudiedAndAnswer5 === engWord5);
 if (wordBeingStudiedAndAnswer5 === engWord5) {
   numberCorrectAnswers = numberCorrectAnswers + 1;
@@ -220,8 +245,9 @@ if (wordBeingStudiedAndAnswer5 === engWord5) {
 //   alert(finalMessage);
 // }
 
-const correctAnswersInPercentage =
-  Math.round(numberCorrectAnswers / totalNumberOfWords) * 100;
+correctAnswersInPercentage = Math.round(
+  (numberCorrectAnswers / totalNumberOfWords) * 100
+);
 
 if (correctAnswersInPercentage > comparisonOfCorrectAnswers) {
   alert(messageOfPraise);
@@ -230,7 +256,8 @@ if (correctAnswersInPercentage > comparisonOfCorrectAnswers) {
 }
 
 // alert(Math.round((numberCorrectAnswers / totalNumberOfWords) * 100) + ' %'); // эту строчку К.-а я сварганил Сам (без Димыча)
-alert(correctAnswersInPercentage + ' %'); // эту строчку К.-а я сварганил Сам (без Димыча)
+alertAboutPercentage = correctAnswersInPercentage + ' %';
+alert(alertAboutPercentage); // эту строчку К.-а я сварганил Сам (без Димыча)
 
 alert(numberCorrectAnswers);
 
