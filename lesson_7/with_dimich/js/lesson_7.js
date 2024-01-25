@@ -1,3 +1,5 @@
+// I. B.
+
 const rusWord0 = 'Принять (мой ответ)'; // 0
 const engWord0 = 'Accept (my answer)';
 
@@ -32,10 +34,10 @@ let showPercentageOfCorrectAnswers;
 // // //
 // // //
 
+// C. B.
+
 showWordAcceptAnswer0 = prompt(rusWord0, textForPromptMessage);
-
 alert(showWordAcceptAnswer0 === engWord0);
-
 if (showWordAcceptAnswer0 === engWord0) {
   numberOfCorrectAnswers = numberOfCorrectAnswers + 1;
 } else {
