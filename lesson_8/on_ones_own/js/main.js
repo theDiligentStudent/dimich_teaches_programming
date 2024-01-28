@@ -32,6 +32,11 @@
 // Комментариев из C. B.    -----    чтобы остался (в Основном) только Чистый К.
 
 // Да!  *чуть НЕ забыл* -- Про.-у протестил -- Всё Работает!!!!
+
+// Залил изменения, вернулся --- поудалял Все Комментарии из C. B.,
+// Скомпоновал Все Ф.-и вместе Вверху C. B.
+// а все их Вызовы - в остались (вместе) в нижней части C. B.
+
 //
 //
 // Псевдокод
@@ -77,6 +82,7 @@
 //
 // I. B.
 //
+
 // 1.
 let englishWord0 = 'Achieve'; // 0
 let russianWord0 = 'Добиваться, достигать';
@@ -131,19 +137,19 @@ const correctAnswersFrom = 'Your correct answers are ';
 //
 // C. B.
 //
-// 1.
-// Показывать на экране Б.-а Русское слово
-//    в строке для ВВода слова Ю.-м показывать надпись:
-//    "Введи слово на Английском"
-// Принимать ответ от Ю.-а
 
 // 27/01/24
 // Попробую Заменить три операции ниже - с prompt-ами ОДНОЙ Ф.-ей
 // и потом Вызывать её Три раза со своими Пар.-ми
 
+// Сделал ОТДЕЛЬНЫЙ Б.К.-а для --
+// -- ОБЪЯВЛЕНИЯ Ф.-й
+// и ОТДЕЛЬНЫЙ (ниже) для ---
+// их ВЫЗОВА
+
 function mainOperationInTheProgram(englishWord, russianWord) {
   let showWordAcceptAnswer;
-  showWordAcceptAnswer = prompt(englishWord, tooltipPromptText); // 0
+  showWordAcceptAnswer = prompt(englishWord, tooltipPromptText);
   alert(russianWord === showWordAcceptAnswer);
   if (russianWord === showWordAcceptAnswer) {
     totalNumberOfCorrectAnswers = totalNumberOfCorrectAnswers + 1;
@@ -152,58 +158,11 @@ function mainOperationInTheProgram(englishWord, russianWord) {
   }
 }
 
-// 27/01/24
-// эти Три ОДИНАКОВЫХ куска К.-а Комментирую --- чтобы заменить их Вызовами Ф.-й
-
-// showWordAcceptAnswer0 = prompt(englishWord0, tooltipPromptText); // 0
-// alert(russianWord0 === showWordAcceptAnswer0);
-// if (russianWord0 === showWordAcceptAnswer0) {
-//   totalNumberOfCorrectAnswers = totalNumberOfCorrectAnswers + 1;
-// } else {
-//   alert(russianWord0);
-// }
-
-// showWordAcceptAnswer1 = prompt(englishWord1, tooltipPromptText); // 1
-// alert(russianWord1 === showWordAcceptAnswer1);
-// if (russianWord1 === showWordAcceptAnswer1) {
-//   totalNumberOfCorrectAnswers = totalNumberOfCorrectAnswers + 1;
-// } else {
-//   alert(russianWord1);
-// }
-
-// showWordAcceptAnswer2 = prompt(englishWord2, tooltipPromptText); // 2
-// alert(russianWord2 === showWordAcceptAnswer2);
-// if (russianWord2 === showWordAcceptAnswer2) {
-//   totalNumberOfCorrectAnswers = totalNumberOfCorrectAnswers + 1;
-// } else {
-//   alert(russianWord2);
-// }
-
-mainOperationInTheProgram(englishWord0, russianWord0);
-mainOperationInTheProgram(englishWord1, russianWord1);
-mainOperationInTheProgram(englishWord2, russianWord2);
-
-// 4.
-// После вывода Всех Слов Для Изучения (когда Основная Про./действия Ю.-а закончены) выводить для Него сообщения с Результатами
-
-// 4.1
-// Вывести на Экран Поощрительную Стр.-у.....  либо:
-// 4.1.1
-// Great!!  ---  если Правильных ответов больше половины *чем 50%*
-// 25/01/24
-
-// 27/01/24
-
 function calculatingInterest() {
   percentageOfCorrectAnswers = Math.round(
     (totalNumberOfCorrectAnswers / totalNumberOfWordsStudied) * 100
   );
 }
-calculatingInterest();
-
-// percentageOfCorrectAnswers = Math.round(
-//   (totalNumberOfCorrectAnswers / totalNumberOfWordsStudied) * 100
-// );
 
 function forFinalMassage1() {
   if (percentageOfCorrectAnswers > numberToCompareAnswers) {
@@ -212,21 +171,18 @@ function forFinalMassage1() {
     alert(messageEncouragingYouToTryHarder);
   }
 }
+//
+//
+// Б.К.-а для --- ВЫЗОВА Ф.-й
 
-// if (percentageOfCorrectAnswers > numberToCompareAnswers) {
-//   alert(messageOfCompleteEncouragement);
-// } else {
-//   alert(messageEncouragingYouToTryHarder);
-// }
+mainOperationInTheProgram(englishWord0, russianWord0);
+mainOperationInTheProgram(englishWord1, russianWord1);
+mainOperationInTheProgram(englishWord2, russianWord2);
+
+calculatingInterest();
 
 forFinalMassage1();
 
-// 5.
-// Вывести на экран сообщение --- The number of your correct answers is 50%
-// -- или Сколько там будет процентов
-// Их (%-ы) надо будет Высчитать и Вставить в эту Стр.-у сообщения
-// 25/01/24
-// 27/01/24
 const finalMessage2 =
   messageAboutPercentCorrectAnswers +
   ' ' +
@@ -238,23 +194,6 @@ const finalMessage3 =
   totalNumberOfCorrectAnswers +
   ' out of ' +
   totalNumberOfWordsStudied;
-
-// alert(
-//   messageAboutPercentCorrectAnswers +
-//     ' ' +
-//     percentageOfCorrectAnswers +
-//     percentIcon
-// );
-
-// 6.
-// Вывести на экран сообщение -- The number of your correct answers is 4 out of 6
-// 4 из 6ти   или сколько там наберётся
-// alert(
-//   correctAnswersFrom +
-//     totalNumberOfCorrectAnswers +
-//     ' out of ' +
-//     totalNumberOfWordsStudied
-// );
 
 alert(finalMessage2);
 alert(finalMessage3);
