@@ -2,12 +2,25 @@
 // Смотрю 8ой Ур Димыча ---- Повторяю Сам
 
 // 1/02/24
-// Пишу Занову
+// Пишу Заново
 // (в смысле Самостоятельно)
 // Про.-у Димыча из 6го Ур.-а, но буду делать уже
 // с Заменой вызова window.alert на document.write --
 // так - как показывает Димыч в 8м Ур.-е
 // Уже столкнулся с Первой Трудностью/НЕпоняткой. - При вызове document.write..... - - может быть разберусь с ней - когда (позже) досмотрю В. Димыча до конца
+
+// 2/02/24
+// Написал Про.-у так - как планировал (с document.write(wordsOfPraise))
+// Разделил её на Несколько Частей:
+// I. B. -- для ОБЪЯВЛЕНИЯ П.-х
+// И   C. B. --- Блок с самим Выполнением Про.-ы ---- который я тоже Разделил на два блока:
+// -- Function declaration block --- Блок ОБЪЯВЛЕНИЯ Ф.-й и
+// -- Function call block --- Блок их (Ф.-й) Выполнения
+// Полностью Все Опе.-и и Действия Про.-ы я занёс в Ф.-и
+// --
+// НЕ использовал пока только Тег </br> -- для Разделения ВЫВОДИМЫХ Д.-х о результатах -- на Стр.-и
+// Сейчас отправлю то, что уже сделал - на ГитХаб -- и вернусь доделывать с </br>
+//
 
 //
 
@@ -34,12 +47,22 @@ let showWordAcceptAnswer;
 // const tagBr = '</br>';
 // const tagBr1 = '</br> </br>';
 
+const wordsOfPraise = 'Great!';
+const wordsEncouragementAndEncouragementTryHarder =
+  'Well done! But try harder!';
+
 let determinePercentageCorrectAnswers;
 const numberForStoringCorrectAnswers = 50;
 
-//
+const resultInPercentage = 'The number of your correct answers is: ';
+const percentIcon = ' %';
+
+let forShowTheNumberOfCorrectAnswers1 = 'Number of correct answers ';
+let showTheNumberOfCorrectAnswers;
 
 // C. B.
+
+// Function declaration block
 
 function toShowPrompt(russianWord, englishWord) {
   showWordAcceptAnswer = prompt(russianWord, promptHelpText);
@@ -55,6 +78,40 @@ function toShowPrompt(russianWord, englishWord) {
   }
 }
 
+function showResults() {
+  determinePercentageCorrectAnswers = Math.round(
+    (numberOfCorrectAnswers / numberOfWordsStudied) * 100
+  );
+  if (determinePercentageCorrectAnswers > numberForStoringCorrectAnswers) {
+    document.write(wordsOfPraise);
+  } else {
+    document.write(wordsEncouragementAndEncouragementTryHarder);
+  }
+}
+
+function showResultInPercentage() {
+  document.write(
+    resultInPercentage + determinePercentageCorrectAnswers + percentIcon
+  );
+}
+
+function usersCorrectAnswers() {
+  showTheNumberOfCorrectAnswers =
+    forShowTheNumberOfCorrectAnswers1 +
+    numberOfCorrectAnswers +
+    ' of ' +
+    numberOfWordsStudied;
+  document.write(showTheNumberOfCorrectAnswers);
+}
+
+// Function call block
+
 toShowPrompt(russianWord0, englishWord0);
 toShowPrompt(russianWord1, englishWord1);
 toShowPrompt(russianWord2, englishWord2);
+
+showResults();
+
+showResultInPercentage();
+
+usersCorrectAnswers();
