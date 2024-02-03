@@ -21,6 +21,16 @@
 // НЕ использовал пока только Тег </br> -- для Разделения ВЫВОДИМЫХ Д.-х о результатах -- на Стр.-и
 // Сейчас отправлю то, что уже сделал - на ГитХаб -- и вернусь доделывать с </br>
 //
+//
+// Доделал ---- Про.-у с использованием Тега --- </br>
+// НЕ даёт мне покоя вот эта вот Стр.-чка: 
+// else {
+//     document.write(englishWord, br);
+//   }
+// при последнем Вызове Ф.-и.    -----  если -- З.-е -- false
+// --- получается ЛИШНИЙ пробел (который мне Вообще НЕ нужен)
+// сейчас за ГитХаблю --- и попробую этот Пробел УБРАТЬ.....
+
 
 //
 
@@ -44,8 +54,8 @@ const promptHelpText = 'Enter a word or group of words in English';
 // let showWordAcceptAnswer1;
 // let showWordAcceptAnswer2;
 let showWordAcceptAnswer;
-// const tagBr = '</br>';
-// const tagBr1 = '</br> </br>';
+const tagBr0 = '</br>';
+const tagBr1 = '</br> </br>';
 
 const wordsOfPraise = 'Great!';
 const wordsEncouragementAndEncouragementTryHarder =
@@ -64,17 +74,26 @@ let showTheNumberOfCorrectAnswers;
 
 // Function declaration block
 
-function toShowPrompt(russianWord, englishWord) {
+// function toShowPrompt(russianWord, englishWord) {
+//   showWordAcceptAnswer = prompt(russianWord, promptHelpText);
+//   // document.write(englishWord === showWordAcceptAnswer);
+//   // document.write(englishWord === showWordAcceptAnswer, '</br>');
+//   // document.write(englishWord === showWordAcceptAnswer, '</br> </br>');
+//   document.write(englishWord === showWordAcceptAnswer, tagBr);
+//   if (englishWord === showWordAcceptAnswer) {
+//     numberOfCorrectAnswers = numberOfCorrectAnswers + 1;
+//   } else {
+//     // document.write(englishWord);
+//     document.write(englishWord, tagBr);
+//   }
+// }
+function toShowPrompt(russianWord, englishWord, br) {
   showWordAcceptAnswer = prompt(russianWord, promptHelpText);
-  document.write(englishWord === showWordAcceptAnswer);
-  // document.write(englishWord === showWordAcceptAnswer, '</br>');
-  // document.write(englishWord === showWordAcceptAnswer, '</br> </br>');
-  // document.write(englishWord === showWordAcceptAnswer, tagBr);
+  document.write(englishWord === showWordAcceptAnswer, br);
   if (englishWord === showWordAcceptAnswer) {
     numberOfCorrectAnswers = numberOfCorrectAnswers + 1;
   } else {
-    document.write(englishWord);
-    // document.write(englishWord, tagBr);
+    document.write(englishWord, br);
   }
 }
 
@@ -83,15 +102,16 @@ function showResults() {
     (numberOfCorrectAnswers / numberOfWordsStudied) * 100
   );
   if (determinePercentageCorrectAnswers > numberForStoringCorrectAnswers) {
-    document.write(wordsOfPraise);
+    document.write(wordsOfPraise, tagBr1);
   } else {
-    document.write(wordsEncouragementAndEncouragementTryHarder);
+    document.write(wordsEncouragementAndEncouragementTryHarder, tagBr1);
   }
 }
 
 function showResultInPercentage() {
   document.write(
-    resultInPercentage + determinePercentageCorrectAnswers + percentIcon
+    resultInPercentage + determinePercentageCorrectAnswers + percentIcon,
+    tagBr1
   );
 }
 
@@ -106,9 +126,9 @@ function usersCorrectAnswers() {
 
 // Function call block
 
-toShowPrompt(russianWord0, englishWord0);
-toShowPrompt(russianWord1, englishWord1);
-toShowPrompt(russianWord2, englishWord2);
+toShowPrompt(russianWord0, englishWord0, tagBr0);
+toShowPrompt(russianWord1, englishWord1, tagBr0);
+toShowPrompt(russianWord2, englishWord2, tagBr1);
 
 showResults();
 
