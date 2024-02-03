@@ -31,6 +31,16 @@
 // --- получается ЛИШНИЙ пробел (который мне Вообще НЕ нужен)
 // сейчас за ГитХаблю --- и попробую этот Пробел УБРАТЬ.....
 
+// 3/02/24
+// Доделал всё - как хотел в предыдущем комментарии 
+// (Всё-таки УБРАЛ Лишнюю Стр.-у пробела)
+// --
+// Правда стало Больше К.-а (незначительно но всё же) --
+// toShowPrompt(russianWord2, englishWord2, tagBr0, tagBr1);
+// на 1 и на 2 - Увеличилось число Пар.-в и А.-в для накручивания Ф.-и
+// --- Но пока смог сделать ТолькО так.
+// Теперь буду Продолжать смотреть 8-й Ур. с Димычем, с 21-й минуты.  
+
 
 //
 
@@ -87,13 +97,13 @@ let showTheNumberOfCorrectAnswers;
 //     document.write(englishWord, tagBr);
 //   }
 // }
-function toShowPrompt(russianWord, englishWord, br) {
+function toShowPrompt(russianWord, englishWord, br1, br2) {
   showWordAcceptAnswer = prompt(russianWord, promptHelpText);
-  document.write(englishWord === showWordAcceptAnswer, br);
+  document.write(englishWord === showWordAcceptAnswer, br1);
   if (englishWord === showWordAcceptAnswer) {
     numberOfCorrectAnswers = numberOfCorrectAnswers + 1;
   } else {
-    document.write(englishWord, br);
+    document.write(englishWord, br2);
   }
 }
 
@@ -126,9 +136,9 @@ function usersCorrectAnswers() {
 
 // Function call block
 
-toShowPrompt(russianWord0, englishWord0, tagBr0);
-toShowPrompt(russianWord1, englishWord1, tagBr0);
-toShowPrompt(russianWord2, englishWord2, tagBr1);
+toShowPrompt(russianWord0, englishWord0, tagBr0, tagBr0);
+toShowPrompt(russianWord1, englishWord1, tagBr0, tagBr0);
+toShowPrompt(russianWord2, englishWord2, tagBr0, tagBr1);
 
 showResults();
 
