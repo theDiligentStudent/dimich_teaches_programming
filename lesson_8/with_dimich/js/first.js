@@ -37,7 +37,7 @@ const message = 'Hello!!';
 
 // 31/01/24
 const message1 = 'Enter your message';
-const message2= 'Hello!!';
+const message2 = 'Hello!!';
 const userInput = prompt(message1);
 // const br = document.write('<br>'); // так НЕ работает
 const userResponse = document.write(userInput);
@@ -58,5 +58,9 @@ document.write(' Your input is: ' + userInput + '</br>');
 
 const userInput2 = prompt(message2);
 document.write(' Your input is: ' + userInput2);
-
-
+document.write(' Your input is: ' + userInput2, '</br>' + '1 ' + '2');
+document.write(
+  ' Your input is: ' + userInput2,
+  '</br>' + '1 ' + '2',
+  '</br>' + '3 ' + '4'
+);
