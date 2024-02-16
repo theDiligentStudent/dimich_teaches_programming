@@ -8,6 +8,12 @@
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+  color: crimson;
+  /* background-color: yellowgreen; */
+}
+
 p {
   font-size: 17px;
   color: rgb(51, 204, 51);
