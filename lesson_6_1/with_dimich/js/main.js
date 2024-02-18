@@ -10,9 +10,21 @@
 // Сделал почти Всё -- теперь осталось сделать чтобы всё было НЕ просто/только -- Текстам и Картинками
 // -- но ещё и ССЫЛКАМИ
 
+// 17 и 18/02/24
+// Работал над тем чтобы сделать КАРТИНКИ - ССЫЛКАМИ 
+// Сделал !! - с помощью ДжиПиТи, конечно,
+// Но Всё же
+// Работает в самом коде и Через П.-е и просто -- Через Ссылки
+// --
+// Я сделал только пока ТАК - только с Первой картинкой ----
+// ----  теперь надо сделать точно также -- со всем Текстом ----
+// чтобы нажатие на Любой текст - ССылало на Сайт
+// (также -- как это сделано/работает на сайте)
+
 //// //// //// ////
 
 // const article1ImageUrl // вариант именования Димычем - П.-й ниже
+const article1Link = "https://thehackernews.com/2024/02/microsoft-openai-warn-of-nation-state.html";
 const article1ImageSrc =
   'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxRK4tPI2hLcsecH1IbrZGpxEBUkSps390MM2wP2PHqm9Q6TLwDgUAU_uGTvAhufbGPtPKrMNnIElu8SAhr5ol_q4XvNDJKLDaIFk96ARir92PcWc6jeMQs1gqlod0lVIjyjZos_yYcxS1ycPEQNvbrnNMQ561FA45cYcBoKbTRaEYsfv_2YY71IlflsA/s728-rw-e30/hackers.jpg';
 const article1title =
@@ -75,7 +87,12 @@ const article4metaDescription =
 // , '<br>
 document.write(
   '<br>',
-  `<img src="${article3ImageUrl}" alt="Article 4 Image">`,
+  '<a href= "https://thehackernews.com/2024/02/microsoft-openai-warn-of-nation-state.html" target="_blank">' +
+    '<img src= "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxRK4tPI2hLcsecH1IbrZGpxEBUkSps390MM2wP2PHqm9Q6TLwDgUAU_uGTvAhufbGPtPKrMNnIElu8SAhr5ol_q4XvNDJKLDaIFk96ARir92PcWc6jeMQs1gqlod0lVIjyjZos_yYcxS1ycPEQNvbrnNMQ561FA45cYcBoKbTRaEYsfv_2YY71IlflsA/s728-rw-e30/hackers.jpg" alt="Article 4 Image">' +
+    '</a>',
+  `<a href= "${article1Link}" target="_blank">` +
+    `<img src= "${article3ImageUrl}" alt="Article 4 Image">` +
+    `</a>`,
   '<br>' + article3Title,
   '<br> <br>' + isThereArticle3LinkToAffiliateProgram,
   '<br>',
