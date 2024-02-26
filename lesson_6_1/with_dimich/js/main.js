@@ -11,7 +11,7 @@
 // -- но ещё и ССЫЛКАМИ
 
 // 17 и 18/02/24
-// Работал над тем чтобы сделать КАРТИНКИ - ССЫЛКАМИ 
+// Работал над тем чтобы сделать КАРТИНКИ - ССЫЛКАМИ
 // Сделал !! - с помощью ДжиПиТи, конечно,
 // Но Всё же
 // Работает в самом коде и Через П.-е и просто -- Через Ссылки
@@ -24,7 +24,8 @@
 //// //// //// ////
 
 // const article1ImageUrl // вариант именования Димычем - П.-й ниже
-const article1Link = "https://thehackernews.com/2024/02/microsoft-openai-warn-of-nation-state.html";
+const article1Link =
+  'https://thehackernews.com/2024/02/microsoft-openai-warn-of-nation-state.html';
 const article1ImageSrc =
   'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxRK4tPI2hLcsecH1IbrZGpxEBUkSps390MM2wP2PHqm9Q6TLwDgUAU_uGTvAhufbGPtPKrMNnIElu8SAhr5ol_q4XvNDJKLDaIFk96ARir92PcWc6jeMQs1gqlod0lVIjyjZos_yYcxS1ycPEQNvbrnNMQ561FA45cYcBoKbTRaEYsfv_2YY71IlflsA/s728-rw-e30/hackers.jpg';
 const article1title =
@@ -93,8 +94,13 @@ document.write(
   `<a href= "${article1Link}" target="_blank">` +
     `<img src= "${article3ImageUrl}" alt="Article 4 Image">` +
     `</a>`,
-  '<br>' + article3Title,
-  '<br> <br>' + isThereArticle3LinkToAffiliateProgram,
+  // '<br>' + article3Title,
+  '<br>' +
+    `<a href= "${article1Link}" target="_blank">` +
+    '<br>' +
+    `<a href= "${article1Link}"` + // ???????   ??????   ????????
+    `</a>`,
+  article3Title + '<br> <br>' + isThereArticle3LinkToAffiliateProgram,
   '<br>',
   article3PublicationDate,
   `&emsp;` + article3Discussed1Issues + article3Discussed2Issues,
