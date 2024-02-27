@@ -22,7 +22,11 @@
 // (также -- как это сделано/работает на сайте)
 
 // 26/02/24
-// смотрю/делаю за Димычем - Дальше --- с 32-й минуты (по 26-ю)
+// смотрю/делаю за Димычем - Дальше --- с 26-й минуты (по 32-ю)
+
+// 27/02/24
+// смотрю/делаю за Димычем - Дальше --- с 32-й минуты (по 44-ю)
+
 
 //// //// //// ////
 
@@ -73,13 +77,17 @@ const article4metaDescription =
 // C. B.
 
 // Пример с Д.В.
-
-document.write('Hello');
-// document.write('<h1>Hello</h1>');  // Not quite correct code
-document.write('<h1>', 'Hello!', '</h1>');
-// And this is how Dmitriy Vladimirovich (D. V.) advises coding
+document.write('Hello!!');
+document.write('<h1>', 'Hello!!', '</h1>');
 
 // САМ - РАБОЧИЙ К.
 
-document.write(`<img src="${article3ImageUrl}" alt="">`);
+document.write('<br>', '</br>');
+document.write(`<img src='${article3ImageUrl}' alt='article image 3'/>`);
 document.write('<h2>', article3Title, '</h2>');
+
+// в строках 86 и 89 ---- РАВНОЗНАЧНЫЙ К.
+document.write('<img src=', '"',article3ImageUrl, '"', 'alt=', '"', 'article 3 image', '"', '/>');
+// alt="article image 3"
+
+document.write('<img src=' + '"' + article3ImageUrl + '"' + 'alt=' + '"' + 'article 3 image' + '"' + '/>');
