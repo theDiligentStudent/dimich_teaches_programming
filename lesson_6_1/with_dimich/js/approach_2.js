@@ -27,6 +27,10 @@
 // 27/02/24
 // смотрю/делаю за Димычем - Дальше --- с 32-й минуты (по 44-ю)
 
+// 28/02/24
+// Повторяю САМ часть Текущего Ур.-а Д. В.-а --- про Конкотенацию Стр.-к 
+// (в dicument.write()) --- 
+// мне кажется - достаточно нормально в этом разобрался (то, что говорил Д. В. - могу делать Самостоятельно)
 
 //// //// //// ////
 
@@ -82,12 +86,19 @@ document.write('<h1>', 'Hello!!', '</h1>');
 
 // САМ - РАБОЧИЙ К.
 
-document.write('<br>', '</br>');
-document.write(`<img src='${article3ImageUrl}' alt='article image 3'/>`);
+document.write('<br>', '<br>');
+// document.write(`<img src=${article3ImageUrl} alt='article 3 image'`);
+document.write('<br>');
 document.write('<h2>', article3Title, '</h2>');
 
-// в строках 86 и 89 ---- РАВНОЗНАЧНЫЙ К.
-document.write('<img src=', '"',article3ImageUrl, '"', 'alt=', '"', 'article 3 image', '"', '/>');
-// alt="article image 3"
+document.write();
+document.write('<br>', '<br>');
 
-document.write('<img src=' + '"' + article3ImageUrl + '"' + 'alt=' + '"' + 'article 3 image' + '"' + '/>');
+document.write('<img src=', article3ImageUrl, 'alt=', '"', 'article 3 image', '"');
+
+document.write('<br>', '<br>', '<br>');
+
+
+document.write('<img src=' + '"' + article3ImageUrl + '"' + '&nbsp; ' + 'alt=' + '"' + 'article 3 image' + '"' + '>');
+
+// document.write(`<img src=${article3ImageUrl} alt='article 3 image'`);
