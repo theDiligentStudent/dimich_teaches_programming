@@ -28,9 +28,12 @@
 // смотрю/делаю за Димычем - Дальше --- с 32-й минуты (по 44-ю)
 
 // 28/02/24
-// Повторяю САМ часть Текущего Ур.-а Д. В.-а --- про Конкотенацию Стр.-к 
-// (в dicument.write()) --- 
+// Повторяю САМ часть Текущего Ур.-а Д. В.-а --- про Конкотенацию Стр.-к
+// (в document.write()) ---
 // мне кажется - достаточно нормально в этом разобрался (то, что говорил Д. В. - могу делать Самостоятельно)
+
+// 29/02/24
+// Покопипастил немного за Д. В.-м (где-то с 44й по 46ю минуту его Ур.-а)
 
 //// //// //// ////
 
@@ -42,8 +45,6 @@
 
 // article one
 
-// const article3Link =
-// 'https://thehackernews.com/2024/02/microsoft-openai-warn-of-nation-state.html';
 const article3ImageUrl =
   'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGKzjBY3OOGttaxkmh8q7aiKyqIRXNwl2tk8tfqxVkOELNUwatuCfFj99ql7EpRXQ7otXkQCrYp8Pn7CvYJoc4GIUvD_AeGk53O9F_HQ3RsYT9AHunGtaGJxq0Jg-YzcX0tCKRkUUmw70FzmAR1vGWuFa0PTdtnESAVgSYxuXP6eJu4CGsOilzdsiYtPq7/s728-rw-e365/machine-learning.jpg';
 const article3Title =
@@ -81,24 +82,28 @@ const article4metaDescription =
 // C. B.
 
 // Пример с Д.В.
-document.write('Hello!!');
-document.write('<h1>', 'Hello!!', '</h1>');
 
 // САМ - РАБОЧИЙ К.
 
 document.write('<br>', '<br>');
-// document.write(`<img src=${article3ImageUrl} alt='article 3 image'`);
-document.write('<br>');
+
+// document.write('<img ', 'src=', ' " ', article3ImageUrl, ' " ', 'alt=', ' " ', 'article 3 image', ' " ', '/>');
+document.write(
+  '<img ',
+  'src="',
+  article3ImageUrl,
+  ' " ',
+  'alt="',
+  'article 3 image',
+  ' "/>'
+); // Д. В. сделал Стр.-у ТАКОЙ  --- НЕ так, как я. НЕ стал  её так разбивать.
+// , 'alt=', ' " ', 'article 3 image', ' " ',
+// document.write(`<img src="${article3ImageUrl}" alt="article 3 image"/>`);
+
 document.write('<h2>', article3Title, '</h2>');
-
+document.write('<span>', article3PublicationDate, '</span>');
+document.write('<p>', article3metaDescription, '</p>');
 document.write();
-document.write('<br>', '<br>');
+document.write();
 
-document.write('<img src=', article3ImageUrl, 'alt=', '"', 'article 3 image', '"');
-
-document.write('<br>', '<br>', '<br>');
-
-
-document.write('<img src=' + '"' + article3ImageUrl + '"' + '&nbsp; ' + 'alt=' + '"' + 'article 3 image' + '"' + '>');
-
-// document.write(`<img src=${article3ImageUrl} alt='article 3 image'`);
+// document.write('<br>', '<br>', '<br>');
