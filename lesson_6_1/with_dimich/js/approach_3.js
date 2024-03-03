@@ -39,6 +39,8 @@
 // Поделал Ур. (текущий) с Д. В.-м -- до 49й минуты
 // Потом создал два Новых html- и js-файла --- и ещё раз написал весь К. Визуализации (именно Программный К.) от начала и до конца того отрывка видео, который досмотрел.
 
+// 3/03/24
+// Закончил смотреть/и Делать этот Урок Д. В.-а ---- 6а
 
 //// //// //// ////
 
@@ -70,7 +72,7 @@ const article4ImageUrl =
 const article4Title = 'Solve Your SaaS Vulnerabilities in Just 2 Hours a Week';
 const article4PublicationDate = null;
 const isArticle4ThereLinkToAffiliateProgramUrl = true;
-const article4PartnerIntegrationName = 'Wing Security';
+const article4PartnerIntegrationName = '😄 Wing Security';
 const article4partnerIntegrationUrl =
   'https://thehackernews.uk/state-of-ai-cloud-2024';
 const article4Discussed1Issues = 'SaaS Security';
@@ -132,9 +134,8 @@ document.write(
   '<a href="',
   article4partnerIntegrationUrl,
   '"',
-  'target="',
-  '_blank"',
-  '>',
+  'target="_blank"',
+  'style="text-decoration: none">',
   article4PartnerIntegrationName,
   '</a>'
 );
@@ -148,4 +149,9 @@ document.write(
 );
 document.write('<span>', article4metaDescription, '</span>');
 
+document.write(tagBr);
+
+document.write('<', 'hr', '>');
+
+document.write(tagBr);
 // document.write(tagBr);
