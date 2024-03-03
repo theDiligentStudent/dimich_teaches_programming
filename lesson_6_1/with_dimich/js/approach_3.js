@@ -35,6 +35,11 @@
 // 29/02/24
 // Покопипастил немного за Д. В.-м (где-то с 44й по 46ю минуту его Ур.-а)
 
+// 1.2/03/24
+// Поделал Ур. (текущий) с Д. В.-м -- до 49й минуты
+// Потом создал два Новых html- и js-файла --- и ещё раз написал весь К. Визуализации (именно Программный К.) от начала и до конца того отрывка видео, который досмотрел.
+
+
 //// //// //// ////
 
 // const article1ImageUrl // вариант именования Димычем - П.-й ниже
@@ -64,7 +69,7 @@ const article4ImageUrl =
   'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicyqhWZMGYpF5i1XMZAwGkU4NNNWDJqDBKwmiFO-tP3ZRUn9EhnYl46_ukYUV-m6FbAOB5YneWyL9Te04v2d13y18b_y2gLQ0IaQghnj8e1m_aUNFhH1jaLOCcS7UZSNk6RGCxhwsbHPkZjnVHAxFRQHPusd-MI5Z7sx2GZFx2JuIvQSw1H0lYhNZg4DHW/s728-rw-e365/wing.jpg';
 const article4Title = 'Solve Your SaaS Vulnerabilities in Just 2 Hours a Week';
 const article4PublicationDate = null;
-const isArticle4ThereLinkToAffiliateProgramUrl = 'true';
+const isArticle4ThereLinkToAffiliateProgramUrl = true;
 const article4PartnerIntegrationName = 'Wing Security';
 const article4partnerIntegrationUrl =
   'https://thehackernews.uk/state-of-ai-cloud-2024';
@@ -91,7 +96,7 @@ document.write(
   article3ImageUrl,
   '"',
   'alt="',
-  'article 3 image',
+  'image 3 article',
   '"/>'
 );
 document.write('<h2>', article3Title, '</h2>');
@@ -99,31 +104,29 @@ document.write('<span>', article3PublicationDate, '</span>');
 document.write(
   '<p>',
   article3Discussed1Issues,
-  ' / ',
+  ' /',
+  ' ',
   article3Discussed2Issues,
   '</p>'
 );
-document.write();
-document.write('<p>', article3metaDescription, '</p>');
-document.write();
+document.write('<span>', article3metaDescription, '</span>');
 
-// document.write('<br>', '<br>', '<br>');
-
-document.write('<hr/>');
+document.write(tagBr);
+document.write('<', 'hr', '>');
 
 // second article
 
-document.write('<br/>');
+document.write('<', 'br', '>');
+
 document.write(
   '<img src="',
   article4ImageUrl,
   '"',
   'alt="',
-  'article 4 image',
+  'image 3 article',
   '"/>'
 );
 document.write('<h2>', article4Title, '</h2>');
-//  <a href=""></a> }
 
 document.write(
   '<a href="',
@@ -138,10 +141,11 @@ document.write(
 document.write(
   '<p>',
   article4Discussed1Issues,
-  ' / ',
+  ' /',
+  ' ',
   article4Discussed2Issues,
   '</p>'
 );
-document.write();
-document.write('<p>', article4metaDescription, '</p>');
-document.write();
+document.write('<span>', article4metaDescription, '</span>');
+
+// document.write(tagBr);
