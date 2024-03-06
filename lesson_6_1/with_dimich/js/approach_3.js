@@ -72,7 +72,7 @@ const article4ImageUrl =
 const article4Title = 'Solve Your SaaS Vulnerabilities in Just 2 Hours a Week';
 const article4PublicationDate = null;
 const isArticle4ThereLinkToAffiliateProgramUrl = true;
-const article4PartnerIntegrationName = '😄 Wing Security';
+const article4PartnerIntegrationName = '🌏 Wing Security';
 const article4partnerIntegrationUrl =
   'https://thehackernews.uk/state-of-ai-cloud-2024';
 const article4Discussed1Issues = 'SaaS Security';
