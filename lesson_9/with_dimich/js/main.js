@@ -3,22 +3,23 @@
 // 9 Ур. - Условная Логика - Ветвление Про.-ы
 
 // 6/03/24
-// В очередной раз --- САМ -- поработал над Про.-й (после 3-х первых минут В.)
+// В очередной раз --- САМ -- немного поработал над Про.-й (после 3-х первых минут В.)
+
+// 9/03/24
+// Смотрю/Делаю Ур. Д. В.-а с 16-й минуты по 26ю
 
 // /// // ///
 
 // I. B.
+// const productTheCost = 120;
+// let cardMoneyAmount1 = 100;
+// let cardMoneyAmount2 = 120;
+// let cardMoneyAmount3 = 200;
 
-const tagBr = '</br>';
-const operationBeginning = 'Start';
-let inputData;
-const promptValue = 100;
-const textPrompt = 'Deposit 100 dollars';
-const amountPurchase = 100;
-const sufficientAmount = 'The product is purchased';
-const insufficientFunds = 'Insufficient funds on your card';
-const operationEnd = 'End';
-
+let balance1 = 100;
+let balance2 = 120;
+let balance3 = 200;
+const productPrice = 120;
 
 // //
 
@@ -30,20 +31,49 @@ const operationEnd = 'End';
 
 // Function declaration block
 
+// function goodsPurchase() {
+//   document.write('<br>', 'START', '<br>');
+//   if(true) {document.write('The product is purchased');
+//   // if(false) {document.write('The product is purchased');
+//     } else {
+//       document.write('There are insufficient funds on the card');
+//     }
+//   document.write('<br>','END');
+// }
+
+// function goodsPurchase() {
+//   document.write('<br>', 'START', '<br>');
+//   if(cardMoneyAmount1 >= productTheCost) {document.write('The product is purchased');
+//   // if(false) {document.write('The product is purchased');
+//     } else {
+//       document.write('There are insufficient funds on the card');
+//     }
+//   document.write('<br>','END');
+// }
+
+// function goodsPurchase() {
+//   document.write('<br>', 'START', '<br>');
+//   // if (balance2 >= productPrice) {
+//   if (productPrice <= balance1) {
+//     document.write('The product is        purchased');
+//     // if(false) {document.write('The product is purchased');
+//   } else {
+//     document.write('There are insufficient funds on the card');
+//   }
+//   document.write('<br>', 'END');
+// }
+
+// 10/30/24
+// Ещё раз играемся и Изменяем К.
 function goodsPurchase() {
-  alert('Start');
-  document.write(tagBr);
-  // document.write(operationBeginning);
-  document.write(tagBr);
-  inputData = prompt(promptValue, textPrompt);
-  if (inputData >= amountPurchase) {
-    document.write(sufficientAmount);
+  document.write('<br>', 'START', '<br>');
+  // if (balance2 >= productPrice) {
+  if (balance3 <= productPrice) {
+    document.write('There are insufficient funds on the card');
   } else {
-    document.write(insufficientFunds);
+    document.write('The product is        purchased');
   }
-  // document.write(tagBr);
-  // document.write(operationEnd);
-  alert(operationEnd);
+  document.write('<br>', 'END');
 }
 
 //
