@@ -8,6 +8,11 @@
 // 9/03/24
 // Смотрю/Делаю Ур. Д. В.-а с 16-й минуты по 26ю
 
+// 11/03/24
+// На 30й минуте Д. В. даёт Задачку на Дом
+// Я полностью её выполнил --Купить или НЕ суметь купить ТРИ ТОВАРА  
+// Сделал Ф.-ю (внутри которой prompt и У.К.) и вызвал её Трижды
+
 // /// // ///
 
 // I. B.
@@ -19,7 +24,10 @@
 let balance1 = 100;
 let balance2 = 120;
 let balance3 = 200;
-const productPrice = 120;
+let cardsBalance = 200;
+// const productPrice = window.prompt('How much does this product cost?');
+// let productPrice = window.prompt('How much does this product cost?');
+let cardsFundsBalance;
 
 // //
 
@@ -31,53 +39,56 @@ const productPrice = 120;
 
 // Function declaration block
 
-// function goodsPurchase() {
-//   document.write('<br>', 'START', '<br>');
-//   if(true) {document.write('The product is purchased');
-//   // if(false) {document.write('The product is purchased');
-//     } else {
-//       document.write('There are insufficient funds on the card');
-//     }
-//   document.write('<br>','END');
-// }
-
-// function goodsPurchase() {
-//   document.write('<br>', 'START', '<br>');
-//   if(cardMoneyAmount1 >= productTheCost) {document.write('The product is purchased');
-//   // if(false) {document.write('The product is purchased');
-//     } else {
-//       document.write('There are insufficient funds on the card');
-//     }
-//   document.write('<br>','END');
-// }
-
-// function goodsPurchase() {
-//   document.write('<br>', 'START', '<br>');
-//   // if (balance2 >= productPrice) {
-//   if (productPrice <= balance1) {
-//     document.write('The product is        purchased');
-//     // if(false) {document.write('The product is purchased');
-//   } else {
-//     document.write('There are insufficient funds on the card');
-//   }
-//   document.write('<br>', 'END');
-// }
-
 // 10/30/24
 // Ещё раз играемся и Изменяем К.
 function goodsPurchase() {
-  document.write('<br>', 'START', '<br>');
+  // document.write('<br>', 'START', '<br>');
+  alert('START');
   // if (balance2 >= productPrice) {
-  if (balance3 <= productPrice) {
-    document.write('There are insufficient funds on the card');
+  if (balance3 < productPrice) {
+    // document.write('There are insufficient funds on the card');
+    alert('There are insufficient funds on the card');
   } else {
-    document.write('The product is        purchased');
+    // document.write('The product is purchased');
+    alert('The product is purchased');
   }
-  document.write('<br>', 'END');
+  balance3 = balance3 - productPrice;
+  alert(balance3);
+  // document.write('<br>', 'END');
+  alert('END');
+}
+
+// function goodsPurchase1(balance) {
+function goodsPurchase1() {
+  alert(cardsBalance);
+  alert('START');
+  const productPrice = window.prompt('How much does this product cost?');
+  if (cardsBalance < productPrice) {
+    alert('There are insufficient funds on the card');
+  }
+  // else if (cardsBalance === 0) {
+  //   alert('The operation has been cancelled. The balance on the card is 0.'); }
+  else {
+    alert('The product is purchased');
+  }
+
+  if (cardsBalance >= productPrice) {
+    cardsBalance = cardsBalance - productPrice;
+  }
+
+  if (cardsBalance > 0) {
+    alert(cardsBalance);
+  } else {
+    alert('The card balance is 0.');
+  }
+  alert('END');
 }
 
 //
 // Function call block
-goodsPurchase();
+goodsPurchase1();
+goodsPurchase1();
+goodsPurchase1();
+// goodsPurchase();
 
 // window.document.write('Hello!');
