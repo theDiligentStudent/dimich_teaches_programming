@@ -24,6 +24,10 @@
 // Поудалял как можно больше (лишних) комментариев
 // Теперь буду Коммитить Изменения
 
+// 14/03/24
+// Досмотрел/Доделал 9-й /у Д. В.-а в плейлисте он уже 11-й/ до 35-й минуты
+
+
 // /// // ///
 // /// // ///
 // /// // ///
@@ -36,7 +40,10 @@ let productPrice;
 
 const forPromptText = 'How much does this product cost?';
 
-let cardsBalance = 200;
+// let cardsBalance = 200;
+// Делаю Баланс На Карте НЕ ЧИСЛОМ, а СТРОКОЙ !!!!!!
+// ЧТОБЫ СДЕЛАТЬ один Тип Данных (при сравнении в . Л.-е
+let cardsBalance = '200';
 
 const productPurchased = 'The product is purchased';
 const lackOfFunds = 'There are insufficient funds on the card';
@@ -91,8 +98,25 @@ function goodsPurchase() {
 /////////////////////////
 
 // Function call block
-goodsPurchase();
-goodsPurchase();
-goodsPurchase();
 
+goodsPurchase();
+// goodsPurchase();
+// goodsPurchase();
 
+///
+////
+/////
+
+// ИЗУЧАЮ ПРОБУЮ RETURN
+
+// function sum(a, b) {
+
+//   // let c = a + b;
+//    c = a + b;  // Почему-то Всё Работает БЕЗ *!!!!* Объявления П.-й.....
+//   return c;
+// }
+
+// let d = sum(4, 5);
+// console.log (d);
+// alert (d);
+// console.log(d + 5);
