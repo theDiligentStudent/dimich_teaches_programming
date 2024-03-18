@@ -26,7 +26,7 @@
 
 // 14/03/24
 // Досмотрел/Доделал 9-й /у Д. В.-а в плейлисте он уже 11-й/ до 35-й минуты
-
+// Удалил ещё немного комментариев, которые в данный момент уже наверное являются больше - лишними
 
 // /// // ///
 // /// // ///
@@ -36,14 +36,16 @@
 
 const operationStart = 'START';
 
-let productPrice;
+let productPriceString;
 
 const forPromptText = 'How much does this product cost?';
 
-// let cardsBalance = 200;
+// 14/03/24
+// Возвращаю баланс карты числом ---- т.к. Д. В. кажется будет использовать ДругоЙ способ -- НЕ перевод Числа в Стр.-у
+let cardsBalance = 200;
 // Делаю Баланс На Карте НЕ ЧИСЛОМ, а СТРОКОЙ !!!!!!
 // ЧТОБЫ СДЕЛАТЬ один Тип Данных (при сравнении в . Л.-е
-let cardsBalance = '200';
+// let cardsBalance = '200';
 
 const productPurchased = 'The product is purchased';
 const lackOfFunds = 'There are insufficient funds on the card';
@@ -55,13 +57,6 @@ const operationEnd = 'END';
 
 // Function declaration block
 
-// 10/30/24
-// Ещё раз играемся и Изменяем К.
-
-// Закомментирую эту Ф.-ю чтобы Зарефакторить мою/Д. В.-а Про.-у
-// ---
-// Вынесу все Стр.-ые Д. в I. B. и позаношу их в П.-е
-
 ///////////
 
 // Рефакторю мой К./мою Ф.-ю
@@ -70,20 +65,25 @@ const operationEnd = 'END';
 function goodsPurchase() {
   alert(cardsBalance);
   alert(operationStart);
-  // const productPrice = window.prompt(forPromptText);
-  productPrice = window.prompt(forPromptText); // Объявил П. в I. B. --- а Здесь -- присвоил ей З. (результат prompt-а)
-  if (productPrice <= cardsBalance) {
+
+  // productPrice = window.prompt(forPromptText);
+  productPriceString = window.prompt(forPromptText); // Переписываю К.за Д. В.-м
+  // const productCost = +productPriceString;    The first option
+  const productCost = window.Number(productPriceString); // the second option
+  // const productCost = Number(productPriceString);  // the second option
+
+  if (productCost <= cardsBalance) {
     alert(productPurchased);
-  }
-  // else if (productPrice === '') { alert('There are insufficient funds on the card');}
-  // К. в Этой Строке почему-то НЕ получилось реализовать.....
-  ///////
-  else {
+  } else {
     alert(lackOfFunds);
   }
 
-  if (productPrice <= cardsBalance) {
-    cardsBalance = cardsBalance - productPrice;
+  // if (productPriceString <= cardsBalance) {
+  // Переписываю К.за Д. В.-м
+  if (productCost <= cardsBalance) {
+    // cardsBalance = cardsBalance - productPriceString;
+    // Переписываю К.за Д. В.-м
+    cardsBalance = cardsBalance - productCost;
   }
 
   if (cardsBalance > 0) {
