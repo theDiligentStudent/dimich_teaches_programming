@@ -40,9 +40,8 @@
 
 // 21/03/24
 // Посмотрел  этот /9-й (у Д. В.-а он почему-то 11-й)/ Ур. до почти 42-й минуты
-// -- и Сперва -- сделал Всё САМ -- всё то, что думаю он будет делать дальше 
+// -- и Сперва -- сделал Всё САМ -- всё то, что думаю он будет делать дальше
 // (т.е. попытался забежать НЕмножко Наперёд)
-
 
 // /// // ///
 // /// // ///
@@ -58,6 +57,8 @@ let cardsBalance = 200;
 const forPromptText = 'How much does this product cost?';
 let productPriceString;
 let productCost;
+
+const isNumber = productCost === productCost;
 
 const productPurchased = 'The product is purchased';
 const lackOfFunds = 'There are insufficient funds on the card';
@@ -101,8 +102,18 @@ function goodsPurchase() {
   // Вариант Д. В.-а:
 
   // First
-  if (!isNaN(productCost)) {
-    // alert(lackOfFunds);
+  // if (!isNaN(productCost)) {
+  // isNaN -- it is an Object Window function  if (!isNaN(productCost)) {
+  // alert(lackOfFunds);
+
+  if (!window.isNaN(productCost)) {
+    // Ещё один способ проверки: является ли Число Числом
+    // if (productCost === productCost){
+
+    // и Ещё Один -- способ проверки -- связанный с Предыдущим. -- Только здесь - мы операцию Сравнения засвовываем в П.-ю
+    // const isNumber = (productCost === productCost);
+    // if (isNumber) {
+
     if (productCost > cardsBalance) {
       alert(lackOfFunds);
     } else {
