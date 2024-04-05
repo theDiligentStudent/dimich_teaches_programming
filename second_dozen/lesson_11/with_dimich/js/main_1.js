@@ -49,3 +49,28 @@ const fundsTransfer = {
   to: 'bookstore Ranok',
   transferAmount: 450,
 };
+
+// 4/04/24
+// I do it myself
+let laptop3 = {
+  name: 'MacBook',
+  manufacturer: {
+    name: 'APPLE',
+    assortment: 'laptops, smartphones, tablets, wireless headphones',
+    isBrandReliable: true,
+  },
+  price: 2000,
+};
+
+// D. V. is doing it
+let laptop4 = {
+  name: 'MacBook',
+  manufacturer: {
+    title: 'APPLE',
+    factoriesNumbers: 75,
+    factoryAddress: 'China, USA, Honkong',
+  },
+  price: 2000,
+};
+console.log(laptop4.manufacturer.factoryAddress);
+console.log(laptop4.manufacturer.factoryAddress.toUpperCase());
