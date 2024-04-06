@@ -8,6 +8,14 @@
 //   4/04/24
 //  Продолжаю смотреть Ур. Димыча, c 12-й минуты
 
+// 6/04/24
+// Продолжаю смотреть Ур. Димыча, посмотрел по 19-ю минуты
+
+
+// // /// /// /// // //
+// // /// /// /// // //
+// // /// /// /// // //
+
 // alert('Hello');  // Проверка подключения JS-файла к html
 
 let myConsole = {};
@@ -74,3 +82,38 @@ let laptop4 = {
 };
 console.log(laptop4.manufacturer.factoryAddress);
 console.log(laptop4.manufacturer.factoryAddress.toUpperCase());
+
+laptop4.manufacturer.factoryAddress = 'China, USA, Macau, Hong Kong';
+console.log(laptop4.manufacturer.factoryAddress);
+
+const myRoom = {
+  walls: {
+    quantity: {
+      numbers: 4,
+      hasWindows: true,
+      doors: {
+        hasOnlyOneDoor: true,
+      },
+    },
+  },
+};
+console.log(myRoom.walls.quantity.doors.hasOnlyOneDoor);
+myRoom.walls.quantity.doors.hasOnlyOneDoor = false;
+console.log(myRoom.walls.quantity.doors.hasOnlyOneDoor);
+
+const room = {
+  wall1: { hasWindow: true, hasDoor: false },
+  wall2: { hasWindow: false, hasDoor: true },
+  wall3: { hasWindow: false, hasDoor: false },
+  wall4: { hasWindow: false, hasDoor: true },
+};
+console.log(room.wall3);
+console.log(room.wall4);
+
+room.wall3.hasDoor = true;
+room.wall4.hasDoor = false;
+
+console.log(room.wall3);
+console.log(room.wall4);
+
+
