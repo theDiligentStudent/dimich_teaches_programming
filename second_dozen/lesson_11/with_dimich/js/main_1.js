@@ -11,6 +11,8 @@
 // 6/04/24
 // Продолжаю смотреть Ур. Димыча, посмотрел по 19-ю минуты
 
+// 7/04/24
+// Продолжаю смотреть Ур. Димыча about Objects  -- по 21ю минуту
 
 // // /// /// /// // //
 // // /// /// /// // //
@@ -86,6 +88,10 @@ console.log(laptop4.manufacturer.factoryAddress.toUpperCase());
 laptop4.manufacturer.factoryAddress = 'China, USA, Macau, Hong Kong';
 console.log(laptop4.manufacturer.factoryAddress);
 
+//////////////
+
+// 6/04/24
+
 const myRoom = {
   walls: {
     quantity: {
@@ -116,4 +122,33 @@ room.wall4.hasDoor = false;
 console.log(room.wall3);
 console.log(room.wall4);
 
+/////////////
 
+// 7/04/24
+
+const roomD = {
+  wall1: {
+    hasAWindow: true,
+    color: 'light green',
+    airConditioner: null,
+  },
+  wall2: {
+    hasAWindow: false,
+    color: 'light green',
+    airConditioner: {
+      manufacturer: 'ASUS',
+      power: 1500,
+      voltage: 200,
+    },
+  },
+  wall3: {
+    hasAWindow: false,
+    color: 'light green',
+    airConditioner: null,
+  },
+  wall4: {
+    hasAWindow: false,
+    color: 'light green',
+    airConditioner: null,
+  },
+};
