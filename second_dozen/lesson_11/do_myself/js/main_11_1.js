@@ -59,7 +59,20 @@ const hintPromptRussian = 'Enter the word in English!';
 const messageCorrect = 'Correct answer!';
 const messageIncorrect = 'False ((';
 
-let correctAnswersNumber = 0;
+// 10/04/24
+const numberAnswersTotal = 3;
+let numberAnswersCorrect = 0;
+const numberCompare = 50;
+
+// 11/04/24
+const encouragement = 'Work hard and try harder';
+const praise = 'Well done!!';
+
+let interestСalculation;
+let correctAnswersPercentage;
+
+const interestMessage = 'The number of your correct answers is ';
+const percentIcon = '%';
 
 ///////
 
@@ -78,6 +91,7 @@ let correctAnswersNumber = 0;
 // (до того состояния -- кокой она была в конце 6го Ур. Димыча
 // "Сложная Про. if else  проценты")
 
+// function iLearn(learnWord1, learnWord2, array1, array2) {
 function learnEnglishWords(learnWord1, learnWord2, array1, array2) {
   alert(learnWord1);
   let hintPrompt;
@@ -89,21 +103,41 @@ function learnEnglishWords(learnWord1, learnWord2, array1, array2) {
   const learnWordPrompt = prompt(hintPrompt);
   if (learnWordPrompt !== learnWord2) {
     alert(messageIncorrect);
-    alert(correctAnswersNumber);
+    alert(numberAnswersCorrect);
   } else {
     alert(messageCorrect);
-    correctAnswersNumber = correctAnswersNumber + 1;
-    alert(correctAnswersNumber);
+    numberAnswersCorrect = numberAnswersCorrect + 1;
+    alert(numberAnswersCorrect);
+  }
+}
+// learnEnglishWords();
+// learnEnglishWords();
+// learnEnglishWords();
+// learnEnglishWords(arrayRussian[0], arrayEnglish[0], arrayRussian, arrayEnglish);
+// learnEnglishWords(arrayRussian[1], arrayEnglish[1], arrayRussian, arrayEnglish);
+// learnEnglishWords(arrayEnglish[2], arrayRussian[2], arrayRussian, arrayEnglish);
+
+function learnWords() {
+  interestСalculation = (numberAnswersCorrect / numberAnswersTotal) * 100;
+  correctAnswersPercentage =
+    interestMessage + Math.round(interestСalculation) + percentIcon;
+  alert(correctAnswersPercentage);
+  if (interestСalculation <= numberCompare) {
+    alert(encouragement);
+  } else {
+    alert(praise);
   }
 }
 
+// learnEnglishWords(arrayRussian[0], arrayEnglish[0], arrayRussian, arrayEnglish);
+// learnEnglishWords(arrayRussian[1], arrayEnglish[1], arrayRussian, arrayEnglish);
+// learnEnglishWords(arrayEnglish[2], arrayRussian[2], arrayRussian, arrayEnglish);
+// arrayRussian[2], // arrayEnglish[2],
+
 learnEnglishWords(arrayRussian[0], arrayEnglish[0], arrayRussian, arrayEnglish);
 learnEnglishWords(arrayRussian[1], arrayEnglish[1], arrayRussian, arrayEnglish);
-learnEnglishWords(
-  // arrayRussian[2],
-  // arrayEnglish[2],
-  arrayEnglish[2],
-  arrayRussian[2],
-  arrayRussian,
-  arrayEnglish
-);
+learnEnglishWords(arrayEnglish[2], arrayRussian[2], arrayRussian, arrayEnglish);
+learnWords();
+// }
+
+// iLearn(arrayRussian[0], arrayEnglish[0], arrayRussian[1], arrayEnglish[1], arrayRussian, arrayEnglish);
