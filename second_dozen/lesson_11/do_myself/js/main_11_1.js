@@ -25,12 +25,16 @@
 
 // Поудалял все Лишние комментарии из Про.-ы
 // и немножко видоизменил её (чуточку)
-// -- 
+// --
 // в Ф.-ю learnWordPrompt в У. if (если НЕ верно) -- добавил:
 // alert(learnWordPrompt)
 // alert(learnWord2)
 // -- две строки - "Показать введённый мной НЕ правильный вариант"
 // и -- Сразу Же -- "Показать Правильный варианта этого слова"
+
+// GPT написал мне К. для Подсказок в prompt к Об.-м
+// я его Переписал
+// (старые Строчки - к Ма.-м - я закомментировал -- теперь Закоммитчу этот К. - Потом вернусь - поудаляю - Лишние комментарии - Закоммитчу - Продолжу смотреть В. с Димычем)
 
 ////////////////////
 ////////////////////
@@ -93,20 +97,38 @@ const percentIcon = '%';
 
 //  Function Initialization bloc
 
-function learnEnglishWords(learnWord1, learnWord2, array1, array2) {
+// Вариант Ф.-и для Ма.-в!
+
+// function learnEnglishWords(learnWord1, learnWord2, array1, array2) {
+//   alert(learnWord1);
+//   let hintPrompt;
+//   if (array1.includes(learnWord1)) {
+//     hintPrompt = hintPromptRussian;
+//   } else if (array2.includes(learnWord1)) {
+//     hintPrompt = hintPromptEnglish;
+//   }
+
+// Вариант Ф.-и для Об.-в!
+
+// function learnEnglishWords(learnWord1, learnWord2, array1, array2) {
+function learnEnglishWords(learnWord1, learnWord2, wordsEnglish, wordsRussian) {
   alert(learnWord1);
   let hintPrompt;
-  if (array1.includes(learnWord1)) {
+  // if (array1.includes(learnWord1)) {
+  // Замена строк с "для Ма.-в" на "для Об.-в"
+  if (Object.values(wordsEnglish).includes(learnWord1)) {
     hintPrompt = hintPromptRussian;
-  } else if (array2.includes(learnWord1)) {
+    // } else if (array2.includes(learnWord1)) {
+    // Замена строк с "для Ма.-в" на "для Об.-в"
+  } else if (Object.values(wordsRussian).includes(learnWord1)) {
     hintPrompt = hintPromptEnglish;
   }
   const learnWordPrompt = prompt(hintPrompt);
   if (learnWordPrompt !== learnWord2) {
     alert(messageIncorrect);
     alert(numberAnswersCorrect);
-    alert(learnWordPrompt)
-    alert(learnWord2)
+    alert(learnWordPrompt);
+    alert(learnWord2);
   } else {
     alert(messageCorrect);
     numberAnswersCorrect = numberAnswersCorrect + 1;
@@ -128,7 +150,29 @@ function learnWords() {
 
 // Function Call block
 
-learnEnglishWords(arrayRussian[0], arrayEnglish[0], arrayRussian, arrayEnglish);
-learnEnglishWords(arrayRussian[1], arrayEnglish[1], arrayRussian, arrayEnglish);
-learnEnglishWords(arrayEnglish[2], arrayRussian[2], arrayRussian, arrayEnglish);
+// learnEnglishWords(arrayRussian[0], arrayEnglish[0], arrayRussian, arrayEnglish);
+// Замена строк с "для Ма.-в" на "для Об.-в"
+learnEnglishWords(
+  wordsRussian.word0,
+  wordsEnglish.word0,
+  wordsRussian,
+  wordsEnglish
+);
+// learnEnglishWords(arrayRussian[1], arrayEnglish[1], arrayRussian, arrayEnglish);
+// Замена строк с "для Ма.-в" на "для Об.-в"
+learnEnglishWords(
+  wordsRussian.word1,
+  wordsEnglish.word1,
+  wordsRussian,
+  wordsEnglish
+);
+// Замена строк с "для Ма.-в" на "для Об.-в"
+// learnEnglishWords(arrayEnglish[2], arrayRussian[2], arrayRussian, arrayEnglish);
+learnEnglishWords(
+  wordsEnglish.word2,
+  wordsRussian.word2,
+  wordsRussian,
+  wordsEnglish
+);
+
 learnWords();
