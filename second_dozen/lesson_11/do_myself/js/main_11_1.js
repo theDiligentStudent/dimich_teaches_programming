@@ -19,6 +19,19 @@
 // Продолжаю САМ Вспоминать и Писать/Делать Про.-у Димыча
 // "по изучению Иностранных Слов"
 
+// 11/04/24
+// Доделал Про.-ку (как смог) - целиком
+// слова заключены в Ма.-ы
+
+// Поудалял все Лишние комментарии из Про.-ы
+// и немножко видоизменил её (чуточку)
+// -- 
+// в Ф.-ю learnWordPrompt в У. if (если НЕ верно) -- добавил:
+// alert(learnWordPrompt)
+// alert(learnWord2)
+// -- две строки - "Показать введённый мной НЕ правильный вариант"
+// и -- Сразу Же -- "Показать Правильный варианта этого слова"
+
 ////////////////////
 ////////////////////
 ////////////////////
@@ -80,18 +93,6 @@ const percentIcon = '%';
 
 //  Function Initialization bloc
 
-// Function Call block
-
-// 9/04/24
-// Код -- который написал мне ДжиПиТи. Включая и вызовы Ф.-и
-// --
-// Код Полностью/Абсолютно - Рабочий
-// -- я его Скопирую и Закомментирую чтобы --
-// - на его Основании - продолжать писать/дописывать Про.-у
-// (до того состояния -- кокой она была в конце 6го Ур. Димыча
-// "Сложная Про. if else  проценты")
-
-// function iLearn(learnWord1, learnWord2, array1, array2) {
 function learnEnglishWords(learnWord1, learnWord2, array1, array2) {
   alert(learnWord1);
   let hintPrompt;
@@ -104,18 +105,14 @@ function learnEnglishWords(learnWord1, learnWord2, array1, array2) {
   if (learnWordPrompt !== learnWord2) {
     alert(messageIncorrect);
     alert(numberAnswersCorrect);
+    alert(learnWordPrompt)
+    alert(learnWord2)
   } else {
     alert(messageCorrect);
     numberAnswersCorrect = numberAnswersCorrect + 1;
     alert(numberAnswersCorrect);
   }
 }
-// learnEnglishWords();
-// learnEnglishWords();
-// learnEnglishWords();
-// learnEnglishWords(arrayRussian[0], arrayEnglish[0], arrayRussian, arrayEnglish);
-// learnEnglishWords(arrayRussian[1], arrayEnglish[1], arrayRussian, arrayEnglish);
-// learnEnglishWords(arrayEnglish[2], arrayRussian[2], arrayRussian, arrayEnglish);
 
 function learnWords() {
   interestСalculation = (numberAnswersCorrect / numberAnswersTotal) * 100;
@@ -129,15 +126,9 @@ function learnWords() {
   }
 }
 
-// learnEnglishWords(arrayRussian[0], arrayEnglish[0], arrayRussian, arrayEnglish);
-// learnEnglishWords(arrayRussian[1], arrayEnglish[1], arrayRussian, arrayEnglish);
-// learnEnglishWords(arrayEnglish[2], arrayRussian[2], arrayRussian, arrayEnglish);
-// arrayRussian[2], // arrayEnglish[2],
+// Function Call block
 
 learnEnglishWords(arrayRussian[0], arrayEnglish[0], arrayRussian, arrayEnglish);
 learnEnglishWords(arrayRussian[1], arrayEnglish[1], arrayRussian, arrayEnglish);
 learnEnglishWords(arrayEnglish[2], arrayRussian[2], arrayRussian, arrayEnglish);
 learnWords();
-// }
-
-// iLearn(arrayRussian[0], arrayEnglish[0], arrayRussian[1], arrayEnglish[1], arrayRussian, arrayEnglish);
