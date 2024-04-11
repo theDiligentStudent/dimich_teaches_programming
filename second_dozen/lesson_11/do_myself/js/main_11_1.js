@@ -36,6 +36,8 @@
 // я его Переписал
 // (старые Строчки - к Ма.-м - я закомментировал -- теперь Закоммитчу этот К. - Потом вернусь - поудаляю - Лишние комментарии - Закоммитчу - Продолжу смотреть В. с Димычем)
 
+// Поудалял Лишние комментарии, скопировал файлы html и js -- в файлы для Работы с Димычем, -- теперь буду коммитить изменения
+
 ////////////////////
 ////////////////////
 ////////////////////
@@ -55,20 +57,20 @@ const wordsEnglish = {
   word2: 'Transfer',
 };
 
-const wordsRussian = {
-  word0: 'Надёжный  достойный доверия  солидный',
-  word1: 'Провод струна трос',
-  word2: 'Передача перевод перенос',
-};
+// const wordsRussian = {
+//   word0: 'Надёжный  достойный доверия  солидный',
+//   word1: 'Провод струна трос',
+//   word2: 'Передача перевод перенос',
+// };
 
-// 8/04/24
-const arrayEnglish = ['Manufacturer', 'Firmly', 'Upward'];
-// 8/04/24
-const arrayRussian = [
-  'Производитель',
-  'Твёрдо крепко неизменно',
-  'Наверх больше',
-];
+// // 8/04/24
+// const arrayEnglish = ['Manufacturer', 'Firmly', 'Upward'];
+// // 8/04/24
+// const arrayRussian = [
+//   'Производитель',
+//   'Твёрдо крепко неизменно',
+//   'Наверх больше',
+// ];
 
 const hintPromptEnglish = 'Enter a word in Russian!';
 const hintPromptRussian = 'Enter the word in English!';
@@ -97,29 +99,13 @@ const percentIcon = '%';
 
 //  Function Initialization bloc
 
-// Вариант Ф.-и для Ма.-в!
-
-// function learnEnglishWords(learnWord1, learnWord2, array1, array2) {
-//   alert(learnWord1);
-//   let hintPrompt;
-//   if (array1.includes(learnWord1)) {
-//     hintPrompt = hintPromptRussian;
-//   } else if (array2.includes(learnWord1)) {
-//     hintPrompt = hintPromptEnglish;
-//   }
-
 // Вариант Ф.-и для Об.-в!
 
-// function learnEnglishWords(learnWord1, learnWord2, array1, array2) {
 function learnEnglishWords(learnWord1, learnWord2, wordsEnglish, wordsRussian) {
   alert(learnWord1);
   let hintPrompt;
-  // if (array1.includes(learnWord1)) {
-  // Замена строк с "для Ма.-в" на "для Об.-в"
   if (Object.values(wordsEnglish).includes(learnWord1)) {
     hintPrompt = hintPromptRussian;
-    // } else if (array2.includes(learnWord1)) {
-    // Замена строк с "для Ма.-в" на "для Об.-в"
   } else if (Object.values(wordsRussian).includes(learnWord1)) {
     hintPrompt = hintPromptEnglish;
   }
@@ -150,24 +136,18 @@ function learnWords() {
 
 // Function Call block
 
-// learnEnglishWords(arrayRussian[0], arrayEnglish[0], arrayRussian, arrayEnglish);
-// Замена строк с "для Ма.-в" на "для Об.-в"
 learnEnglishWords(
   wordsRussian.word0,
   wordsEnglish.word0,
   wordsRussian,
   wordsEnglish
 );
-// learnEnglishWords(arrayRussian[1], arrayEnglish[1], arrayRussian, arrayEnglish);
-// Замена строк с "для Ма.-в" на "для Об.-в"
 learnEnglishWords(
   wordsRussian.word1,
   wordsEnglish.word1,
   wordsRussian,
   wordsEnglish
 );
-// Замена строк с "для Ма.-в" на "для Об.-в"
-// learnEnglishWords(arrayEnglish[2], arrayRussian[2], arrayRussian, arrayEnglish);
 learnEnglishWords(
   wordsEnglish.word2,
   wordsRussian.word2,
