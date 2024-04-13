@@ -57,20 +57,20 @@ const wordsEnglish = {
   word2: 'Transfer',
 };
 
-// const wordsRussian = {
-//   word0: 'Надёжный  достойный доверия  солидный',
-//   word1: 'Провод струна трос',
-//   word2: 'Передача перевод перенос',
-// };
+const wordsRussian = {
+  word0: 'Надёжный  достойный доверия  солидный',
+  word1: 'Провод струна трос',
+  word2: 'Передача перевод перенос',
+};
 
-// // 8/04/24
-// const arrayEnglish = ['Manufacturer', 'Firmly', 'Upward'];
-// // 8/04/24
-// const arrayRussian = [
-//   'Производитель',
-//   'Твёрдо крепко неизменно',
-//   'Наверх больше',
-// ];
+// 8/04/24
+const arrayEnglish = ['Manufacturer', 'Firmly', 'Upward'];
+// 8/04/24
+const arrayRussian = [
+  'Производитель',
+  'Твёрдо крепко неизменно',
+  'Наверх больше',
+];
 
 const hintPromptEnglish = 'Enter a word in Russian!';
 const hintPromptRussian = 'Enter the word in English!';
