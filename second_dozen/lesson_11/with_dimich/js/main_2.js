@@ -45,6 +45,20 @@
 // зайду заново --- поудаляю большое кол-во комментариев ---
 // и опять Закоммитчу
 
+// 13,14/04/24
+// Продолжил смотреть В. Д. В.-а НО
+// услышал про "СЕКУНДОМЕР" в Про.-е --- опять остановился ---
+// Расспросил у ДжиПиТи  -- Как его сделать --- Скопипастил этот К. себе в Про.-у,
+// потестил    а потом ещё узнал у ДжиПиТи --- как сделать так ----
+// чтобы НЕ вызывать Ф.
+//    learnEnglishWords(word0.original, word0.translation, word0, word1, word2);
+// Трижды --- или Более Раз ---
+// ДжиПиТи мне опять Написал К. --- я --- опять же --- Скопипастил его Себе
+// Скопировал оба файла ('html' and 'js') в новые --- чтобы дальше 
+// Рефакторить К. с Димычем --- а вся Предыдущая версия К.-а --- Сохранилась.
+
+// Сейчас Закоммитчу все изменения    и   дальше "пойду" заниматься - опять - по В. Димыча
+
 ////////////////////
 ////////////////////
 ////////////////////
@@ -101,7 +115,7 @@ let changingSettings = {
 // Переделываю К. за Димычем
 const programSetting = {
   numberCompare: 50,
-  numberAnswersTotal: 3,
+  numberTotalAnswers: 3,
 };
 
 // 11/04/24
@@ -125,50 +139,129 @@ const additionalSettings = {
 
 // Вариант Ф.-и для Об.-в!
 
-function learnEnglishWords(learnWord1, learnWord2, words) {
-  alert(learnWord1);
-  let hintPrompt;
+// let startTime;
+// function startStopwatch() {
+//   startTime = new Date();
+// }
+// function stopStopwatch() {
+//   const stopTime = new Date();
+//   const elapsedTime = stopTime - startTime;
+//   const minutes = Math.floor(elapsedTime / 60000); // Convert milliseconds to minutes
+//   const seconds = Math.floor((elapsedTime % 60000) / 1000); // Convert remaining milliseconds to seconds
+//   alert(`Stopwatch stopped.\nElapsed time: ${minutes} minutes ${seconds} seconds.`);
+// }
 
-  const learnWordPrompt = prompt(hintPrompt);
-  if (learnWordPrompt !== learnWord2) {
-    alert(checkingMessage.incorrect);
-    alert(changingSettings.numberAnswersCorrect);
-    alert(learnWordPrompt);
-    alert(learnWord2);
-  } else {
-    alert(checkingMessage.correct);
-    changingSettings.numberAnswersCorrect =
-      changingSettings.numberAnswersCorrect + 1;
-    alert(changingSettings.numberAnswersCorrect);
+// function learnEnglishWords(learnWord1, learnWord2, words) {
+
+//   alert(learnWord1);
+
+//   if (!startTime) {
+//     startStopwatch(); // Start the stopwatch before the first alert
+//   }
+
+//   let hintPrompt;
+
+//   const learnWordPrompt = prompt(hintPrompt);
+//   if (learnWordPrompt !== learnWord2) {
+//     alert(checkingMessage.incorrect);
+//     alert(changingSettings.numberAnswersCorrect);
+//     alert(learnWordPrompt);
+//     alert(learnWord2);
+//   } else {
+//     alert(checkingMessage.correct);
+//     changingSettings.numberAnswersCorrect =
+//       changingSettings.numberAnswersCorrect + 1;
+//     alert(changingSettings.numberAnswersCorrect);
+//   }
+// }
+
+// function learnWords() {
+//   changingSettings.interestСalculation =
+//     // 12/04/24
+//     // Переделываю К. за Димычем
+//     (changingSettings.numberAnswersCorrect /
+//       programSetting.numberTotalAnswers) *
+//     100;
+//   // 13/04/24
+//   // Переделываю К. за Димычем
+//   changingSettings.correctAnswersPercentage =
+//     additionalSettings.interestMessage +
+//     Math.round(changingSettings.interestСalculation) +
+//     additionalSettings.percentIcon;
+//   alert(changingSettings.correctAnswersPercentage);
+//   if (changingSettings.interestСalculation <= programSetting.numberCompare) {
+//     alert(resultMessage.encouragement);
+//   } else {
+//     alert(resultMessage.praise);
+//   }
+// }
+
+// function learnWords() {
+//   stopStopwatch(); // Stop the stopwatch after the last prompt
+// }
+
+// // Function Call block
+
+// // My Code, My demand
+// learnEnglishWords(word0.original, word0.translation, word0, word1, word2);
+// learnEnglishWords(word1.original, word1.translation, word0, word1, word2);
+// learnEnglishWords(word2.original, word2.translation, word0, word1, word2);
+
+// learnWords();
+
+// Stopwatch function
+let startTime;
+function startStopwatch() {
+  startTime = new Date();
+}
+
+function stopStopwatch() {
+  const stopTime = new Date();
+  const elapsedTime = stopTime - startTime;
+  const minutes = Math.floor(elapsedTime / 60000); // Convert milliseconds to minutes
+  const seconds = Math.floor((elapsedTime % 60000) / 1000); // Convert remaining milliseconds to seconds
+  alert(
+    `Stopwatch stopped.\nElapsed time: ${minutes} minutes ${seconds} seconds.`
+  );
+}
+
+// Вариант Ф.-и для Об.-в!
+
+function learnEnglishWords(wordsArray) {
+  if (!startTime) {
+    startStopwatch(); // Start the stopwatch before the first alert
+  }
+
+  for (let i = 0; i < wordsArray.length; i++) {
+    const word = wordsArray[i];
+
+    alert(word.original);
+    let hintPrompt;
+
+    const learnWordPrompt = prompt(hintPrompt);
+    if (learnWordPrompt !== word.translation) {
+      alert(checkingMessage.incorrect);
+      alert(changingSettings.numberAnswersCorrect);
+      alert(learnWordPrompt);
+      alert(word.translation);
+    } else {
+      alert(checkingMessage.correct);
+      changingSettings.numberAnswersCorrect =
+        changingSettings.numberAnswersCorrect + 1;
+      alert(changingSettings.numberAnswersCorrect);
+    }
   }
 }
 
 function learnWords() {
-  changingSettings.interestСalculation =
-    // 12/04/24
-    // Переделываю К. за Димычем
-    (changingSettings.numberAnswersCorrect /
-      programSetting.numberAnswersTotal) *
-    100;
-  // 13/04/24
-  // Переделываю К. за Димычем
-  changingSettings.correctAnswersPercentage =
-    additionalSettings.interestMessage +
-    Math.round(changingSettings.interestСalculation) +
-    additionalSettings.percentIcon;
-  alert(changingSettings.correctAnswersPercentage);
-  if (changingSettings.interestСalculation <= programSetting.numberCompare) {
-    alert(resultMessage.encouragement);
-  } else {
-    alert(resultMessage.praise);
-  }
+  stopStopwatch(); // Stop the stopwatch after the last prompt
 }
 
 // Function Call block
 
 // My Code, My demand
-learnEnglishWords(word0.original, word0.translation, word0, word1, word2);
-learnEnglishWords(word1.original, word1.translation, word0, word1, word2);
-learnEnglishWords(word2.original, word2.translation, word0, word1, word2);
+const wordsArray = [word0, word1, word2];
+
+learnEnglishWords(wordsArray);
 
 learnWords();
