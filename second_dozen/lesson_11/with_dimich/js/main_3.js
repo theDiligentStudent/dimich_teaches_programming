@@ -61,6 +61,12 @@
 
 // 15/04/24 ---- сделал относительно небольшие и незначительные изменения ---  поудалял лишние комментарии
 
+
+// 16/04/24
+// Дошёл почти до 42й минуты Ур.-а
+// Димыч опять начинает рефакторить К. ---- поэтому я опять ----
+// --- Прежде, чем продолжать --- возьму и Сохраню/Закоммитчу -- все Изменения
+
 ////////////////////
 ////////////////////
 ////////////////////
@@ -132,9 +138,24 @@ const programSetting = {
 // 11/04/24
 // 12/04/24
 // Переделываю К. за Димычем
-const resultMessage = {
-  encouragement: 'Work hard and try harder',
-  praise: 'Well done!!',
+// const resultMessage = {
+//   // 16/04/24
+//   // encouragement: 'Work hard and try harder',
+//   // Меняю содержимое encouragement на Более Подходящее
+//   encouragement: 'I know - you are trying, but try More and More )',
+//   praise: 'Well done!!',
+// };
+
+// 16/04/24
+// Переписываю Об. за Димычем
+const userMessages = {
+  start: {
+    firstMessage: 'Our training/study begins!  Please be attentive!',
+  },
+  result: {
+    encouragement: 'I know - you are trying, but try More and More )',
+    praise: 'Well done!!',
+  },
 };
 
 const additionalSettings = {
@@ -167,6 +188,7 @@ function stopStopwatch() {
 // Вариант Ф.-и для Об.-в!
 
 function learnEnglishWords(wordsArray) {
+  alert(userMessages.start.firstMessage);
   if (!startTime) {
     startStopwatch(); // Start the stopwatch before the first alert
   }
@@ -225,9 +247,9 @@ function learnWords1() {
     additionalSettings.percentIcon;
   alert(changingSettings.correctAnswersPercentage);
   if (changingSettings.interestСalculation <= programSetting.numberCompare) {
-    alert(resultMessage.encouragement);
+    alert(userMessages.result.encouragement);
   } else {
-    alert(resultMessage.praise);
+    alert(userMessages.result.praise);
   }
 }
 
