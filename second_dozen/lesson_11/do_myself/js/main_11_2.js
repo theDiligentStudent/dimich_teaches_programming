@@ -66,6 +66,10 @@
 // Димыч опять начинает рефакторить К. ---- поэтому я опять ----
 // --- Прежде, чем продолжать --- возьму и Сохраню/Закоммитчу -- все Изменения
 
+// Прежде чем Коммитить и писать К. дальше самому
+// ---- Укрупнять Об.-ы - увеличивать Вложенность -- и Создавать Один Г.Об. *попытаться*
+// -- я Поудаляю избыточные (лишние) комментарии из JS-файла
+
 ////////////////////
 ////////////////////
 ////////////////////
@@ -87,19 +91,6 @@
 
 // 16/04/24
 // Продолжаю Рефакторить К. с Димычем
-
-// const word0 = {
-//   original: 'Reliable',
-//   translation: 'Надёжный  достойный доверия  солидный',
-// };
-// const word1 = {
-//   original: 'Wire',
-//   translation: 'Провод струна трос',
-// };
-// const word2 = {
-//   original: 'Transfer',
-//   translation: 'Передача перевод перенос',
-// };
 
 const words = {
   numberTotalAnswers: 3,
@@ -134,9 +125,6 @@ const checkingMessage = {
 
 // 14/04/24
 // Переделываю К. за Димычем
-//   Убираю let ставлю (Вместо Неё) const
-//   т.к. мы изменяем НЕ сам Об. --- А ИЗМЕНЯЕМ его З.-я !!!!!
-// --- ПереПрисваиваем НЕ целиком Об. -- А его З.
 
 //   let changingSettings = {
 const changingSettings = {
@@ -163,12 +151,6 @@ const programSetting = {
 // 12/04/24
 // Переделываю К. за Димычем
 // const resultMessage = {
-//   // 16/04/24
-//   // encouragement: 'Work hard and try harder',
-//   // Меняю содержимое encouragement на Более Подходящее
-//   encouragement: 'I know - you are trying, but try More and More )',
-//   praise: 'Well done!!',
-// };
 
 // 16/04/24
 // Переписываю Об. за Димычем
@@ -209,8 +191,6 @@ function stopStopwatch() {
   );
 }
 
-// Вариант Ф.-и для Об.-в!
-
 function learnEnglishWords(wordsArray) {
   alert(userMessages.start.firstMessage);
   if (!startTime) {
@@ -220,14 +200,10 @@ function learnEnglishWords(wordsArray) {
   for (let i = 0; i < wordsArray.length; i++) {
     const word = wordsArray[i];
 
-    // alert(word.original);
-
     // 14/04/24
     // const learnWordPrompt = prompt();         Меняю П.-ю на Сво-во из Об.-а
 
     // 15/04/24
-    // changingSettings.learnWordPrompt = prompt(); // так - как я делал с Самого Начала *Сам*
-    // changingSettings.learnWordPrompt = prompt('Hello!!', 'Hello!');  // пробую/вспоминаю
     changingSettings.learnWordPrompt = prompt(word.original); // так - как делает Димыч
     if (changingSettings.learnWordPrompt !== word.translation) {
       alert(checkingMessage.incorrect);
@@ -249,7 +225,6 @@ function learnWords() {
 
 // Function Call block
 
-// My Code, My demand
 // const wordsArray = [word0, word1, word2];
 const wordsArray = [words.word0, words.word1, words.word2];
 
