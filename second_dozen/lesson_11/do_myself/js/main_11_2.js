@@ -100,15 +100,6 @@
 
 // I.B.
 
-// 11/04/24
-// Изменяю К. за Д. В.-м
-
-// 11/04/24
-// Переделываю К. / Делаю за Димычем
-
-// 16/04/24
-// Продолжаю Рефакторить К. с Димычем
-
 // 18/04/24
 // Переделываю К. ---- буду Засовывать Все (Уже Укрупнённые) Об.-ы ----
 // --- в ОДИН Большой
@@ -134,10 +125,6 @@ const oneBigObject = {
   // const hintPromptEnglish = 'Enter a word in Russian!';
   // const hintPromptRussian = 'Enter the word in English!';
 
-  // 12/04/24
-  // Переделываю К. за Димычем
-  // 18/04/24
-  // I combine All Messages in the program into One Object
   allMessages: {
     checkingMessage: {
       correct: 'Correct answer!',
@@ -154,8 +141,6 @@ const oneBigObject = {
     },
   },
 
-  // 18/04/24
-  // I combine All Settings in the program into One Object
   allSettings: {
     changingSettings: {
       learnWordPrompt: null, // 14/04/24
@@ -174,75 +159,6 @@ const oneBigObject = {
     },
   },
 };
-
-// 18/04/24
-// Комментирую К. ниже потому что буду создавать ОДИН ОБЩИЙ Об. - для всех сообщений - Выше
-// и этот Об. буду Переносить Во Внутрь Об.-а allMessages
-// const checkingMessage = {
-//   correct: 'Correct answer!',
-//   incorrect: 'False ((',
-// };
-
-// 10/04/24
-// 12/04/24
-// Переделываю К. за Димычем
-
-// 14/04/24
-// Переделываю К. за Димычем
-
-//   let changingSettings = {
-// 18/04/24
-// Комментирую К. ниже потому что буду создавать ОДИН ОБЩИЙ Об. - для всех Настроек - Выше
-// и этот Об. буду Переносить Во Внутрь Об.-а allSettings
-// const changingSettings = {
-//   learnWordPrompt: null, // 14/04/24
-//   numberAnswersCorrect: 0,
-//   interestСalculation: null, // работает и  так и
-//   interestСalculation: 0, //  и  так
-//   correctAnswersPercentage: null, // работает и  так и
-//   correctAnswersPercentage: 0, //  и  так
-// };
-
-// 12/04/24
-// Переделываю К. за Димычем
-// 18/04/24
-// Комментирую К. ниже потому что буду создавать ОДИН ОБЩИЙ Об. - для всех Настроек - Выше
-// и этот Об. буду Переносить Во Внутрь Об.-а allSettings
-// const programSetting = {
-//   numberCompare: 50,
-//   // 12/04/24
-//   // Переделываю К. за Димычем
-//   // Переношу эту С. К.-а (Сво.-во и З. Об.-а programSetting)  в  Об.:
-//   //  "words" ---  туда - где находятся Все Слова для Изучения   (Д.В. говорит -- что так будет Логичнее)
-//   // numberTotalAnswers: 3,
-// };
-
-// 11/04/24
-// 12/04/24
-// Переделываю К. за Димычем
-// const resultMessage = {
-
-// 16/04/24
-// Переписываю Об. за Димычем
-// 18/04/24
-// Комментирую К. ниже потому что буду создавать ОДИН ОБЩИЙ Об. - для всех сообщений - Выше
-// и этот Об. буду Переносить Во Внутрь Об.-а allMessages
-// const userMessages = {
-//   start: {
-//     firstMessage: 'Our training/study begins!  Please be attentive!',
-//   },
-//   result: {
-//     encouragement: 'I know - you are trying, but try More and More )',
-//     praise: 'Well done!!',
-//   },
-// };
-
-// Комментирую К. ниже потому что буду создавать ОДИН ОБЩИЙ Об. - для всех сообщений - Выше
-// и этот Об. буду Переносить Во Внутрь Об.-а allMessages
-// const additionalSettings = {
-//   interestMessage: 'The number of your correct answers is ',
-//   percentIcon: '%',
-// };
 
 ///////
 
@@ -275,10 +191,6 @@ function learnEnglishWords(wordsArray) {
   for (let i = 0; i < wordsArray.length; i++) {
     const word = wordsArray[i];
 
-    // 14/04/24
-    // const learnWordPrompt = prompt();         Меняю П.-ю на Сво-во из Об.-а
-
-    // 15/04/24
     oneBigObject.allSettings.changingSettings.learnWordPrompt = prompt(
       word.original
     ); // так - как делает Димыч
@@ -318,13 +230,10 @@ learnWords();
 
 function learnWords1() {
   oneBigObject.allSettings.changingSettings.interestСalculation =
-    // 12/04/24
-    // Переделываю К. за Димычем
     (oneBigObject.allSettings.changingSettings.numberAnswersCorrect /
       oneBigObject.words.numberTotalAnswers) *
     100;
-  // 13/04/24
-  // Переделываю К. за Димычем
+
   oneBigObject.allSettings.changingSettings.correctAnswersPercentage =
     oneBigObject.allSettings.additionalSettings.interestMessage +
     Math.round(oneBigObject.allSettings.changingSettings.interestСalculation) +
@@ -341,243 +250,3 @@ function learnWords1() {
 }
 
 learnWords1();
-
-/////////
-// // // // //
-////////
-
-// 18/04/24
-// Ноучью ПОУКРУПНЯЛ Об.-ы сделал (в них) БОЛЬШуЮ Вложенность
-// теперь ---- навсякий случай ---
-// Продублировал и Закомментировал весь К.
-// /он ПОЛНОСТЬЮ РАБОЧИЙ/
-// чтобы ВСЕ Об.-ы Объеденить (попробовать) - в ОДИН
-
-// // I.B.
-
-// // 11/04/24
-// // Изменяю К. за Д. В.-м
-
-// // 11/04/24
-// // Переделываю К. / Делаю за Димычем
-
-// // 16/04/24
-// // Продолжаю Рефакторить К. с Димычем
-
-// const words = {
-//   numberTotalAnswers: 3,
-
-//   word0: {
-//     original: 'Reliable',
-//     translation: 'Надёжный  достойный доверия  солидный',
-//   },
-//   word1: {
-//     original: 'Wire',
-//     translation: 'Провод струна трос',
-//   },
-//   word2: {
-//     original: 'Transfer',
-//     translation: 'Передача перевод перенос',
-//   },
-// };
-
-// const hintPromptEnglish = 'Enter a word in Russian!';
-// const hintPromptRussian = 'Enter the word in English!';
-
-// // 12/04/24
-// // Переделываю К. за Димычем
-// // 18/04/24
-// // I combine All Messages in the program into One Object
-// const allMessages = {
-//   checkingMessage: {
-//     correct: 'Correct answer!',
-//     incorrect: 'False ((',
-//   },
-//   userMessages: {
-//     start: {
-//       firstMessage: 'Our training/study begins!  Please be attentive!',
-//     },
-//     result: {
-//       encouragement: 'I know - you are trying, but try More and More )',
-//       praise: 'Well done!!',
-//     },
-//   },
-// };
-
-// // 18/04/24
-// // I combine All Settings in the program into One Object
-// const allSettings = {
-//   changingSettings: {
-//     learnWordPrompt: null, // 14/04/24
-//     numberAnswersCorrect: 0,
-//     interestСalculation: null, // работает и  так и
-//     interestСalculation: 0, //  и  так
-//     correctAnswersPercentage: null, // работает и  так и
-//     correctAnswersPercentage: 0, //  и  так
-//   },
-//   programSetting: {
-//     numberCompare: 50,
-//   },
-//   additionalSettings: {
-//     interestMessage: 'The number of your correct answers is ',
-//     percentIcon: '%',
-//   },
-// };
-
-// // 18/04/24
-// // Комментирую К. ниже потому что буду создавать ОДИН ОБЩИЙ Об. - для всех сообщений - Выше
-// // и этот Об. буду Переносить Во Внутрь Об.-а allMessages
-// // const checkingMessage = {
-// //   correct: 'Correct answer!',
-// //   incorrect: 'False ((',
-// // };
-
-// // 10/04/24
-// // 12/04/24
-// // Переделываю К. за Димычем
-
-// // 14/04/24
-// // Переделываю К. за Димычем
-
-// //   let changingSettings = {
-// // 18/04/24
-// // Комментирую К. ниже потому что буду создавать ОДИН ОБЩИЙ Об. - для всех Настроек - Выше
-// // и этот Об. буду Переносить Во Внутрь Об.-а allSettings
-// // const changingSettings = {
-// //   learnWordPrompt: null, // 14/04/24
-// //   numberAnswersCorrect: 0,
-// //   interestСalculation: null, // работает и  так и
-// //   interestСalculation: 0, //  и  так
-// //   correctAnswersPercentage: null, // работает и  так и
-// //   correctAnswersPercentage: 0, //  и  так
-// // };
-
-// // 12/04/24
-// // Переделываю К. за Димычем
-// // 18/04/24
-// // Комментирую К. ниже потому что буду создавать ОДИН ОБЩИЙ Об. - для всех Настроек - Выше
-// // и этот Об. буду Переносить Во Внутрь Об.-а allSettings
-// // const programSetting = {
-// //   numberCompare: 50,
-// //   // 12/04/24
-// //   // Переделываю К. за Димычем
-// //   // Переношу эту С. К.-а (Сво.-во и З. Об.-а programSetting)  в  Об.:
-// //   //  "words" ---  туда - где находятся Все Слова для Изучения   (Д.В. говорит -- что так будет Логичнее)
-// //   // numberTotalAnswers: 3,
-// // };
-
-// // 11/04/24
-// // 12/04/24
-// // Переделываю К. за Димычем
-// // const resultMessage = {
-
-// // 16/04/24
-// // Переписываю Об. за Димычем
-// // 18/04/24
-// // Комментирую К. ниже потому что буду создавать ОДИН ОБЩИЙ Об. - для всех сообщений - Выше
-// // и этот Об. буду Переносить Во Внутрь Об.-а allMessages
-// // const userMessages = {
-// //   start: {
-// //     firstMessage: 'Our training/study begins!  Please be attentive!',
-// //   },
-// //   result: {
-// //     encouragement: 'I know - you are trying, but try More and More )',
-// //     praise: 'Well done!!',
-// //   },
-// // };
-
-// // Комментирую К. ниже потому что буду создавать ОДИН ОБЩИЙ Об. - для всех сообщений - Выше
-// // и этот Об. буду Переносить Во Внутрь Об.-а allMessages
-// // const additionalSettings = {
-// //   interestMessage: 'The number of your correct answers is ',
-// //   percentIcon: '%',
-// // };
-
-// ///////
-
-// // C.B.
-
-// //  Function Initialization block
-
-// // Stopwatch function
-// let startTime;
-// function startStopwatch() {
-//   startTime = new Date();
-// }
-
-// function stopStopwatch() {
-//   const stopTime = new Date();
-//   const elapsedTime = stopTime - startTime;
-//   const minutes = Math.floor(elapsedTime / 60000); // Convert milliseconds to minutes
-//   const seconds = Math.floor((elapsedTime % 60000) / 1000); // Convert remaining milliseconds to seconds
-//   alert(
-//     `Stopwatch stopped.\nElapsed time: ${minutes} minutes ${seconds} seconds.`
-//   );
-// }
-
-// function learnEnglishWords(wordsArray) {
-//   alert(allMessages.userMessages.start.firstMessage);
-//   if (!startTime) {
-//     startStopwatch(); // Start the stopwatch before the first alert
-//   }
-
-//   for (let i = 0; i < wordsArray.length; i++) {
-//     const word = wordsArray[i];
-
-//     // 14/04/24
-//     // const learnWordPrompt = prompt();         Меняю П.-ю на Сво-во из Об.-а
-
-//     // 15/04/24
-//     allSettings.changingSettings.learnWordPrompt = prompt(word.original); // так - как делает Димыч
-//     if (allSettings.changingSettings.learnWordPrompt !== word.translation) {
-//       alert(allMessages.checkingMessage.incorrect);
-//       alert(allSettings.changingSettings.numberAnswersCorrect);
-//       alert(allSettings.changingSettings.learnWordPrompt);
-//       alert(word.translation);
-//     } else {
-//       alert(allMessages.checkingMessage.correct);
-//       allSettings.changingSettings.numberAnswersCorrect =
-//         allSettings.changingSettings.numberAnswersCorrect + 1;
-//       alert(allSettings.changingSettings.numberAnswersCorrect);
-//     }
-//   }
-// }
-
-// function learnWords() {
-//   stopStopwatch(); // Stop the stopwatch after the last prompt
-// }
-
-// // Function Call block
-
-// // const wordsArray = [word0, word1, word2];
-// const wordsArray = [words.word0, words.word1, words.word2];
-
-// learnEnglishWords(wordsArray);
-
-// learnWords();
-
-// function learnWords1() {
-//   allSettings.changingSettings.interestСalculation =
-//     // 12/04/24
-//     // Переделываю К. за Димычем
-//     (allSettings.changingSettings.numberAnswersCorrect /
-//       words.numberTotalAnswers) *
-//     100;
-//   // 13/04/24
-//   // Переделываю К. за Димычем
-//   allSettings.changingSettings.correctAnswersPercentage =
-//     allSettings.additionalSettings.interestMessage +
-//     Math.round(allSettings.changingSettings.interestСalculation) +
-//     allSettings.additionalSettings.percentIcon;
-//   alert(allSettings.changingSettings.correctAnswersPercentage);
-//   if (
-//     allSettings.changingSettings.interestСalculation <=
-//     allSettings.programSetting.numberCompare
-//   ) {
-//     alert(allMessages.userMessages.result.encouragement);
-//   } else {
-//     alert(allMessages.userMessages.result.praise);
-//   }
-// }
-
-// learnWords1();
