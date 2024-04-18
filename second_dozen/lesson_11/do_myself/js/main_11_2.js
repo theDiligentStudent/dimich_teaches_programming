@@ -70,6 +70,23 @@
 // ---- Укрупнять Об.-ы - увеличивать Вложенность -- и Создавать Один Г.Об. *попытаться*
 // -- я Поудаляю избыточные (лишние) комментарии из JS-файла
 
+// 17,18/04/24
+// Сперва поУкрупнял уже Имеющиеся Об.-ы  (П.-х в К.-е у меня уже Больше НЕТ --- есть только Сво-ва Об.-в - их Сво-ва - Об.-ы -- и их З.-я)
+// Сделал СЛИЯНИЕ Нескольких Об.-в посоздавав Общие для них Об.-ы
+// ---
+// Потом - когда у меня осталось объекта 3 или 4 - я Объединил их Все в Один Общий Об.
+// --
+// конечно же К. в Ф.-ях при этом Увеличился/Удлинился - каждая строка Стала Длиннее
+// -- и возможно - Димыч дальше будет делать (в Своём В.) --- совсем не так.....
+// ---
+// НО - Всё РАВНО ---- я попробовал и поэксперементировал
+
+// Теперь закаммитчу Изменения, --- Потом - Поудаляю лишние комментарии
+// и Ещё Раз Закоммитчу
+
+// Уже после -- сделаю новые файлы для работы - продолжения - с Димычем --
+// скопирую туда К. с предыдущих файлов    и буду Дальше Смотреть/Делать Ур.
+
 ////////////////////
 ////////////////////
 ////////////////////
@@ -92,32 +109,79 @@
 // 16/04/24
 // Продолжаю Рефакторить К. с Димычем
 
-const words = {
-  numberTotalAnswers: 3,
+// 18/04/24
+// Переделываю К. ---- буду Засовывать Все (Уже Укрупнённые) Об.-ы ----
+// --- в ОДИН Большой
 
-  word0: {
-    original: 'Reliable',
-    translation: 'Надёжный  достойный доверия  солидный',
+const oneBigObject = {
+  words: {
+    numberTotalAnswers: 3,
+
+    word0: {
+      original: 'Reliable',
+      translation: 'Надёжный  достойный доверия  солидный',
+    },
+    word1: {
+      original: 'Wire',
+      translation: 'Провод струна трос',
+    },
+    word2: {
+      original: 'Transfer',
+      translation: 'Передача перевод перенос',
+    },
   },
-  word1: {
-    original: 'Wire',
-    translation: 'Провод струна трос',
+
+  // const hintPromptEnglish = 'Enter a word in Russian!';
+  // const hintPromptRussian = 'Enter the word in English!';
+
+  // 12/04/24
+  // Переделываю К. за Димычем
+  // 18/04/24
+  // I combine All Messages in the program into One Object
+  allMessages: {
+    checkingMessage: {
+      correct: 'Correct answer!',
+      incorrect: 'False ((',
+    },
+    userMessages: {
+      start: {
+        firstMessage: 'Our training/study begins!  Please be attentive!',
+      },
+      result: {
+        encouragement: 'I know - you are trying, but try More and More )',
+        praise: 'Well done!!',
+      },
+    },
   },
-  word2: {
-    original: 'Transfer',
-    translation: 'Передача перевод перенос',
+
+  // 18/04/24
+  // I combine All Settings in the program into One Object
+  allSettings: {
+    changingSettings: {
+      learnWordPrompt: null, // 14/04/24
+      numberAnswersCorrect: 0,
+      interestСalculation: null, // работает и  так и
+      interestСalculation: 0, //  и  так
+      correctAnswersPercentage: null, // работает и  так и
+      correctAnswersPercentage: 0, //  и  так
+    },
+    programSetting: {
+      numberCompare: 50,
+    },
+    additionalSettings: {
+      interestMessage: 'The number of your correct answers is ',
+      percentIcon: '%',
+    },
   },
 };
 
-const hintPromptEnglish = 'Enter a word in Russian!';
-const hintPromptRussian = 'Enter the word in English!';
-
-// 12/04/24
-// Переделываю К. за Димычем
-const checkingMessage = {
-  correct: 'Correct answer!',
-  incorrect: 'False ((',
-};
+// 18/04/24
+// Комментирую К. ниже потому что буду создавать ОДИН ОБЩИЙ Об. - для всех сообщений - Выше
+// и этот Об. буду Переносить Во Внутрь Об.-а allMessages
+// const checkingMessage = {
+//   correct: 'Correct answer!',
+//   incorrect: 'False ((',
+// };
 
 // 10/04/24
 // 12/04/24
@@ -127,25 +191,31 @@ const checkingMessage = {
 // Переделываю К. за Димычем
 
 //   let changingSettings = {
-const changingSettings = {
-  learnWordPrompt: null, // 14/04/24
-  numberAnswersCorrect: 0,
-  interestСalculation: null, // работает и  так и
-  interestСalculation: 0, //  и  так
-  correctAnswersPercentage: null, // работает и  так и
-  correctAnswersPercentage: 0, //  и  так
-};
+// 18/04/24
+// Комментирую К. ниже потому что буду создавать ОДИН ОБЩИЙ Об. - для всех Настроек - Выше
+// и этот Об. буду Переносить Во Внутрь Об.-а allSettings
+// const changingSettings = {
+//   learnWordPrompt: null, // 14/04/24
+//   numberAnswersCorrect: 0,
+//   interestСalculation: null, // работает и  так и
+//   interestСalculation: 0, //  и  так
+//   correctAnswersPercentage: null, // работает и  так и
+//   correctAnswersPercentage: 0, //  и  так
+// };
 
 // 12/04/24
 // Переделываю К. за Димычем
-const programSetting = {
-  numberCompare: 50,
-  // 12/04/24
-  // Переделываю К. за Димычем
-  // Переношу эту С. К.-а (Сво.-во и З. Об.-а programSetting)  в  Об.:
-  //  "words" ---  туда - где находятся Все Слова для Изучения   (Д.В. говорит -- что так будет Логичнее)
-  // numberTotalAnswers: 3,
-};
+// 18/04/24
+// Комментирую К. ниже потому что буду создавать ОДИН ОБЩИЙ Об. - для всех Настроек - Выше
+// и этот Об. буду Переносить Во Внутрь Об.-а allSettings
+// const programSetting = {
+//   numberCompare: 50,
+//   // 12/04/24
+//   // Переделываю К. за Димычем
+//   // Переношу эту С. К.-а (Сво.-во и З. Об.-а programSetting)  в  Об.:
+//   //  "words" ---  туда - где находятся Все Слова для Изучения   (Д.В. говорит -- что так будет Логичнее)
+//   // numberTotalAnswers: 3,
+// };
 
 // 11/04/24
 // 12/04/24
@@ -154,20 +224,25 @@ const programSetting = {
 
 // 16/04/24
 // Переписываю Об. за Димычем
-const userMessages = {
-  start: {
-    firstMessage: 'Our training/study begins!  Please be attentive!',
-  },
-  result: {
-    encouragement: 'I know - you are trying, but try More and More )',
-    praise: 'Well done!!',
-  },
-};
+// 18/04/24
+// Комментирую К. ниже потому что буду создавать ОДИН ОБЩИЙ Об. - для всех сообщений - Выше
+// и этот Об. буду Переносить Во Внутрь Об.-а allMessages
+// const userMessages = {
+//   start: {
+//     firstMessage: 'Our training/study begins!  Please be attentive!',
+//   },
+//   result: {
+//     encouragement: 'I know - you are trying, but try More and More )',
+//     praise: 'Well done!!',
+//   },
+// };
 
-const additionalSettings = {
-  interestMessage: 'The number of your correct answers is ',
-  percentIcon: '%',
-};
+// Комментирую К. ниже потому что буду создавать ОДИН ОБЩИЙ Об. - для всех сообщений - Выше
+// и этот Об. буду Переносить Во Внутрь Об.-а allMessages
+// const additionalSettings = {
+//   interestMessage: 'The number of your correct answers is ',
+//   percentIcon: '%',
+// };
 
 ///////
 
@@ -192,7 +267,7 @@ function stopStopwatch() {
 }
 
 function learnEnglishWords(wordsArray) {
-  alert(userMessages.start.firstMessage);
+  alert(oneBigObject.allMessages.userMessages.start.firstMessage);
   if (!startTime) {
     startStopwatch(); // Start the stopwatch before the first alert
   }
@@ -204,17 +279,22 @@ function learnEnglishWords(wordsArray) {
     // const learnWordPrompt = prompt();         Меняю П.-ю на Сво-во из Об.-а
 
     // 15/04/24
-    changingSettings.learnWordPrompt = prompt(word.original); // так - как делает Димыч
-    if (changingSettings.learnWordPrompt !== word.translation) {
-      alert(checkingMessage.incorrect);
-      alert(changingSettings.numberAnswersCorrect);
-      alert(changingSettings.learnWordPrompt);
+    oneBigObject.allSettings.changingSettings.learnWordPrompt = prompt(
+      word.original
+    ); // так - как делает Димыч
+    if (
+      oneBigObject.allSettings.changingSettings.learnWordPrompt !==
+      word.translation
+    ) {
+      alert(oneBigObject.allMessages.checkingMessage.incorrect);
+      alert(oneBigObject.allSettings.changingSettings.numberAnswersCorrect);
+      alert(oneBigObject.allSettings.changingSettings.learnWordPrompt);
       alert(word.translation);
     } else {
-      alert(checkingMessage.correct);
-      changingSettings.numberAnswersCorrect =
-        changingSettings.numberAnswersCorrect + 1;
-      alert(changingSettings.numberAnswersCorrect);
+      alert(oneBigObject.allMessages.checkingMessage.correct);
+      oneBigObject.allSettings.changingSettings.numberAnswersCorrect =
+        oneBigObject.allSettings.changingSettings.numberAnswersCorrect + 1;
+      alert(oneBigObject.allSettings.changingSettings.numberAnswersCorrect);
     }
   }
 }
@@ -226,29 +306,278 @@ function learnWords() {
 // Function Call block
 
 // const wordsArray = [word0, word1, word2];
-const wordsArray = [words.word0, words.word1, words.word2];
+const wordsArray = [
+  oneBigObject.words.word0,
+  oneBigObject.words.word1,
+  oneBigObject.words.word2,
+];
 
 learnEnglishWords(wordsArray);
 
 learnWords();
 
 function learnWords1() {
-  changingSettings.interestСalculation =
+  oneBigObject.allSettings.changingSettings.interestСalculation =
     // 12/04/24
     // Переделываю К. за Димычем
-    (changingSettings.numberAnswersCorrect / words.numberTotalAnswers) * 100;
+    (oneBigObject.allSettings.changingSettings.numberAnswersCorrect /
+      oneBigObject.words.numberTotalAnswers) *
+    100;
   // 13/04/24
   // Переделываю К. за Димычем
-  changingSettings.correctAnswersPercentage =
-    additionalSettings.interestMessage +
-    Math.round(changingSettings.interestСalculation) +
-    additionalSettings.percentIcon;
-  alert(changingSettings.correctAnswersPercentage);
-  if (changingSettings.interestСalculation <= programSetting.numberCompare) {
-    alert(userMessages.result.encouragement);
+  oneBigObject.allSettings.changingSettings.correctAnswersPercentage =
+    oneBigObject.allSettings.additionalSettings.interestMessage +
+    Math.round(oneBigObject.allSettings.changingSettings.interestСalculation) +
+    oneBigObject.allSettings.additionalSettings.percentIcon;
+  alert(oneBigObject.allSettings.changingSettings.correctAnswersPercentage);
+  if (
+    oneBigObject.allSettings.changingSettings.interestСalculation <=
+    oneBigObject.allSettings.programSetting.numberCompare
+  ) {
+    alert(oneBigObject.allMessages.userMessages.result.encouragement);
   } else {
-    alert(userMessages.result.praise);
+    alert(oneBigObject.allMessages.userMessages.result.praise);
   }
 }
 
 learnWords1();
+
+/////////
+// // // // //
+////////
+
+// 18/04/24
+// Ноучью ПОУКРУПНЯЛ Об.-ы сделал (в них) БОЛЬШуЮ Вложенность
+// теперь ---- навсякий случай ---
+// Продублировал и Закомментировал весь К.
+// /он ПОЛНОСТЬЮ РАБОЧИЙ/
+// чтобы ВСЕ Об.-ы Объеденить (попробовать) - в ОДИН
+
+// // I.B.
+
+// // 11/04/24
+// // Изменяю К. за Д. В.-м
+
+// // 11/04/24
+// // Переделываю К. / Делаю за Димычем
+
+// // 16/04/24
+// // Продолжаю Рефакторить К. с Димычем
+
+// const words = {
+//   numberTotalAnswers: 3,
+
+//   word0: {
+//     original: 'Reliable',
+//     translation: 'Надёжный  достойный доверия  солидный',
+//   },
+//   word1: {
+//     original: 'Wire',
+//     translation: 'Провод струна трос',
+//   },
+//   word2: {
+//     original: 'Transfer',
+//     translation: 'Передача перевод перенос',
+//   },
+// };
+
+// const hintPromptEnglish = 'Enter a word in Russian!';
+// const hintPromptRussian = 'Enter the word in English!';
+
+// // 12/04/24
+// // Переделываю К. за Димычем
+// // 18/04/24
+// // I combine All Messages in the program into One Object
+// const allMessages = {
+//   checkingMessage: {
+//     correct: 'Correct answer!',
+//     incorrect: 'False ((',
+//   },
+//   userMessages: {
+//     start: {
+//       firstMessage: 'Our training/study begins!  Please be attentive!',
+//     },
+//     result: {
+//       encouragement: 'I know - you are trying, but try More and More )',
+//       praise: 'Well done!!',
+//     },
+//   },
+// };
+
+// // 18/04/24
+// // I combine All Settings in the program into One Object
+// const allSettings = {
+//   changingSettings: {
+//     learnWordPrompt: null, // 14/04/24
+//     numberAnswersCorrect: 0,
+//     interestСalculation: null, // работает и  так и
+//     interestСalculation: 0, //  и  так
+//     correctAnswersPercentage: null, // работает и  так и
+//     correctAnswersPercentage: 0, //  и  так
+//   },
+//   programSetting: {
+//     numberCompare: 50,
+//   },
+//   additionalSettings: {
+//     interestMessage: 'The number of your correct answers is ',
+//     percentIcon: '%',
+//   },
+// };
+
+// // 18/04/24
+// // Комментирую К. ниже потому что буду создавать ОДИН ОБЩИЙ Об. - для всех сообщений - Выше
+// // и этот Об. буду Переносить Во Внутрь Об.-а allMessages
+// // const checkingMessage = {
+// //   correct: 'Correct answer!',
+// //   incorrect: 'False ((',
+// // };
+
+// // 10/04/24
+// // 12/04/24
+// // Переделываю К. за Димычем
+
+// // 14/04/24
+// // Переделываю К. за Димычем
+
+// //   let changingSettings = {
+// // 18/04/24
+// // Комментирую К. ниже потому что буду создавать ОДИН ОБЩИЙ Об. - для всех Настроек - Выше
+// // и этот Об. буду Переносить Во Внутрь Об.-а allSettings
+// // const changingSettings = {
+// //   learnWordPrompt: null, // 14/04/24
+// //   numberAnswersCorrect: 0,
+// //   interestСalculation: null, // работает и  так и
+// //   interestСalculation: 0, //  и  так
+// //   correctAnswersPercentage: null, // работает и  так и
+// //   correctAnswersPercentage: 0, //  и  так
+// // };
+
+// // 12/04/24
+// // Переделываю К. за Димычем
+// // 18/04/24
+// // Комментирую К. ниже потому что буду создавать ОДИН ОБЩИЙ Об. - для всех Настроек - Выше
+// // и этот Об. буду Переносить Во Внутрь Об.-а allSettings
+// // const programSetting = {
+// //   numberCompare: 50,
+// //   // 12/04/24
+// //   // Переделываю К. за Димычем
+// //   // Переношу эту С. К.-а (Сво.-во и З. Об.-а programSetting)  в  Об.:
+// //   //  "words" ---  туда - где находятся Все Слова для Изучения   (Д.В. говорит -- что так будет Логичнее)
+// //   // numberTotalAnswers: 3,
+// // };
+
+// // 11/04/24
+// // 12/04/24
+// // Переделываю К. за Димычем
+// // const resultMessage = {
+
+// // 16/04/24
+// // Переписываю Об. за Димычем
+// // 18/04/24
+// // Комментирую К. ниже потому что буду создавать ОДИН ОБЩИЙ Об. - для всех сообщений - Выше
+// // и этот Об. буду Переносить Во Внутрь Об.-а allMessages
+// // const userMessages = {
+// //   start: {
+// //     firstMessage: 'Our training/study begins!  Please be attentive!',
+// //   },
+// //   result: {
+// //     encouragement: 'I know - you are trying, but try More and More )',
+// //     praise: 'Well done!!',
+// //   },
+// // };
+
+// // Комментирую К. ниже потому что буду создавать ОДИН ОБЩИЙ Об. - для всех сообщений - Выше
+// // и этот Об. буду Переносить Во Внутрь Об.-а allMessages
+// // const additionalSettings = {
+// //   interestMessage: 'The number of your correct answers is ',
+// //   percentIcon: '%',
+// // };
+
+// ///////
+
+// // C.B.
+
+// //  Function Initialization block
+
+// // Stopwatch function
+// let startTime;
+// function startStopwatch() {
+//   startTime = new Date();
+// }
+
+// function stopStopwatch() {
+//   const stopTime = new Date();
+//   const elapsedTime = stopTime - startTime;
+//   const minutes = Math.floor(elapsedTime / 60000); // Convert milliseconds to minutes
+//   const seconds = Math.floor((elapsedTime % 60000) / 1000); // Convert remaining milliseconds to seconds
+//   alert(
+//     `Stopwatch stopped.\nElapsed time: ${minutes} minutes ${seconds} seconds.`
+//   );
+// }
+
+// function learnEnglishWords(wordsArray) {
+//   alert(allMessages.userMessages.start.firstMessage);
+//   if (!startTime) {
+//     startStopwatch(); // Start the stopwatch before the first alert
+//   }
+
+//   for (let i = 0; i < wordsArray.length; i++) {
+//     const word = wordsArray[i];
+
+//     // 14/04/24
+//     // const learnWordPrompt = prompt();         Меняю П.-ю на Сво-во из Об.-а
+
+//     // 15/04/24
+//     allSettings.changingSettings.learnWordPrompt = prompt(word.original); // так - как делает Димыч
+//     if (allSettings.changingSettings.learnWordPrompt !== word.translation) {
+//       alert(allMessages.checkingMessage.incorrect);
+//       alert(allSettings.changingSettings.numberAnswersCorrect);
+//       alert(allSettings.changingSettings.learnWordPrompt);
+//       alert(word.translation);
+//     } else {
+//       alert(allMessages.checkingMessage.correct);
+//       allSettings.changingSettings.numberAnswersCorrect =
+//         allSettings.changingSettings.numberAnswersCorrect + 1;
+//       alert(allSettings.changingSettings.numberAnswersCorrect);
+//     }
+//   }
+// }
+
+// function learnWords() {
+//   stopStopwatch(); // Stop the stopwatch after the last prompt
+// }
+
+// // Function Call block
+
+// // const wordsArray = [word0, word1, word2];
+// const wordsArray = [words.word0, words.word1, words.word2];
+
+// learnEnglishWords(wordsArray);
+
+// learnWords();
+
+// function learnWords1() {
+//   allSettings.changingSettings.interestСalculation =
+//     // 12/04/24
+//     // Переделываю К. за Димычем
+//     (allSettings.changingSettings.numberAnswersCorrect /
+//       words.numberTotalAnswers) *
+//     100;
+//   // 13/04/24
+//   // Переделываю К. за Димычем
+//   allSettings.changingSettings.correctAnswersPercentage =
+//     allSettings.additionalSettings.interestMessage +
+//     Math.round(allSettings.changingSettings.interestСalculation) +
+//     allSettings.additionalSettings.percentIcon;
+//   alert(allSettings.changingSettings.correctAnswersPercentage);
+//   if (
+//     allSettings.changingSettings.interestСalculation <=
+//     allSettings.programSetting.numberCompare
+//   ) {
+//     alert(allMessages.userMessages.result.encouragement);
+//   } else {
+//     alert(allMessages.userMessages.result.praise);
+//   }
+// }
+
+// learnWords1();
