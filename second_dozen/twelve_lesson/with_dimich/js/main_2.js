@@ -210,85 +210,182 @@
       //  Function Initialization block
       
       // Stopwatch function
-      let startTime;
-      function startStopwatch() {
-        startTime = new Date();
+    //   let startTime;
+    //   function startStopwatch() {
+    //     startTime = new Date();
+    //   }
+      
+    //   function stopStopwatch() {
+    //     const stopTime = new Date();
+    //     const elapsedTime = stopTime - startTime;
+    //     const minutes = Math.floor(elapsedTime / 60000); // Convert milliseconds to minutes
+    //     const seconds = Math.floor((elapsedTime % 60000) / 1000); // Convert remaining milliseconds to seconds
+    //     alert(
+    //       `Stopwatch stopped.\nElapsed time: ${minutes} minutes ${seconds} seconds.`
+    //     );
+    //   }
+      
+    //   function learnEnglishWords(wordsArray) {
+    //     alert(oneBigArray[1][1].userStartMessages.firstMessage);
+    //     if (!startTime) {
+    //       startStopwatch(); // Start the stopwatch before the first alert
+    //     }
+      
+    //     for (let i = 0; i < wordsArray.length; i++) {
+    //       const word = wordsArray[i];
+      
+    //       oneBigArray[2][0].adjustmentLearnWordPrompt = prompt(word.original); // так - как делает Димыч
+    //       if (oneBigArray[2][0].adjustmentLearnWordPrompt !== word.translation) {
+    //         alert(oneBigArray[1][0].incorrectMessage);
+    //         alert(oneBigArray[2][0].adjustmentNumberAnswersCorrect);
+    //         alert(oneBigArray[2][0].adjustmentLearnWordPrompt);
+    //         alert(word.translation);
+    //       } else {
+    //         alert(oneBigArray[1][0].correctMessage);
+    //         oneBigArray[2][0].adjustmentNumberAnswersCorrect =
+    //           oneBigArray[2][0].adjustmentNumberAnswersCorrect + 1;
+    //         alert(oneBigArray[2][0].adjustmentNumberAnswersCorrect);
+    //       }
+    //     }
+    //   }
+      
+    //   function learnWords() {
+    //     stopStopwatch(); // Stop the stopwatch after the last prompt
+    //   }
+      
+    //   // Function Call block
+      
+    //   // const wordsArray = [word0, word1, word2];
+    //   const wordsArray = [
+    //     oneBigArray[0][1].setWords0,
+    //     oneBigArray[0][1].setWords1,
+    //     oneBigArray[0][1].setWords2,
+    //     //   oneBigObject.words.word0,
+    //     //   oneBigObject.words.word1,
+    //     //   oneBigObject.words.word2,
+    //   ];
+      
+    //   learnEnglishWords(wordsArray);
+      
+    //   learnWords();
+      
+    //   function learnWords1() {
+    //     oneBigArray[2][0].adjustmentInterestСalculation =
+    //       (oneBigArray[2][0].adjustmentNumberAnswersCorrect /
+    //         oneBigArray[0][0].numberTotalWords) *
+    //       100;
+      
+    //     oneBigArray[2][0].adjustmentCorrectAnswersPercentage =
+    //       oneBigArray[2][2].adjustmentInterestMessage +
+    //       Math.round(oneBigArray[2][0].adjustmentInterestСalculation) +
+    //       oneBigArray[2][2].adjustmentPercentIcon;
+    //     alert(oneBigArray[2][0].adjustmentCorrectAnswersPercentage);
+    //     if (
+    //       oneBigArray[2][0].adjustmentInterestСalculation <=
+    //       oneBigArray[2][1].adjustmentNumberCompare
+    //     ) {
+    //       alert(oneBigArray[1][1].userResultMessages.encouragement);
+    //     } else {
+    //       alert(oneBigArray[1][1].userResultMessages.praise);
+    //     }
+    //   }
+      
+    //   learnWords1();
+      
+
+// К. ДжиПиТи для вывода пар слов (английское -- русское) --- в СЛУЧАЙНОМ ПОРЯДКЕ
+
+    let startTime;
+    function startStopwatch() {
+      startTime = new Date();
+    }
+    
+    function stopStopwatch() {
+      const stopTime = new Date();
+      const elapsedTime = stopTime - startTime;
+      const minutes = Math.floor(elapsedTime / 60000); // Convert milliseconds to minutes
+      const seconds = Math.floor((elapsedTime % 60000) / 1000); // Convert remaining milliseconds to seconds
+      alert(
+        `Stopwatch stopped.\nElapsed time: ${minutes} minutes ${seconds} seconds.`
+      );
+    }
+    
+    function learnEnglishWords(wordsArray) {
+      alert(oneBigArray[1][1].userStartMessages.firstMessage);
+      if (!startTime) {
+        startStopwatch(); // Start the stopwatch before the first alert
       }
-      
-      function stopStopwatch() {
-        const stopTime = new Date();
-        const elapsedTime = stopTime - startTime;
-        const minutes = Math.floor(elapsedTime / 60000); // Convert milliseconds to minutes
-        const seconds = Math.floor((elapsedTime % 60000) / 1000); // Convert remaining milliseconds to seconds
-        alert(
-          `Stopwatch stopped.\nElapsed time: ${minutes} minutes ${seconds} seconds.`
-        );
-      }
-      
-      function learnEnglishWords(wordsArray) {
-        alert(oneBigArray[1][1].userStartMessages.firstMessage);
-        if (!startTime) {
-          startStopwatch(); // Start the stopwatch before the first alert
-        }
-      
-        for (let i = 0; i < wordsArray.length; i++) {
-          const word = wordsArray[i];
-      
-          oneBigArray[2][0].adjustmentLearnWordPrompt = prompt(word.original); // так - как делает Димыч
-          if (oneBigArray[2][0].adjustmentLearnWordPrompt !== word.translation) {
-            alert(oneBigArray[1][0].incorrectMessage);
-            alert(oneBigArray[2][0].adjustmentNumberAnswersCorrect);
-            alert(oneBigArray[2][0].adjustmentLearnWordPrompt);
-            alert(word.translation);
-          } else {
-            alert(oneBigArray[1][0].correctMessage);
-            oneBigArray[2][0].adjustmentNumberAnswersCorrect =
-              oneBigArray[2][0].adjustmentNumberAnswersCorrect + 1;
-            alert(oneBigArray[2][0].adjustmentNumberAnswersCorrect);
-          }
-        }
-      }
-      
-      function learnWords() {
-        stopStopwatch(); // Stop the stopwatch after the last prompt
-      }
-      
-      // Function Call block
-      
-      // const wordsArray = [word0, word1, word2];
-      const wordsArray = [
-        oneBigArray[0][1].setWords0,
-        oneBigArray[0][1].setWords1,
-        oneBigArray[0][1].setWords2,
-        //   oneBigObject.words.word0,
-        //   oneBigObject.words.word1,
-        //   oneBigObject.words.word2,
-      ];
-      
-      learnEnglishWords(wordsArray);
-      
-      learnWords();
-      
-      function learnWords1() {
-        oneBigArray[2][0].adjustmentInterestСalculation =
-          (oneBigArray[2][0].adjustmentNumberAnswersCorrect /
-            oneBigArray[0][0].numberTotalWords) *
-          100;
-      
-        oneBigArray[2][0].adjustmentCorrectAnswersPercentage =
-          oneBigArray[2][2].adjustmentInterestMessage +
-          Math.round(oneBigArray[2][0].adjustmentInterestСalculation) +
-          oneBigArray[2][2].adjustmentPercentIcon;
-        alert(oneBigArray[2][0].adjustmentCorrectAnswersPercentage);
-        if (
-          oneBigArray[2][0].adjustmentInterestСalculation <=
-          oneBigArray[2][1].adjustmentNumberCompare
-        ) {
-          alert(oneBigArray[1][1].userResultMessages.encouragement);
+    
+      // Shuffle the wordsArray
+      wordsArray = shuffleArray(wordsArray);
+    
+      for (let i = 0; i < wordsArray.length; i++) {
+        const word = wordsArray[i];
+    
+        oneBigArray[2][0].adjustmentLearnWordPrompt = prompt(word.original); // так - как делает Димыч
+        if (oneBigArray[2][0].adjustmentLearnWordPrompt !== word.translation) {
+          alert(oneBigArray[1][0].incorrectMessage);
+          alert(oneBigArray[2][0].adjustmentNumberAnswersCorrect);
+          alert(oneBigArray[2][0].adjustmentLearnWordPrompt);
+          alert(word.translation);
         } else {
-          alert(oneBigArray[1][1].userResultMessages.praise);
+          alert(oneBigArray[1][0].correctMessage);
+          oneBigArray[2][0].adjustmentNumberAnswersCorrect =
+            oneBigArray[2][0].adjustmentNumberAnswersCorrect + 1;
+          alert(oneBigArray[2][0].adjustmentNumberAnswersCorrect);
         }
       }
-      
-      learnWords1();
-      
+    }
+    
+    function learnWords() {
+      stopStopwatch(); // Stop the stopwatch after the last prompt
+    }
+    
+    // Function Call block
+    
+    // const wordsArray = [word0, word1, word2];
+    const wordsArray = [
+      oneBigArray[0][1].setWords0,
+      oneBigArray[0][1].setWords1,
+      oneBigArray[0][1].setWords2,
+      //   oneBigObject.words.word0,
+      //   oneBigObject.words.word1,
+      //   oneBigObject.words.word2,
+    ];
+    
+    learnEnglishWords(wordsArray);
+    
+    learnWords();
+    
+    function learnWords1() {
+      oneBigArray[2][0].adjustmentInterestСalculation =
+        (oneBigArray[2][0].adjustmentNumberAnswersCorrect /
+          oneBigArray[0][0].numberTotalWords) *
+        100;
+    
+      oneBigArray[2][0].adjustmentCorrectAnswersPercentage =
+        oneBigArray[2][2].adjustmentInterestMessage +
+        Math.round(oneBigArray[2][0].adjustmentInterestСalculation) +
+        oneBigArray[2][2].adjustmentPercentIcon;
+      alert(oneBigArray[2][0].adjustmentCorrectAnswersPercentage);
+      if (
+        oneBigArray[2][0].adjustmentInterestСalculation <=
+        oneBigArray[2][1].adjustmentNumberCompare
+      ) {
+        alert(oneBigArray[1][1].userResultMessages.encouragement);
+      } else {
+        alert(oneBigArray[1][1].userResultMessages.praise);
+      }
+    }
+    
+    learnWords1();
+    
+    // Function to shuffle array elements
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+    
