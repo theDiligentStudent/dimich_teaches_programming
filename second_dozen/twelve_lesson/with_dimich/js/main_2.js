@@ -141,222 +141,154 @@
 // --- в ОДИН Большой
 
 // const oneBigObject = {
-const oneBigArray = [
-  [
-    {
-      numberTotalWords: 3,
-      // numberTotalAnswers: 3,   меняю название на Более Подходящее
-    },
-    {
-      setWords0: {
-        original: 'Reliable',
-        translation: 'Надёжный  достойный доверия  солидный',
-      },
-      setWords1: {
-        original: 'Wire',
-        translation: 'Провод струна трос',
-      },
-      setWords2: {
-        original: 'Transfer',
-        translation: 'Передача перевод перенос',
-      },
-    },
-  ],
-  // const hintPromptEnglish = 'Enter a word in Russian!';
-  // const hintPromptRussian = 'Enter the word in English!';
-
-  [
-    {
-      correctMessage: 'Correct answer!',
-      incorrectMessage: 'False ((',
-    },
-    {
-      userStartMessages: {
-        firstMessage: 'Our training/study begins!  Please be attentive!',
-      },
-
-      userResultMessages: {
-        encouragement: 'I know - you are trying, but try More and More )',
-        praise: 'Well done!!',
-      },
-    },
-  ],
-
-  [
-    {
-      adjustmentLearnWordPrompt: null, // 14/04/24
-      adjustmentNumberAnswersCorrect: 0,
-      adjustmentInterestСalculation: null, // работает и  так и
-      adjustmentInterestСalculation: 0, //  и  так
-      adjustmentCorrectAnswersPercentage: null, // работает и  так и
-      adjustmentCorrectAnswersPercentage: 0, //  и  так
-    },
-    {
-      adjustmentNumberCompare: 50,
-    },
-    {
-      adjustmentInterestMessage: 'The number of your correct answers is ',
-      adjustmentPercentIcon: '%',
-    },
-  ],
-];
-
-console.log(oneBigArray);
-
-///////
-
-// C.B.
-
-//  Function Initialization block
-
-// Stopwatch function
-let startTime;
-function startStopwatch() {
-  startTime = new Date();
-}
-
-function stopStopwatch() {
-  const stopTime = new Date();
-  const elapsedTime = stopTime - startTime;
-  const minutes = Math.floor(elapsedTime / 60000); // Convert milliseconds to minutes
-  const seconds = Math.floor((elapsedTime % 60000) / 1000); // Convert remaining milliseconds to seconds
-  alert(
-    `Stopwatch stopped.\nElapsed time: ${minutes} minutes ${seconds} seconds.`
-  );
-}
-
-function learnEnglishWords(wordsArray) {
-  alert(oneBigArray[1][1].userStartMessages.firstMessage);
-  if (!startTime) {
-    startStopwatch(); // Start the stopwatch before the first alert
-  }
-
-  for (let i = 0; i < wordsArray.length; i++) {
-    const word = wordsArray[i];
-
-    oneBigArray[2][0].adjustmentLearnWordPrompt = prompt(word.original); // так - как делает Димыч
-    if (oneBigArray[2][0].adjustmentLearnWordPrompt !== word.translation) {
-      alert(oneBigArray[1][0].incorrectMessage);
-      alert(oneBigArray[2][0].adjustmentNumberAnswersCorrect);
-      alert(oneBigArray[2][0].adjustmentLearnWordPrompt);
-      alert(word.translation);
-    } else {
-      alert(oneBigArray[1][0].correctMessage);
-      oneBigArray[2][0].adjustmentNumberAnswersCorrect =
-        oneBigArray[2][0].adjustmentNumberAnswersCorrect + 1;
-      alert(oneBigArray[2][0].adjustmentNumberAnswersCorrect);
-    }
-  }
-}
-
-function learnWords() {
-  stopStopwatch(); // Stop the stopwatch after the last prompt
-}
-
-// Function Call block
-
-// const wordsArray = [word0, word1, word2];
-const wordsArray = [
-  oneBigArray[0][1].setWords0,
-  oneBigArray[0][1].setWords1,
-  oneBigArray[0][1].setWords2,
-  //   oneBigObject.words.word0,
-  //   oneBigObject.words.word1,
-  //   oneBigObject.words.word2,
-];
-
-learnEnglishWords(wordsArray);
-
-learnWords();
-
-function learnWords1() {
-  oneBigArray[2][0].adjustmentInterestСalculation =
-    (oneBigArray[2][0].adjustmentNumberAnswersCorrect /
-      oneBigArray[0][0].numberTotalWords) *
-    100;
-
-  oneBigArray[2][0].adjustmentCorrectAnswersPercentage =
-    oneBigArray[2][2].adjustmentInterestMessage +
-    Math.round(oneBigArray[2][0].adjustmentInterestСalculation) +
-    oneBigArray[2][2].adjustmentPercentIcon;
-  alert(oneBigArray[2][0].adjustmentCorrectAnswersPercentage);
-  if (
-    oneBigArray[2][0].adjustmentInterestСalculation <=
-    oneBigArray[2][1].adjustmentNumberCompare
-  ) {
-    alert(oneBigArray[1][1].userResultMessages.encouragement);
-  } else {
-    alert(oneBigArray[1][1].userResultMessages.praise);
-  }
-}
-
-learnWords1();
-
-////////// ///////// ///////
-
-// Буду Рифакторить этот Ма.
-// Поэтому -- на Всякий Случай ---
-// Закомментирую Предыдущую версию
-
-/////
-
-// // const oneBigObject = {
-//   const oneBigArray = [
-//     {
-//       allWords: {
-//         numberTotalWords: 3,
-//         // numberTotalAnswers: 3,   меняю название на Более Подходящее
-//       },
-//       wordsSets: {
-//         set0: {
-//           original: 'Reliable',
-//           translation: 'Надёжный  достойный доверия  солидный',
-//         },
-//         set1: {
-//           original: 'Wire',
-//           translation: 'Провод струна трос',
-//         },
-//         set2: {
-//           original: 'Transfer',
-//           translation: 'Передача перевод перенос',
-//         },
-//       },
-//     },
-
-//     // const hintPromptEnglish = 'Enter a word in Russian!';
-//     // const hintPromptRussian = 'Enter the word in English!';
-
-//     {
-//       checkingMessage: {
-//         correct: 'Correct answer!',
-//         incorrect: 'False ((',
-//       },
-//       userMessages: {
-//         start: {
-//           firstMessage: 'Our training/study begins!  Please be attentive!',
-//         },
-//         result: {
-//           encouragement: 'I know - you are trying, but try More and More )',
-//           praise: 'Well done!!',
-//         },
-//       },
-//     },
-
-//     {
-//       changingSettings: {
-//         learnWordPrompt: null, // 14/04/24
-//         numberAnswersCorrect: 0,
-//         interestСalculation: null, // работает и  так и
-//         interestСalculation: 0, //  и  так
-//         correctAnswersPercentage: null, // работает и  так и
-//         correctAnswersPercentage: 0, //  и  так
-//       },
-//       programSetting: {
-//         numberCompare: 50,
-//       },
-//       additionalSettings: {
-//         interestMessage: 'The number of your correct answers is ',
-//         percentIcon: '%',
-//       },
-//     },
-//   ];
+    const oneBigArray = [
+        [
+          {
+            numberTotalWords: 3,
+            // numberTotalAnswers: 3,   меняю название на Более Подходящее
+          },
+          {
+            setWords0: {
+              original: 'Reliable',
+              translation: 'Надёжный  достойный доверия  солидный',
+            },
+            setWords1: {
+              original: 'Wire',
+              translation: 'Провод струна трос',
+            },
+            setWords2: {
+              original: 'Transfer',
+              translation: 'Передача перевод перенос',
+            },
+          },
+        ],
+        // const hintPromptEnglish = 'Enter a word in Russian!';
+        // const hintPromptRussian = 'Enter the word in English!';
+      
+        [
+          {
+            correctMessage: 'Correct answer!',
+            incorrectMessage: 'False ((',
+          },
+          {
+            userStartMessages: {
+              firstMessage: 'Our training/study begins!  Please be attentive!',
+            },
+      
+            userResultMessages: {
+              encouragement: 'I know - you are trying, but try More and More )',
+              praise: 'Well done!!',
+            },
+          },
+        ],
+      
+        [
+          {
+            adjustmentLearnWordPrompt: null, // 14/04/24
+            adjustmentNumberAnswersCorrect: 0,
+            adjustmentInterestСalculation: null, // работает и  так и
+            adjustmentInterestСalculation: 0, //  и  так
+            adjustmentCorrectAnswersPercentage: null, // работает и  так и
+            adjustmentCorrectAnswersPercentage: 0, //  и  так
+          },
+          {
+            adjustmentNumberCompare: 50,
+          },
+          {
+            adjustmentInterestMessage: 'The number of your correct answers is ',
+            adjustmentPercentIcon: '%',
+          },
+        ],
+      ];
+      
+      console.log(oneBigArray);
+      
+      ///////
+      
+      // C.B.
+      
+      //  Function Initialization block
+      
+      // Stopwatch function
+      let startTime;
+      function startStopwatch() {
+        startTime = new Date();
+      }
+      
+      function stopStopwatch() {
+        const stopTime = new Date();
+        const elapsedTime = stopTime - startTime;
+        const minutes = Math.floor(elapsedTime / 60000); // Convert milliseconds to minutes
+        const seconds = Math.floor((elapsedTime % 60000) / 1000); // Convert remaining milliseconds to seconds
+        alert(
+          `Stopwatch stopped.\nElapsed time: ${minutes} minutes ${seconds} seconds.`
+        );
+      }
+      
+      function learnEnglishWords(wordsArray) {
+        alert(oneBigArray[1][1].userStartMessages.firstMessage);
+        if (!startTime) {
+          startStopwatch(); // Start the stopwatch before the first alert
+        }
+      
+        for (let i = 0; i < wordsArray.length; i++) {
+          const word = wordsArray[i];
+      
+          oneBigArray[2][0].adjustmentLearnWordPrompt = prompt(word.original); // так - как делает Димыч
+          if (oneBigArray[2][0].adjustmentLearnWordPrompt !== word.translation) {
+            alert(oneBigArray[1][0].incorrectMessage);
+            alert(oneBigArray[2][0].adjustmentNumberAnswersCorrect);
+            alert(oneBigArray[2][0].adjustmentLearnWordPrompt);
+            alert(word.translation);
+          } else {
+            alert(oneBigArray[1][0].correctMessage);
+            oneBigArray[2][0].adjustmentNumberAnswersCorrect =
+              oneBigArray[2][0].adjustmentNumberAnswersCorrect + 1;
+            alert(oneBigArray[2][0].adjustmentNumberAnswersCorrect);
+          }
+        }
+      }
+      
+      function learnWords() {
+        stopStopwatch(); // Stop the stopwatch after the last prompt
+      }
+      
+      // Function Call block
+      
+      // const wordsArray = [word0, word1, word2];
+      const wordsArray = [
+        oneBigArray[0][1].setWords0,
+        oneBigArray[0][1].setWords1,
+        oneBigArray[0][1].setWords2,
+        //   oneBigObject.words.word0,
+        //   oneBigObject.words.word1,
+        //   oneBigObject.words.word2,
+      ];
+      
+      learnEnglishWords(wordsArray);
+      
+      learnWords();
+      
+      function learnWords1() {
+        oneBigArray[2][0].adjustmentInterestСalculation =
+          (oneBigArray[2][0].adjustmentNumberAnswersCorrect /
+            oneBigArray[0][0].numberTotalWords) *
+          100;
+      
+        oneBigArray[2][0].adjustmentCorrectAnswersPercentage =
+          oneBigArray[2][2].adjustmentInterestMessage +
+          Math.round(oneBigArray[2][0].adjustmentInterestСalculation) +
+          oneBigArray[2][2].adjustmentPercentIcon;
+        alert(oneBigArray[2][0].adjustmentCorrectAnswersPercentage);
+        if (
+          oneBigArray[2][0].adjustmentInterestСalculation <=
+          oneBigArray[2][1].adjustmentNumberCompare
+        ) {
+          alert(oneBigArray[1][1].userResultMessages.encouragement);
+        } else {
+          alert(oneBigArray[1][1].userResultMessages.praise);
+        }
+      }
+      
+      learnWords1();
+      
