@@ -126,7 +126,7 @@
 // Досмотрел В. до 52й минуты -- теперь надо всё закоммитить
 // Убрал из К.-а - П.-ю --- которая определяла общее Кол-во слов (для изучения)
 // Итоговый подсчёт правильных ответов теперь Определяется с Помощью:
-// -- обращения к Длине Ма.-а (со словами) --- 
+// -- обращения к Длине Ма.-а (со словами) ---
 // который мне тоже пришлось переделать ----
 // Сам Ма. - я вынес НАРУЖУ - и записал/сделал его - Перед - Большим Ма.-м
 // -- а вот -- его П.-ю ---
@@ -151,18 +151,18 @@
 // I.B.
 
 const setWords = [
-  {
-    original: 'Reliable',
-    translation: 'Надёжный  достойный доверия  солидный',
-  },
-  {
-    original: 'Wire',
-    translation: 'Провод струна трос',
-  },
-  {
-    original: 'Transfer',
-    translation: 'Передача перевод перенос',
-  },
+  //   {
+  //     original: 'Reliable',
+  //     translation: 'Надёжный  достойный доверия  солидный',
+  //   },
+  //   {
+  //     original: 'Wire',
+  //     translation: 'Провод струна трос',
+  //   },
+  //   {
+  //     original: 'Transfer',
+  //     translation: 'Передача перевод перенос',
+  //   },
   {
     original: 'Low',
     translation: 'Низкий невысокий тихий',
@@ -174,28 +174,6 @@ const setWords = [
 ];
 
 const oneBigArray = [
-  // [
-  //   // {
-  //   //   numberTotalWords: 3,
-  //   //   // numberTotalAnswers: 3,   меняю название на Более Подходящее
-  //   // },
-  //   {
-  //     setWords0: {
-  //       original: 'Reliable',
-  //       translation: 'Надёжный  достойный доверия  солидный',
-  //     },
-  //     setWords1: {
-  //       original: 'Wire',
-  //       translation: 'Провод струна трос',
-  //     },
-  //     setWords2: {
-  //       original: 'Transfer',
-  //       translation: 'Передача перевод перенос',
-  //     },
-  //   },
-  // ],
-  // const hintPromptEnglish = 'Enter a word in Russian!';
-  // const hintPromptRussian = 'Enter the word in English!';
   setWords,
   [
     {
@@ -324,119 +302,3 @@ function shuffleArray(array) {
   }
   return array;
 }
-
-// // Stopwatch function
-// //   let startTime;
-
-// let startTime;
-// function startStopwatch() {
-//   startTime = new Date();
-// }
-
-// function stopStopwatch() {
-//   const stopTime = new Date();
-//   const elapsedTime = stopTime - startTime;
-//   const minutes = Math.floor(elapsedTime / 60000); // Convert milliseconds to minutes
-//   const seconds = Math.floor((elapsedTime % 60000) / 1000); // Convert remaining milliseconds to seconds
-//   alert(
-//     `Stopwatch stopped.\nElapsed time: ${minutes} minutes ${seconds} seconds.`
-//   );
-// }
-
-// function learnEnglishWords(wordsArray) {
-//   alert(oneBigArray[1][1].userStartMessages.firstMessage);
-//   if (!startTime) {
-//     startStopwatch(); // Start the stopwatch before the first alert
-//   }
-
-//   // Shuffle the wordsArray
-//   wordsArray = shuffleArray(wordsArray);
-
-//   for (let i = 0; i < wordsArray.length; i++) {
-//     const word = wordsArray[i];
-
-//     oneBigArray[2][0].adjustmentLearnWordPrompt = prompt(word.original); // так - как делает Димыч
-//     if (oneBigArray[2][0].adjustmentLearnWordPrompt !== word.translation) {
-//       alert(oneBigArray[1][0].incorrectMessage);
-//       alert(oneBigArray[2][0].adjustmentNumberAnswersCorrect);
-//       alert(oneBigArray[2][0].adjustmentLearnWordPrompt);
-//       alert(word.translation);
-//     } else {
-//       alert(oneBigArray[1][0].correctMessage);
-//       oneBigArray[2][0].adjustmentNumberAnswersCorrect =
-//         oneBigArray[2][0].adjustmentNumberAnswersCorrect + 1;
-//       alert(oneBigArray[2][0].adjustmentNumberAnswersCorrect);
-//     }
-//   }
-// }
-
-// function learnWords() {
-//   stopStopwatch(); // Stop the stopwatch after the last prompt
-// }
-
-// // Function Call block
-
-// // const wordsArray = [word0, word1, word2];
-// const wordsArray = [
-//   // Меняю К. За Димычем.
-
-//   //   oneBigArray[0][1].setWords0,
-//   // oneBigArray[0][0].setWords0,
-//   // oneBigArray[0].setWords0,
-//   // oneBigArray[0][0],
-
-//   //   oneBigArray[0][1].setWords1,
-//   // oneBigArray[0][0].setWords1,
-//   // oneBigArray[0].setWords1,
-//   // oneBigArray[0][1],
-
-//   //   oneBigArray[0][1].setWords2,
-//   // oneBigArray[0][0].setWords2,
-//   // oneBigArray[0].setWords2,
-//   // oneBigArray[0][2],
-
-//   // oneBigArray[0][3],
-//   oneBigArray[0].length
-
-//   //   oneBigObject.words.word0,
-//   //   oneBigObject.words.word1,
-//   //   oneBigObject.words.word2,
-// ];
-
-// learnEnglishWords(wordsArray);
-
-// learnWords();
-
-// function learnWords1() {
-//   oneBigArray[2][0].adjustmentInterestСalculation =
-//     (oneBigArray[2][0].adjustmentNumberAnswersCorrect /
-//       // Меняю К За Димычем
-//       //   oneBigArray[0][0].numberTotalWords) *
-//       oneBigArray[0].length) *
-//     100;
-
-//   oneBigArray[2][0].adjustmentCorrectAnswersPercentage =
-//     oneBigArray[2][2].adjustmentInterestMessage +
-//     Math.round(oneBigArray[2][0].adjustmentInterestСalculation) +
-//     oneBigArray[2][2].adjustmentPercentIcon;
-//   alert(oneBigArray[2][0].adjustmentCorrectAnswersPercentage);
-//   if (
-//     oneBigArray[2][0].adjustmentInterestСalculation <=
-//     oneBigArray[2][1].adjustmentNumberCompare
-//   ) {
-//     alert(oneBigArray[1][1].userResultMessages.encouragement);
-//   } else {
-//     alert(oneBigArray[1][1].userResultMessages.praise);
-//   }
-// }
-
-// learnWords1();
-
-// // Function to shuffle array elements
-// function shuffleArray(array) {
-//   for (let i = array.length - 1; i > 0; i--) {
-//     const j = Math.floor(Math.random() * (i + 1));
-//     [array[i], array[j]] = [array[j], array[i]];
-//   }
-//   return array;
-// }
